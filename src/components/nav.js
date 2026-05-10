@@ -1,4 +1,5 @@
 import { go } from '../utils/router.js';
+import { SITE } from '../config/site.js';
 
 const ROUTES = [
   ['home', 'Home'],
@@ -15,8 +16,8 @@ export function renderNav() {
   nav.className = 'app-nav';
   nav.innerHTML = `
     <div class="nav-inner">
-      <div class="logo" data-go="home">
-        <div class="logo-mark">🤖</div>
+      <div class="logo" data-go="home" style="cursor:pointer">
+        <img src="${SITE.logo}" alt="Bharat AI Academy" class="logo-img" style="height:40px;width:auto;display:block" />
         <div>
           <div class="logo-name">Bharat <span>AI</span> Academy</div>
           <div class="logo-sub">Empowering Bharat with AI</div>
@@ -26,14 +27,19 @@ export function renderNav() {
         ${ROUTES.map(([id, label]) => `
           <li data-route="${id}"><button data-go="${id}">${label}</button></li>
         `).join('')}
-        <li><button class="nav-cta" data-go="register">Apply Now →</button></li>
+        <li><button class="nav-cta" data-go="register" data-program="youth">Apply Now →</button></li>
       </ul>
       <button class="mbtn" id="mbtn">☰</button>
     </div>
   `;
   nav.addEventListener('click', (e) => {
     const t = e.target.closest('[data-go]');
-    if (t) { go(t.dataset.go); closeMobile(); return; }
+    if (t) {
+      const program = t.dataset.program;
+      go(t.dataset.go, program ? { program } : {});
+      closeMobile();
+      return;
+    }
     if (e.target.id === 'mbtn') toggleMobile();
   });
   return nav;

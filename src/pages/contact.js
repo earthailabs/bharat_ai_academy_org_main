@@ -62,7 +62,7 @@ export function renderContact() {
             <div class="alert warn" style="margin-top:12px">
               <span>⚡</span><span>Only 40 seats for the June 8 batch. First come, first enrolled.</span>
             </div>
-            <button class="btn-bl" data-go="register" style="width:100%;justify-content:center;margin-top:6px">Reserve Your Seat →</button>
+            <button class="btn-bl" data-go="register" data-program="youth" style="width:100%;justify-content:center;margin-top:6px">Apply Now →</button>
           </div>
         </div>
       </div>
@@ -94,7 +94,10 @@ export function renderContact() {
 
   view.addEventListener('click', (e) => {
     const t = e.target.closest('[data-go]');
-    if (t) go(t.dataset.go);
+    if (t) {
+      const program = t.dataset.program;
+      go(t.dataset.go, program ? { program } : {});
+    }
   });
 
   return view;

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /dashboard
 
-Sitemap: https://bharatai.academy/sitemap.xml
+Sitemap: https://bharataiacademy.org/sitemap.xml

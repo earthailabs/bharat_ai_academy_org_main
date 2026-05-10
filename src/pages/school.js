@@ -39,7 +39,7 @@ export function renderSchool() {
             <span>👥 Max 20 students per batch</span>
             <span>📜 Certificate included</span>
           </div>
-          <button class="btn-bl" data-go="register" data-program="school" style="white-space:nowrap">Enroll Now →</button>
+          <button class="btn-bl" data-go="register" data-program="school" style="white-space:nowrap">Apply Now →</button>
         </div>
       </div>
     </section>

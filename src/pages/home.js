@@ -13,6 +13,7 @@ export function renderHome() {
       <div class="btns">
         <button class="btn-dk" data-go="youth">View Programs →</button>
         <button class="btn-gh" data-go="contact">Talk to Us</button>
+        <button class="btn-bl" data-go="register" data-program="youth">Apply Now →</button>
       </div>
       <div class="stats-row">
         <div class="stat"><span class="n">40</span><span class="l">Seats Available</span></div>
@@ -98,16 +99,20 @@ export function renderHome() {
     <section class="bg-gray">
       <div class="container-x">
         <div class="ctab">
-          <h2>Reserve Your Seat — Only 40 Spots</h2>
-          <p>Pay just ₹5,000 to reserve your seat in the 8 June 2026 batch. Limited time price.</p>
-          <button class="btn-bl" data-go="register">Reserve Seat Now →</button>
+          <h2>Apply Now — Only 40 Seats</h2>
+          <p>Drop your name &amp; phone. Our counselor will call you within 24 hours. Batch starts 8 June 2026.</p>
+          <button class="btn-bl" data-go="register" data-program="youth">Apply for AI for Youth →</button>
+          <button class="btn-gh" data-go="register" data-program="school" style="margin-left:8px">Apply for School Program →</button>
         </div>
       </div>
     </section>
   `;
   view.addEventListener('click', (e) => {
     const t = e.target.closest('[data-go]');
-    if (t) go(t.dataset.go);
+    if (t) {
+      const program = t.dataset.program;
+      go(t.dataset.go, program ? { program } : {});
+    }
   });
   return view;
 }

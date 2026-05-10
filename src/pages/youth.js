@@ -1,4 +1,5 @@
 import { go } from '../utils/router.js';
+import { SITE, telLink, whatsappLink } from '../config/site.js';
 
 export function renderYouth() {
   const view = document.createElement('div');
@@ -11,8 +12,9 @@ export function renderYouth() {
         <h1>AI for Youth Program</h1>
         <p>8-week intensive offline AI training in Charkhi Dadri. Skills to get a job, freelance, or launch your own AI business.</p>
         <div class="btns" style="justify-content:flex-start">
-          <button class="btn-dk" data-go="register" data-program="youth">Reserve Your Seat →</button>
-          <a class="btn-gh" href="tel:+919876543210">📞 Call Us</a>
+          <button class="btn-dk" data-go="register" data-program="youth">Apply Now →</button>
+          <a class="btn-gn" href="${whatsappLink('Hi, I want to apply for AI for Youth.')}" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn-gh" href="${telLink()}">📞 Call ${SITE.contactPhone}</a>
         </div>
       </div>
     </div>
@@ -30,7 +32,7 @@ export function renderYouth() {
               <span>👥 40 students max per batch</span>
               <span>⚠️ Price increases from next batch</span>
             </div>
-            <button class="btn-bl" data-go="register" data-program="youth" style="width:100%;justify-content:center">Secure Your Seat →</button>
+            <button class="btn-bl" data-go="register" data-program="youth" style="width:100%;justify-content:center">Apply Now →</button>
           </div>
           <div class="pr">
             <h3>What's Included</h3>
