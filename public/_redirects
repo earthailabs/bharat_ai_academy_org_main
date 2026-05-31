@@ -1,1 +1,5 @@
+# Standalone static webinar page (served as-is, not via the SPA router)
+/webinar    /webinar/index.html   200
+
+# SPA fallback for all other routes
 /*    /index.html   200

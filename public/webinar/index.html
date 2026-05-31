@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="2 घंटे की Live AI Workshop सिर्फ ₹99 में। Hindi में AI सीखो और Career, Job व Life में आगे बढ़ो। ChatGPT, AI Tools, Prompt Writing और बहुत कुछ।" />
+<meta name="keywords" content="AI Workshop Hindi, ChatGPT Hindi, AI सीखें, Live AI Workshop, AI Tools 2026, AI for Jobs" />
+<meta property="og:title" content="AI सीखो और Career, Job & Life में आगे बढ़ो" />
+<meta property="og:description" content="2 घंटे की Live AI Workshop | Beginner Friendly | सिर्फ ₹99" />
+<meta property="og:type" content="website" />
+<title>AI सीखो और Career, Job & Life में आगे बढ़ो | Live AI Workshop ₹99</title>
+
+<!-- Meta Pixel Placeholder -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){...Facebook Pixel Code...}
+fbq('init', 'YOUR_PIXEL_ID_HERE');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --primary:#3B82F6;
+    --primary-soft:#60A5FA;
+    --accent:#0EA5E9;
+    --cta:#F97316;
+    --bg:#F5F9FF;
+    --bg-2:#EFF6FF;
+    --dark:#0F172A;
+    --muted:#64748B;
+    --border:#E2E8F0;
+    --card:#ffffff;
+    --shadow:0 4px 20px rgba(15,23,42,0.05);
+    --shadow-lg:0 12px 40px rgba(59,130,246,0.15);
+    --grad:linear-gradient(135deg,#60A5FA 0%,#3B82F6 50%,#0EA5E9 100%);
+    --grad-soft:linear-gradient(135deg,#DBEAFE 0%,#E0F2FE 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins','Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--dark);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ====== BUTTONS ====== */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--cta);
+    color:#fff;font-weight:700;font-size:18px;
+    padding:16px 32px;border-radius:14px;
+    border:none;cursor:pointer;
+    box-shadow:0 12px 28px rgba(249,115,22,0.45);
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    text-align:center;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(249,115,22,0.55);background:#ea670d}
+  .btn-lg{padding:20px 40px;font-size:20px;border-radius:16px}
+  .btn-ghost{
+    background:#fff;color:var(--primary);
+    border:1.5px solid var(--border);
+    box-shadow:0 2px 8px rgba(15,23,42,0.04);
+  }
+  .btn-ghost:hover{background:var(--bg-2);box-shadow:0 6px 16px rgba(59,130,246,0.12);border-color:var(--primary-soft)}
+
+  /* ====== NAV ====== */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1180px;margin:0 auto}
+  .logo{
+    font-weight:800;font-size:22px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .nav .btn{padding:10px 20px;font-size:14px;border-radius:10px;box-shadow:0 6px 16px rgba(249,115,22,0.35)}
+
+  /* ====== HERO ====== */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,#EFF6FF 0%,#F5F9FF 60%,#ffffff 100%);
+    color:var(--dark);
+    padding:40px 0 60px;
+    overflow:hidden;
+  }
+  .hero-banner{
+    display:block;max-width:920px;margin:0 auto;
+    border-radius:24px;overflow:hidden;
+    box-shadow:0 20px 50px rgba(59,130,246,0.18);
+    transition:transform .35s ease, box-shadow .35s ease;
+    position:relative;z-index:2;
+  }
+  .hero-banner:hover{transform:translateY(-4px);box-shadow:0 28px 60px rgba(59,130,246,0.28)}
+  .hero-banner img{width:100%;height:auto;display:block}
+  .hero::before,.hero::after{
+    content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none;
+  }
+  .hero::before{width:380px;height:380px;background:#93C5FD;top:-120px;left:-80px}
+  .hero::after{width:480px;height:480px;background:#7DD3FC;bottom:-220px;right:-140px}
+  .hero-grid{
+    display:grid;grid-template-columns:1.2fr .9fr;gap:50px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:8px 16px;border-radius:999px;
+    font-size:14px;font-weight:500;margin-bottom:20px;
+    color:var(--dark);
+    box-shadow:0 2px 8px rgba(15,23,42,0.04);
+  }
+  .badge .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 4px rgba(34,197,94,.25);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+
+  .hero h1{
+    font-size:clamp(32px,5.2vw,54px);
+    line-height:1.18;font-weight:800;
+    margin-bottom:18px;letter-spacing:-.5px;
+    color:var(--dark);
+  }
+  .hero h1 .gradient-word{
+    background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .sub{
+    font-size:clamp(16px,2.2vw,20px);
+    color:var(--muted);margin-bottom:26px;font-weight:500;
+  }
+  .trust{
+    display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;
+  }
+  .trust span{
+    background:#fff;
+    border:1px solid var(--border);
+    padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;
+    color:var(--dark);
+    box-shadow:0 2px 6px rgba(15,23,42,0.03);
+  }
+  .hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .price-line{font-size:15px;color:var(--muted);margin-top:14px}
+  .price-line .strike{text-decoration:line-through;opacity:.7;margin-right:8px}
+
+  /* HERO ILLUSTRATION (CSS only AI orb) */
+  .hero-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:380px}
+  .orb{
+    position:relative;width:340px;height:340px;border-radius:50%;
+    background:conic-gradient(from 90deg,#93C5FD,#60A5FA,#38BDF8,#7DD3FC,#93C5FD);
+    box-shadow:0 20px 60px rgba(59,130,246,.25),inset 0 0 60px rgba(255,255,255,.5);
+    animation:spin 22s linear infinite;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .orb::before{
+    content:"";position:absolute;inset:22px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#fff,#DBEAFE 40%,#60A5FA 100%);
+    filter:blur(1px);
+  }
+  .orb-core{
+    position:relative;z-index:2;font-size:90px;font-weight:800;color:#fff;
+    text-shadow:0 4px 20px rgba(59,130,246,.5);
+    animation:spin 22s linear infinite reverse;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .float-card{
+    position:absolute;background:#fff;color:var(--dark);
+    padding:12px 16px;border-radius:14px;box-shadow:var(--shadow-lg);
+    font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;
+    animation:float 4s ease-in-out infinite;
+  }
+  .float-card{border:1px solid var(--border)}
+  .float-card .ico{width:32px;height:32px;border-radius:8px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 4px 10px rgba(59,130,246,.25)}
+  .fc-1{top:10%;left:-10px;animation-delay:0s}
+  .fc-2{top:50%;right:-20px;animation-delay:1.2s}
+  .fc-3{bottom:8%;left:20px;animation-delay:2.2s}
+  @keyframes float{50%{transform:translateY(-12px)}}
+
+  /* ====== COUNTDOWN ====== */
+  .countdown-bar{
+    background:#fff;
+    color:var(--dark);padding:18px 0;
+    text-align:center;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .countdown-bar .cd-inner{
+    display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;
+  }
+  .countdown-bar .label{font-weight:600;font-size:15px}
+  .timer{display:flex;gap:8px}
+  .timer .box{
+    background:var(--grad);color:#fff;
+    padding:8px 12px;border-radius:10px;min-width:54px;
+    font-weight:700;font-size:18px;text-align:center;
+    box-shadow:0 4px 12px rgba(59,130,246,.25);
+  }
+  .timer .box small{display:block;font-size:10px;font-weight:500;opacity:.9;margin-top:2px}
+
+  /* ====== SECTIONS ====== */
+  section{padding:80px 0;position:relative}
+  .section-head{text-align:center;max-width:760px;margin:0 auto 50px}
+  .section-head h2{
+    font-size:clamp(28px,4vw,42px);font-weight:800;
+    margin-bottom:14px;line-height:1.2;letter-spacing:-.5px;
+  }
+  .section-head h2 .grad{
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .section-head p{color:var(--muted);font-size:17px}
+  section{background:var(--bg)}
+  section#learn,section.about{background:#fff}
+
+  /* ====== CARD GRID ====== */
+  .grid{display:grid;gap:22px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{
+    background:var(--card);border-radius:18px;padding:28px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--primary-soft)}
+  .card .icon{
+    width:54px;height:54px;border-radius:14px;
+    background:var(--grad-soft);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--primary);font-size:26px;font-weight:700;margin-bottom:18px;
+    border:1px solid #BFDBFE;
+  }
+  .card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+
+  /* ====== LEARN SHOWCASE IMAGE ====== */
+  .learn-showcase{
+    max-width:520px;margin:0 auto 40px;
+    border-radius:24px;overflow:hidden;
+    box-shadow:0 16px 40px rgba(59,130,246,0.15);
+    transition:transform .35s ease;
+  }
+  .learn-showcase:hover{transform:translateY(-4px)}
+  .learn-showcase img{width:100%;height:auto;display:block}
+
+  /* ====== PRICE GRID + IMAGE ====== */
+  .price-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .price-image{
+    border-radius:24px;overflow:hidden;
+    box-shadow:0 16px 40px rgba(59,130,246,0.15);
+    transition:transform .35s ease;
+  }
+  .price-image:hover{transform:translateY(-4px)}
+  .price-image img{width:100%;height:auto;display:block}
+
+  /* ====== BONUS ====== */
+  .bonus-section{
+    background:var(--bg-2);
+  }
+  .bonus-card{
+    background:#fff;border-radius:18px;padding:24px;
+    box-shadow:var(--shadow);display:flex;gap:16px;align-items:flex-start;
+    border:1px solid var(--border);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .bonus-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--primary-soft)}
+  .bonus-card .icon{background:#FFF7ED;color:var(--cta);flex-shrink:0;margin-bottom:0;border:1px solid #FED7AA}
+  .bonus-card .tag{
+    display:inline-block;background:#FFF7ED;color:#9A3412;
+    font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;margin-top:8px;
+    border:1px solid #FED7AA;
+  }
+
+  /* ====== ABOUT ====== */
+  .about{background:#fff}
+  .about-card{
+    max-width:880px;margin:0 auto;
+    background:var(--grad-soft);
+    padding:46px 40px;border-radius:24px;
+    border:1px solid #BFDBFE;
+    text-align:center;
+  }
+  .about-card .avatar{
+    width:110px;height:110px;border-radius:50%;
+    background:var(--grad);margin:0 auto 22px;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-size:44px;font-weight:800;
+    box-shadow:0 12px 30px rgba(59,130,246,.3);
+  }
+  .about-card p{color:var(--muted);font-size:17px;line-height:1.8;margin-bottom:14px}
+
+  /* ====== AUDIENCE ====== */
+  .audience-card{
+    background:#fff;border-radius:18px;padding:28px 20px;text-align:center;
+    box-shadow:var(--shadow);transition:all .3s ease;
+    border:1px solid var(--border);
+  }
+  .audience-card:hover{transform:translateY(-4px);background:var(--grad-soft);border-color:var(--primary-soft);box-shadow:var(--shadow-lg)}
+  .audience-card .emoji{font-size:42px;margin-bottom:10px;display:block}
+  .audience-card h3{font-size:17px;font-weight:700}
+
+  /* ====== PRICE ====== */
+  .price-section{
+    background:linear-gradient(180deg,#F5F9FF 0%,#EFF6FF 100%);
+    color:var(--dark);text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .price-section::before{
+    content:"";position:absolute;width:600px;height:600px;border-radius:50%;
+    background:rgba(96,165,250,0.12);top:-300px;left:50%;transform:translateX(-50%);
+    filter:blur(80px);
+  }
+  .price-box{
+    position:relative;z-index:2;margin:0 auto;width:100%;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:50px 40px;border-radius:28px;
+    box-shadow:0 20px 60px rgba(59,130,246,0.15);
+  }
+  .price-tag{
+    font-size:clamp(48px,9vw,84px);font-weight:800;line-height:1;
+    margin:14px 0 6px;letter-spacing:-2px;
+    background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .price-tag .small-rs{font-size:.5em;vertical-align:top;font-weight:600}
+  .price-old{font-size:22px;text-decoration:line-through;color:var(--muted);font-weight:500}
+  .urgency{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#FFF7ED;color:#9A3412;
+    border:1px solid #FED7AA;
+    padding:8px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;margin-bottom:14px;
+  }
+  .urgency .dot{width:8px;height:8px;background:var(--cta);border-radius:50%;animation:pulse 1.6s infinite}
+
+  /* ====== FAQ ====== */
+  .faq{background:#fff}
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-item{
+    background:var(--bg);border-radius:14px;margin-bottom:14px;
+    border:1px solid var(--border);
+    overflow:hidden;transition:box-shadow .3s ease, border-color .3s ease;
+  }
+  .faq-item[open]{box-shadow:var(--shadow);border-color:var(--primary-soft);background:#fff}
+  .faq-item summary{
+    cursor:pointer;padding:20px 24px;font-weight:600;font-size:17px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    list-style:none;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{
+    content:"+";font-size:26px;color:var(--primary);font-weight:400;
+    transition:transform .3s ease;
+  }
+  .faq-item[open] summary::after{content:"−";transform:rotate(180deg)}
+  .faq-item .faq-body{padding:0 24px 22px;color:var(--muted);font-size:15px}
+
+  /* ====== FINAL CTA ====== */
+  .final-cta{
+    background:var(--grad);
+    color:#fff;text-align:center;position:relative;overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";position:absolute;width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.2),transparent 70%);
+    top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  .final-cta h2{
+    position:relative;z-index:2;
+    font-size:clamp(28px,5vw,46px);font-weight:800;margin-bottom:18px;
+  }
+  .final-cta h2 .grad{
+    background:linear-gradient(90deg,#FEF3C7,#FFFFFF);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .final-cta p{position:relative;z-index:2;opacity:.95;font-size:18px;margin-bottom:30px}
+  .final-cta .btn{position:relative;z-index:2}
+
+  /* ====== FOOTER ====== */
+  footer{
+    background:#fff;color:var(--muted);text-align:center;
+    padding:36px 20px;font-size:14px;
+    border-top:1px solid var(--border);
+  }
+  footer a{color:var(--primary);margin:0 6px}
+  footer strong{color:var(--dark)}
+
+  /* ====== STICKY MOBILE CTA ====== */
+  .sticky-cta{
+    display:none;
+    position:fixed;bottom:0;left:0;right:0;z-index:80;
+    background:#fff;padding:12px 14px;
+    box-shadow:0 -10px 30px rgba(0,0,0,.15);
+    border-top:1px solid rgba(0,0,0,.05);
+  }
+  .sticky-cta .btn{width:100%;padding:14px;font-size:16px;border-radius:12px}
+
+  /* ====== WHATSAPP FLOAT ====== */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:75;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(37,211,102,.5);
+    transition:transform .3s ease;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px}
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width:900px){
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+    .price-grid{grid-template-columns:1fr;gap:30px}
+    .price-image{max-width:420px;margin:0 auto}
+  }
+  @media (max-width:640px){
+    section{padding:60px 0}
+    .hero{padding:24px 0 50px}
+    .hero-banner{border-radius:18px}
+    .hero-cta-row{flex-direction:column;align-items:stretch}
+    .hero-cta-row .btn{width:100%}
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .price-box{padding:40px 24px}
+    .about-card{padding:30px 22px}
+    .price-box{padding:36px 24px}
+    .nav .btn{display:none}
+    .sticky-cta{display:block}
+    body{padding-bottom:80px}
+    .wa-float{bottom:88px;width:54px;height:54px}
+    .wa-float svg{width:28px;height:28px}
+    .float-card{font-size:11px;padding:8px 12px}
+    .float-card .ico{width:26px;height:26px;font-size:14px}
+    .timer .box{min-width:46px;font-size:15px;padding:6px 10px}
+    .countdown-bar .cd-inner{gap:12px}
+  }
+
+  /* ====== ANIMATIONS ====== */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">Bharat AI Academy</div>
+    <a href="#book" class="btn">₹99 में बुक करें</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <a href="#book" class="hero-banner" aria-label="Book your seat for AI Workshop at ₹99">
+      <img src="Image_1.png" alt="AI सीखो और Career, Job & Life में आगे बढ़ो - Live Workshop सिर्फ ₹99" loading="eager" fetchpriority="high">
+    </a>
+    <div class="hero-cta-row" style="justify-content:center;margin-top:28px;text-align:center">
+      <a href="#book" class="btn btn-lg">₹99 में सीट बुक करें →</a>
+      <a href="#learn" class="btn btn-ghost">क्या सीखेंगे?</a>
+    </div>
+    <p class="price-line" style="text-align:center;margin-top:18px">
+      <span class="strike">₹999</span> आज सिर्फ ₹99 — Limited Seats Available
+    </p>
+  </div>
+</header>
+
+<!-- ===== COUNTDOWN ===== -->
+<div class="countdown-bar">
+  <div class="cd-inner container">
+    <span class="label">⏰ Offer Ending In:</span>
+    <div class="timer" id="timer">
+      <div class="box"><span id="d">00</span><small>Days</small></div>
+      <div class="box"><span id="h">00</span><small>Hrs</small></div>
+      <div class="box"><span id="m">00</span><small>Min</small></div>
+      <div class="box"><span id="s">00</span><small>Sec</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHY AI ===== -->
+<section id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>आज <span class="grad">AI सीखना</span> क्यों जरूरी है?</h2>
+      <p>क्योंकि AI अब future नहीं, present है — और जो आज सीखेगा, वो आगे रहेगा।</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="icon">🚀</div><h3>AI = Future Skill</h3><p>2026 की हर job में AI knowledge एक बड़ा advantage है।</p></div>
+      <div class="card reveal"><div class="icon">🎓</div><h3>Students + Professionals</h3><p>पढ़ाई हो या काम — AI दोनों में काम आता है।</p></div>
+      <div class="card reveal"><div class="icon">⚡</div><h3>Hours → Minutes</h3><p>घंटों का काम AI tools से कुछ ही minutes में।</p></div>
+      <div class="card reveal"><div class="icon">📈</div><h3>Job & Career Growth</h3><p>Resume, interview और skills — सब में मदद।</p></div>
+      <div class="card reveal"><div class="icon">🧠</div><h3>Productivity Boost</h3><p>Learning और काम दोनों में तेज़ी और clarity।</p></div>
+      <div class="card reveal"><div class="icon">💡</div><h3>Smart Decisions</h3><p>AI insights से बेहतर फैसले, कम मेहनत में।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT YOU'LL LEARN ===== -->
+<section id="learn" style="background:#fff">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Workshop में <span class="grad">क्या सीखेंगे?</span></h2>
+      <p>2 घंटे में practical AI knowledge — एकदम zero से शुरू।</p>
+    </div>
+    <div class="learn-showcase reveal">
+      <img src="Image_2.png" alt="2 घंटे में सीखो AI के दमदार Skills - ChatGPT, Jobs, Content Creation, Studies, Productivity, AI Tools" loading="lazy">
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="icon">🤖</div><h3>ChatGPT Basics</h3><p>ChatGPT को सही से इस्तेमाल करना सीखें।</p></div>
+      <div class="card reveal"><div class="icon">💼</div><h3>AI Tools for Jobs</h3><p>नौकरी ढूंढने और apply करने के लिए AI tools।</p></div>
+      <div class="card reveal"><div class="icon">📄</div><h3>Resume & Interview Help</h3><p>AI से professional resume और interview prep।</p></div>
+      <div class="card reveal"><div class="icon">📚</div><h3>AI for Studies</h3><p>Notes, summary, doubts — सब AI से।</p></div>
+      <div class="card reveal"><div class="icon">⚙️</div><h3>AI for Productivity</h3><p>रोज़ के काम तेज़ और smart बनाएं।</p></div>
+      <div class="card reveal"><div class="icon">✍️</div><h3>Content Creation</h3><p>Posts, captions, scripts — सब AI से।</p></div>
+      <div class="card reveal"><div class="icon">🎨</div><h3>AI Image Tools</h3><p>Text से image — सबसे आसान तरीका।</p></div>
+      <div class="card reveal"><div class="icon">🏆</div><h3>Best AI Tools 2026</h3><p>2026 के top और free AI tools की list।</p></div>
+      <div class="card reveal"><div class="icon">💬</div><h3>Prompt Writing Basics</h3><p>सही prompts लिखने का formula सीखें।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BONUSES ===== -->
+<section class="bonus-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>🎁 <span class="grad">FREE Bonuses</span></h2>
+      <p>सिर्फ ₹99 में ये सब FREE मिलेगा — value ₹5000+</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="bonus-card reveal"><div class="icon">📘</div><div><h3>AI Tools PDF Guide</h3><p>50+ best AI tools की complete PDF guide।</p><span class="tag">FREE · Value ₹999</span></div></div>
+      <div class="bonus-card reveal"><div class="icon">💬</div><div><h3>100 AI Prompts</h3><p>Ready-to-use prompts collection जो काम आसान बना देंगे।</p><span class="tag">FREE · Value ₹799</span></div></div>
+      <div class="bonus-card reveal"><div class="icon">💼</div><div><h3>AI for Jobs Guide</h3><p>नौकरी ढूंढने और grow करने का AI roadmap।</p><span class="tag">FREE · Value ₹1299</span></div></div>
+      <div class="bonus-card reveal"><div class="icon">🎥</div><div><h3>Workshop Recording</h3><p>पूरी workshop की recording, lifetime access।</p><span class="tag">FREE · Value ₹999</span></div></div>
+      <div class="bonus-card reveal" style="grid-column:1 / -1"><div class="icon">👥</div><div><h3>Private WhatsApp Community</h3><p>Daily AI tips, doubts solve और network।</p><span class="tag">FREE · Value ₹1499</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>About the <span class="grad">Workshop</span></h2>
+    </div>
+    <div class="about-card reveal">
+      <div class="avatar">AI</div>
+      <p>यह workshop खास तौर पर उन students और professionals के लिए design की गई है जो AI को आसान <strong>Hindi</strong> में, बिना technical background के, सीखना चाहते हैं।</p>
+      <p>हम practical AI tools पढ़ाएंगे जो आप <strong>career, learning, productivity और daily life</strong> में तुरंत इस्तेमाल कर सकते हैं — कोई fake promise नहीं, बस real और useful knowledge।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUDIENCE ===== -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>यह Workshop किसके <span class="grad">लिए है?</span></h2>
+      <p>अगर आप इनमें से किसी भी category में हैं — यह workshop आपके लिए बनी है।</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="audience-card reveal"><span class="emoji">🎓</span><h3>Students</h3></div>
+      <div class="audience-card reveal"><span class="emoji">🔍</span><h3>Job Seekers</h3></div>
+      <div class="audience-card reveal"><span class="emoji">💼</span><h3>Working Professionals</h3></div>
+      <div class="audience-card reveal"><span class="emoji">💻</span><h3>Freelancers</h3></div>
+      <div class="audience-card reveal"><span class="emoji">🏪</span><h3>Business Owners</h3></div>
+      <div class="audience-card reveal"><span class="emoji">🌱</span><h3>Beginners</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICE ===== -->
+<section id="book" class="price-section">
+  <div class="container price-grid">
+    <div class="price-image reveal">
+      <a href="#book"><img src="Image_3.png" alt="आज सिर्फ ₹99 - Limited Seats - Hurry Up - सीट बुक करें" loading="lazy"></a>
+    </div>
+    <div class="price-box reveal">
+      <div class="urgency"><span class="dot"></span> Limited Seats Available</div>
+      <p style="color:var(--muted);font-size:16px">आज सिर्फ</p>
+      <div class="price-old">₹999</div>
+      <div class="price-tag"><span class="small-rs">₹</span>99</div>
+      <p style="color:var(--muted);margin-bottom:26px">90% OFF — सिर्फ आज के लिए</p>
+      <!-- Instamojo Payment Link Placeholder -->
+      <a href="https://imjo.in/WT2VzE" target="_blank" rel="noopener" class="btn btn-lg" style="width:100%">
+        अपनी सीट अभी बुक करें →
+      </a>
+      <p style="margin-top:16px;font-size:13px;color:var(--muted)">🔒 Secure Payment · Instant Confirmation</p>
+      <p style="margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6">
+        Booking करने का मतलब है आप हमारी 
+        <a href="terms.html" style="color:var(--primary);text-decoration:underline">Terms</a> और 
+        <a href="refund.html" style="color:var(--primary);text-decoration:underline">Non-Refundable Policy</a> से सहमत हैं।
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>आपके <span class="grad">सवाल</span> — हमारे जवाब</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>क्या technical knowledge जरूरी है?</summary><div class="faq-body">बिल्कुल नहीं। यह workshop पूरी तरह beginners के लिए है। बस mobile/laptop चलाना आना चाहिए।</div></details>
+      <details class="faq-item reveal"><summary>क्या mobile से attend कर सकते हैं?</summary><div class="faq-body">हाँ, आप mobile, tablet या laptop — किसी भी device से join कर सकते हैं।</div></details>
+      <details class="faq-item reveal"><summary>क्या workshop की recording मिलेगी?</summary><div class="faq-body">हाँ, पूरी workshop की recording आपको मिलेगी, जिसे आप कभी भी देख सकते हैं।</div></details>
+      <details class="faq-item reveal"><summary>क्या workshop Hindi में होगी?</summary><div class="faq-body">हाँ, पूरी workshop आसान Hindi भाषा में होगी ताकि सबको समझ आए।</div></details>
+      <details class="faq-item reveal"><summary>कौन-कौन से AI tools सीखेंगे?</summary><div class="faq-body">ChatGPT, Gemini, AI image tools, productivity tools, resume tools और 2026 के best AI tools।</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="reveal">अपनी सीट <span class="grad">अभी बुक करें</span></h2>
+    <p class="reveal">सिर्फ ₹99 में अपना AI सफर शुरू करें — Limited Seats Only</p>
+    <a href="https://imjo.in/WT2VzE" target="_blank" rel="noopener" class="btn btn-lg reveal">Join Live Workshop →</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2026 <strong>Bharat AI Academy</strong> · Owned and operated by <strong>Aditi</strong> · सभी अधिकार सुरक्षित</p>
+  <p style="margin-top:10px"><a href="terms.html">Terms & Conditions</a> · <a href="refund.html">Refund Policy</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@bharataiacademy.org">Contact</a></p>
+  <p style="margin-top:8px;font-size:12px;opacity:.7">📧 hello@bharataiacademy.org · Made with ❤️ for Hindi learners</p>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="#book" class="btn">₹99 में सीट बुक करें →</a>
+</div>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/919518846970?text=Hi%2C%20I%20want%20to%20join%20the%20AI%20Workshop%20(%E2%82%B999)" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.8 5.5 2.2 7.9L.3 31.7l8-2.1c2.3 1.2 4.9 1.9 7.7 1.9 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.5 20.7 2.8 18.4 2.8 16 2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 28.8 16 28.8zm7.4-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.3 1.6c-.2.2-.5.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.4-.6.1-.2 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.6-.8-.7h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .7.8.3 1.6.2 2.2.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.8-.4z"/></svg>
+</a>
+
+<script>
+  // ===== COUNTDOWN TIMER =====
+  (function(){
+    // Persistent end time: 3 days from first visit
+    var key='aiws_end_v1';
+    var end=localStorage.getItem(key);
+    if(!end){end=Date.now()+3*24*60*60*1000;localStorage.setItem(key,end);}
+    end=parseInt(end,10);
+    var d=document.getElementById('d'),h=document.getElementById('h'),m=document.getElementById('m'),s=document.getElementById('s');
+    function pad(n){return n<10?'0'+n:n}
+    function tick(){
+      var diff=end-Date.now();
+      if(diff<=0){d.textContent='00';h.textContent='00';m.textContent='00';s.textContent='00';return;}
+      var dd=Math.floor(diff/86400000);
+      var hh=Math.floor(diff/3600000)%24;
+      var mm=Math.floor(diff/60000)%60;
+      var ss=Math.floor(diff/1000)%60;
+      d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
+    }
+    tick();setInterval(tick,1000);
+  })();
+
+  // ===== SCROLL REVEAL =====
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+
+</body>
+</html>
