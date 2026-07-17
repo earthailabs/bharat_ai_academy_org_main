@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 1 — Computer Basics | Module 1 Study Pack</title>
+  <link rel="stylesheet" href="studypack.css">
+</head>
+<body class="part-1">
+  <div class="print-bar no-print">
+    Part 1 — Computer Basics: Zero to Confident
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- PART OPENER -->
+  <div class="page cover">
+    <div class="watermark">Bharat AI Academy</div>
+    <span class="cover-badge">Module 1 · Part 1</span>
+    <h1>Computer Basics</h1>
+    <p class="cover-sub">Zero to Confident</p>
+    <div class="cover-parts">
+      <ul class="toc-list">
+        <li><span class="sec">1. What is a Computer?</span></li>
+        <li><span class="sec">2. The Desktop, Mouse &amp; Keyboard</span></li>
+        <li><span class="sec">3. Files &amp; Folders</span></li>
+        <li><span class="sec">4. File Types — The Surname of Every File</span></li>
+        <li><span class="sec">5. Windows Skills — Hands On</span></li>
+        <li><span class="sec">6. Local vs Cloud vs Browser</span></li>
+        <li><span class="sec">7. Internet Basics</span></li>
+        <li><span class="sec">8. Keyboard Shortcuts Cheat Sheet</span></li>
+        <li><span class="sec">9. Practice &amp; Quiz</span></li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span>© Bharat AI Academy</span>
+      <span class="pageno">1</span>
+    </div>
+  </div>
+
+  <!-- 1. WHAT IS A COMPUTER -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 1</span>
+    </div>
+
+    <span class="chapter-num">Chapter 1</span>
+    <h1>What is a Computer?</h1>
+    <p class="lead">Before we learn AI, we must be comfortable with the machine AI runs on — the computer.</p>
+
+    <p>A computer is a machine that can <strong>store</strong> information, <strong>process</strong> information, and <strong>show</strong> you results. That's it. Everything else — games, videos, AI — is built on these three jobs.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Kitchen</div>
+      <p>Think of a computer as a kitchen. The <strong>fridge</strong> stores ingredients (storage). The <strong>cook</strong> prepares the dish (processor). The <strong>plate</strong> shows you the finished food (screen). You give the order (keyboard and mouse) — the kitchen does the work.</p>
+    </div>
+
+    <h2>The main parts</h2>
+    <table>
+      <thead><tr><th>Part</th><th>What it does</th><th>Kitchen analogy</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Processor (CPU)</strong></td><td>Does the thinking and calculations</td><td>The cook</td></tr>
+        <tr><td><strong>Memory (RAM)</strong></td><td>Holds what you are working on right now</td><td>The kitchen counter</td></tr>
+        <tr><td><strong>Storage (Hard disk / SSD)</strong></td><td>Keeps your files safe, even when power is off</td><td>The fridge</td></tr>
+        <tr><td><strong>Screen</strong></td><td>Shows you everything</td><td>The plate</td></tr>
+        <tr><td><strong>Keyboard &amp; Mouse</strong></td><td>How you give instructions</td><td>Placing your order</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Hardware &amp; Software</div>
+      <p><strong>Hardware</strong> = the parts you can touch (screen, keyboard, mouse).<br>
+      <strong>Software</strong> = the programs that run on it (WhatsApp, Chrome, games). You cannot touch software — it is instructions for the hardware.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">2</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 1</span>
+    </div>
+
+    <h2>Types of computers you already know</h2>
+    <div class="cards">
+      <div class="mini-card"><span class="emoji">💻</span><h4>Laptop</h4><p>A portable computer. Screen + keyboard in one. This is what you will use in class.</p></div>
+      <div class="mini-card"><span class="emoji">🖥️</span><h4>Desktop</h4><p>A bigger computer that stays on a desk. Separate screen, keyboard, and box.</p></div>
+      <div class="mini-card"><span class="emoji">📱</span><h4>Smartphone</h4><p>Yes — your phone is a computer too! It stores, processes, and shows information.</p></div>
+      <div class="mini-card"><span class="emoji">☁️</span><h4>Server</h4><p>A powerful computer in a big building far away. When you use ChatGPT, a server does the AI work.</p></div>
+    </div>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>Computer = <strong>Store + Process + Show</strong>. Your phone, your laptop, and the giant machines running ChatGPT all follow this same idea.</p>
+    </div>
+
+    <h2>What is an Operating System?</h2>
+    <p>When you switch on a laptop, a special software wakes up first and manages everything. It is called the <strong>Operating System (OS)</strong>.</p>
+    <ul>
+      <li><strong>Windows</strong> — most common on laptops in India. We will use this.</li>
+      <li><strong>macOS</strong> — runs on Apple laptops (MacBook).</li>
+      <li><strong>Android</strong> — runs on most phones.</li>
+      <li><strong>iOS</strong> — runs on iPhones.</li>
+    </ul>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The School Principal</div>
+      <p>The Operating System is like a school principal. Students (apps) do the actual work, but the principal decides who gets which classroom (memory), keeps the timetable (schedules tasks), and keeps everything running smoothly.</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>On your laptop, press the <code>Windows key</code> (the key with the window logo, bottom-left). The Start Menu opens — this is the front door of your Operating System. Press it again to close.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">3</span>
+    </div>
+  </div>
+
+  <!-- 2. DESKTOP, MOUSE, KEYBOARD -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 2</span>
+    </div>
+
+    <span class="chapter-num">Chapter 2</span>
+    <h1>The Desktop, Mouse &amp; Keyboard</h1>
+    <p class="lead">The screen you see after your laptop starts is called the <strong>Desktop</strong>. Let's learn its parts.</p>
+
+    <h2>Parts of the screen</h2>
+    <table>
+      <thead><tr><th>Name</th><th>Where</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Desktop</strong></td><td>The whole screen</td><td>Your work table. Icons sit on it.</td></tr>
+        <tr><td><strong>Icon</strong></td><td>Small pictures</td><td>A shortcut to open an app or file. Double-click to open.</td></tr>
+        <tr><td><strong>Taskbar</strong></td><td>Bottom strip</td><td>Shows open apps, the clock, and the Start button.</td></tr>
+        <tr><td><strong>Start Menu</strong></td><td>Bottom-left</td><td>The list of all apps on the computer.</td></tr>
+        <tr><td><strong>Window</strong></td><td>Any open box</td><td>Every app opens inside a rectangle called a window.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Mouse actions — the five moves</h2>
+    <ul class="steps">
+      <li><strong>Click (left button, once)</strong> — select something.</li>
+      <li><strong>Double-click (left button, twice quickly)</strong> — open something.</li>
+      <li><strong>Right-click (right button, once)</strong> — open a menu of options. Very useful!</li>
+      <li><strong>Drag</strong> — press and hold left button, move the mouse, release. Moves things.</li>
+      <li><strong>Scroll</strong> — roll the wheel to move up and down a page.</li>
+    </ul>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Common Mistake</div>
+      <p>Beginners often <strong>double-click everything</strong>. Remember: one click = select, two clicks = open. Buttons on websites need only <strong>one</strong> click.</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Right-click on an empty area of your Desktop. See the menu that appears? This menu changes depending on <em>where</em> you right-click. Right-click is your best friend in Windows.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">4</span>
+    </div>
+  </div>
+
+  <!-- 3. FILES & FOLDERS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 3</span>
+    </div>
+
+    <span class="chapter-num">Chapter 3</span>
+    <h1>Files &amp; Folders</h1>
+    <p class="lead">This is the most important chapter of Part 1. Everything in AI work depends on understanding files and folders.</p>
+
+    <h2>Start with a question</h2>
+    <p><strong>Your phone has hundreds of photos. Where do they live?</strong></p>
+    <p>They are stored inside your phone's memory, arranged in <strong>folders</strong> — one folder for camera photos, one for WhatsApp images, one for screenshots. Your laptop works exactly the same way.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Cupboard</div>
+      <p>Your computer is a <strong>cupboard</strong>.<br>
+      Each <strong>shelf</strong> in the cupboard is a <strong>folder</strong>.<br>
+      Each <strong>book</strong> on a shelf is a <strong>file</strong>.<br>
+      A shelf can also hold a smaller box (a folder inside a folder!), and that box can hold more books.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-node"><strong>Cupboard</strong><span>Computer</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><strong>Shelf</strong><span>Folder</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><strong>Book</strong><span>File</span></div>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — File</div>
+      <p>A <strong>file</strong> is one single item saved on a computer: one photo, one document, one song, one video. Every file has a <strong>name</strong> and a <strong>type</strong>.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Folder</div>
+      <p>A <strong>folder</strong> is a container that holds files and other folders. Folders keep your computer organized, just like shelves keep a cupboard organized.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">5</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 3</span>
+    </div>
+
+    <h2>Folders inside folders</h2>
+    <p>A folder can contain more folders. This creates a <strong>tree</strong> — like branches of a family. Here is an example of a student's computer:</p>
+
+    <div class="tree">Documents
+├── College
+│   ├── Notes
+│   │   ├── physics-notes.pdf
+│   │   └── maths-notes.pdf
+│   └── Assignments
+│       └── essay.docx
+├── Photos
+│   └── trip-jaipur.jpg
+└── AI Workspace
+    └── (we will build this in class!)</div>
+
+    <p>Reading the tree above: the <code>Documents</code> folder contains three folders. The <code>College</code> folder contains two more folders. The file <code>physics-notes.pdf</code> lives inside <code>Notes</code>, which lives inside <code>College</code>, which lives inside <code>Documents</code>.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Path</div>
+      <p>The <strong>path</strong> is the address of a file — the full route to reach it. Example:<br>
+      <code>Documents → College → Notes → physics-notes.pdf</code><br>
+      Just like a home address: State → City → Street → House.</p>
+    </div>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Folders hold things. Files are the things.</strong> A folder is never "opened in an app" — it just shows what's inside. A file always opens in some app (photo app, PDF reader, browser).</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Open <strong>File Explorer</strong> (yellow folder icon in the taskbar, or press <code>Windows + E</code>). Click on <strong>Documents</strong> on the left side. Look at what folders and files already live there.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">6</span>
+    </div>
+  </div>
+
+  <!-- 4. FILE TYPES -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 4</span>
+    </div>
+
+    <span class="chapter-num">Chapter 4</span>
+    <h1>File Types — The Surname of Every File</h1>
+    <p class="lead">Every file name has two parts: the name you choose, and a short ending that tells the computer what kind of file it is.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — Name and Surname</div>
+      <p>A file is like a person. <code>resume.pdf</code> — here <strong>resume</strong> is the first name (you choose it), and <strong>.pdf</strong> is the surname (it tells the family — the file type). Just as a surname tells you which family someone belongs to, the extension tells the computer which app should open the file.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Extension</div>
+      <p>The <strong>extension</strong> is the part of the file name after the dot: <code>.pdf</code>, <code>.jpg</code>, <code>.txt</code>. It tells the computer (and AI) what type of content is inside.</p>
+    </div>
+
+    <h2>The file types you will actually use</h2>
+    <table>
+      <thead><tr><th>Extension</th><th>What it stores</th><th>Example</th><th>Opens with</th></tr></thead>
+      <tbody>
+        <tr><td><code>.txt</code></td><td>Plain text — just words</td><td>Quick notes</td><td>Notepad</td></tr>
+        <tr><td><code>.md</code></td><td>Markdown — text with simple formatting. AI loves this!</td><td>AI instructions</td><td>Notepad, Cursor</td></tr>
+        <tr><td><code>.pdf</code></td><td>A fixed document that looks the same everywhere</td><td>Resume, forms</td><td>Browser, PDF reader</td></tr>
+        <tr><td><code>.jpg</code></td><td>A photo</td><td>Camera pictures</td><td>Photos app</td></tr>
+        <tr><td><code>.png</code></td><td>An image that can have a transparent background</td><td>Logos</td><td>Photos app</td></tr>
+        <tr><td><code>.docx</code></td><td>A Word document you can edit</td><td>Letters, essays</td><td>MS Word</td></tr>
+        <tr><td><code>.xlsx</code></td><td>A spreadsheet — rows and columns of data</td><td>Marks, expenses</td><td>MS Excel</td></tr>
+        <tr><td><code>.pptx</code></td><td>A slide presentation</td><td>Class slides</td><td>MS PowerPoint</td></tr>
+      </tbody>
+    </table>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">7</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 4</span>
+    </div>
+
+    <h2>Website and data file types</h2>
+    <table>
+      <thead><tr><th>Extension</th><th>What it stores</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>.html</code></td><td>A web page — the structure of a website</td><td>Your portfolio page</td></tr>
+        <tr><td><code>.css</code></td><td>The design of a website — colors, sizes, spacing</td><td>Styling your portfolio</td></tr>
+        <tr><td><code>.js</code></td><td>The actions of a website — what happens when you click</td><td>Buttons that work</td></tr>
+        <tr><td><code>.json</code></td><td>Structured data that apps and AI exchange</td><td>Settings files</td></tr>
+        <tr><td><code>.zip</code></td><td>A compressed package of many files in one</td><td>Sharing a whole folder</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>You don't need to memorise what's <em>inside</em> each type. Just remember the job:<br>
+      <strong>.txt/.md = words · .jpg/.png = pictures · .pdf = documents · .html/.css/.js = websites · .zip = a packed bag of files</strong></p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Common Mistake</div>
+      <p>By default, Windows <strong>hides extensions</strong>! You see "resume" instead of "resume.pdf". This confuses beginners badly. We will fix this in the next chapter — it is the first thing every AI student should do on a new laptop.</p>
+    </div>
+
+    <h2>Can AI read these files?</h2>
+    <p>Modern AI tools (like Cursor, ChatGPT, Gemini) can read most files:</p>
+    <ul>
+      <li><strong>Reads easily:</strong> <code>.txt</code>, <code>.md</code>, <code>.html</code>, <code>.css</code>, <code>.js</code>, <code>.json</code></li>
+      <li><strong>Reads well:</strong> <code>.pdf</code>, <code>.docx</code>, <code>.xlsx</code> — AI extracts the text inside</li>
+      <li><strong>Can see:</strong> <code>.jpg</code>, <code>.png</code> — AI can look at images and describe them</li>
+      <li><strong>Cannot read directly:</strong> <code>.zip</code> — you must unpack it first</li>
+    </ul>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">8</span>
+    </div>
+  </div>
+
+  <!-- 5. WINDOWS SKILLS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 5</span>
+    </div>
+
+    <span class="chapter-num">Chapter 5</span>
+    <h1>Windows Skills — Hands On</h1>
+    <p class="lead">Time to practise. Do every step on your laptop as you read. These small skills will save you hours later.</p>
+
+    <h2>Skill 1 — Show file extensions (do this first!)</h2>
+    <ul class="steps">
+      <li>Open <strong>File Explorer</strong> (press <code>Windows + E</code>).</li>
+      <li>Click <strong>View</strong> in the top menu.</li>
+      <li>Find and tick <strong>File name extensions</strong>. (On Windows 11: View → Show → File name extensions.)</li>
+      <li>Now every file shows its full name, like <code>notes.txt</code> instead of just "notes".</li>
+    </ul>
+
+    <h2>Skill 2 — Create a new folder</h2>
+    <ul class="steps">
+      <li>Go to your <strong>Desktop</strong> (or open Documents).</li>
+      <li><strong>Right-click</strong> on an empty area.</li>
+      <li>Choose <strong>New → Folder</strong>.</li>
+      <li>Type a name, for example <code>Practice Folder</code>, and press <code>Enter</code>.</li>
+    </ul>
+
+    <h2>Skill 3 — Rename a file or folder</h2>
+    <ul class="steps">
+      <li>Click the file once to select it.</li>
+      <li>Press <code>F2</code> on the keyboard.</li>
+      <li>Type the new name and press <code>Enter</code>.</li>
+    </ul>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Common Mistake</div>
+      <p>When renaming, <strong>do not delete the extension</strong>. If you rename <code>photo.jpg</code> to just <code>photo</code> and remove <code>.jpg</code>, Windows may not know how to open it. Keep the surname!</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">9</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 5</span>
+    </div>
+
+    <h2>Skill 4 — Copy and paste a file</h2>
+    <ul class="steps">
+      <li>Click the file once to select it.</li>
+      <li>Press <code>Ctrl + C</code> (copy). Nothing visible happens — the file is remembered.</li>
+      <li>Open the folder where you want the copy.</li>
+      <li>Press <code>Ctrl + V</code> (paste). A copy appears!</li>
+    </ul>
+
+    <h2>Skill 5 — Move a file (cut and paste)</h2>
+    <ul class="steps">
+      <li>Select the file, press <code>Ctrl + X</code> (cut).</li>
+      <li>Open the destination folder.</li>
+      <li>Press <code>Ctrl + V</code>. The file has <strong>moved</strong> — it is no longer in the old place.</li>
+    </ul>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Copy = original stays + a duplicate is made.</strong><br>
+      <strong>Cut = the file moves to the new place.</strong><br>
+      Made a mistake? Press <code>Ctrl + Z</code> to undo it immediately!</p>
+    </div>
+
+    <h2>Skill 6 — Delete and recover</h2>
+    <ul class="steps">
+      <li>Select the file, press <code>Delete</code>. It goes to the <strong>Recycle Bin</strong> — not gone forever.</li>
+      <li>Deleted by mistake? Open <strong>Recycle Bin</strong> (Desktop icon), right-click the file → <strong>Restore</strong>.</li>
+    </ul>
+
+    <h2>Skill 7 — Search for a file</h2>
+    <ul class="steps">
+      <li>Press the <code>Windows key</code> and simply start typing the file name.</li>
+      <li>Or, inside File Explorer, use the search box at the top-right.</li>
+    </ul>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now — The Practice Folder Challenge</div>
+      <p>Create this structure on your Desktop, using only the skills above:</p>
+      <p><code>Practice Folder</code> containing: <code>Notes.txt</code> (right-click → New → Text Document), a copy of any photo renamed to <code>Image.jpg</code>, and a folder inside it called <code>My Work</code>. Then move <code>Notes.txt</code> into <code>My Work</code>.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">10</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 5</span>
+    </div>
+
+    <h2>The three folders you must know</h2>
+    <p>Windows gives every user three special folders. Knowing the difference prevents the most common beginner confusion: <em>"Where did my file go?!"</em></p>
+
+    <div class="cards cards-3">
+      <div class="mini-card"><span class="emoji">🖥️</span><h4>Desktop</h4><p>What you see when the laptop starts. Good for shortcuts and current work. Don't let it become a junkyard!</p></div>
+      <div class="mini-card"><span class="emoji">⬇️</span><h4>Downloads</h4><p>Everything you download from the internet lands here automatically. Clean it every week.</p></div>
+      <div class="mini-card"><span class="emoji">📄</span><h4>Documents</h4><p>The best home for long-term work. Your AI Workspace will live here.</p></div>
+    </div>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — Rooms of a House</div>
+      <p><strong>Desktop</strong> = the dining table — things you're using right now.<br>
+      <strong>Downloads</strong> = the doormat — everything arriving from outside lands here first.<br>
+      <strong>Documents</strong> = the almirah — where important things are kept properly, long-term.</p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Common Mistake</div>
+      <p>Saving everything in <strong>Downloads</strong> and never moving it. Downloads becomes a jungle of 500 files, and nothing can be found. Rule: <strong>download → move to the right folder → keep Downloads clean.</strong></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">11</span>
+    </div>
+  </div>
+
+  <!-- 6. LOCAL VS CLOUD VS BROWSER -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <span class="chapter-num">Chapter 6</span>
+    <h1>Local vs Cloud vs Browser</h1>
+    <p class="lead">Three words people mix up all the time. After this chapter, you never will.</p>
+
+    <h2>Local — on YOUR machine</h2>
+    <p>A <strong>local</strong> file lives on your laptop's own storage. No internet needed to open it. If your Wi-Fi goes off, the file still works. If your laptop is lost, the file is lost with it (unless you made a copy).</p>
+
+    <h2>Cloud — on SOMEONE ELSE'S machine</h2>
+    <p>A <strong>cloud</strong> file lives on a big company's server — a powerful computer in a data centre far away. Google Drive, Google Photos, and OneDrive are cloud services. You need internet to reach these files, but you can open them from <em>any</em> device.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — Almirah vs Bank Locker</div>
+      <p><strong>Local</strong> = your almirah at home. Fast to open, works anytime — but if something happens to the house, it's gone.<br>
+      <strong>Cloud</strong> = a bank locker. Your things are stored safely in the bank's building. You need to travel there (internet) to access them — but even if your house has a problem, your locker is safe. And you can visit from any branch (any device).</p>
+    </div>
+
+    <h2>Browser — the WINDOW, not the cupboard</h2>
+    <p>Chrome and Edge are <strong>browsers</strong>. A browser is an app that opens <strong>websites</strong>. It does not store your files — it is the window through which you look at the internet.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Cloud</div>
+      <p>The <strong>cloud</strong> simply means "someone else's powerful computers, reachable through the internet". There is no actual cloud in the sky — just huge buildings full of servers.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">12</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <h2>Quick test — Local, Cloud, or Browser?</h2>
+    <table>
+      <thead><tr><th>Thing</th><th>Answer</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Photos app on your phone</td><td><strong>Local</strong></td><td>Photos stored on the phone itself</td></tr>
+        <tr><td>Google Photos</td><td><strong>Cloud</strong></td><td>Photos stored on Google's servers</td></tr>
+        <tr><td>Chrome</td><td><strong>Browser</strong></td><td>Opens websites; stores nothing of yours</td></tr>
+        <tr><td>A PDF in your Downloads folder</td><td><strong>Local</strong></td><td>Saved on your laptop's storage</td></tr>
+        <tr><td>A file in Google Drive</td><td><strong>Cloud</strong></td><td>On Google's servers, needs internet</td></tr>
+        <tr><td>ChatGPT website</td><td><strong>Browser + Cloud</strong></td><td>You open it in a browser; the AI runs in the cloud</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Local = my machine · Cloud = their machine · Browser = the window between us.</strong></p>
+    </div>
+
+    <h2>Why this matters for AI</h2>
+    <ul>
+      <li>When you chat with ChatGPT, your question travels through the <strong>browser</strong> to the <strong>cloud</strong>, where the AI thinks, and the answer travels back.</li>
+      <li>When you use <strong>Cursor</strong> on your laptop, it reads your <strong>local</strong> files — your folders and projects — and sends questions to AI in the cloud.</li>
+      <li>Knowing where your files are = knowing what AI can and cannot see.</li>
+    </ul>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Turn off your laptop's Wi-Fi for one minute. Try opening: (1) a file in Documents, (2) google.com in Chrome. Which one still works? That's the difference between local and cloud!</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">13</span>
+    </div>
+  </div>
+
+  <!-- 7. INTERNET BASICS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 7</span>
+    </div>
+
+    <span class="chapter-num">Chapter 7</span>
+    <h1>Internet Basics</h1>
+    <p class="lead">You use the internet every day on your phone. Let's understand it just enough to work smartly with AI.</p>
+
+    <h2>What is the internet?</h2>
+    <p>The internet is <strong>millions of computers connected to each other</strong> around the world. When you open a website, your device asks another computer (a server) for that page, and the server sends it back — all in less than a second.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Postal System</div>
+      <p>The internet works like a super-fast postal system. You write a request (open a website), it travels through many post offices (network cables and towers), reaches the right address (the server), and the reply is delivered back to you — in milliseconds instead of days.</p>
+    </div>
+
+    <h2>Words you hear every day</h2>
+    <table>
+      <thead><tr><th>Word</th><th>Simple meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Website</strong></td><td>A place on the internet, like <code>google.com</code></td></tr>
+        <tr><td><strong>URL / Link</strong></td><td>The address of a website or page</td></tr>
+        <tr><td><strong>Search engine</strong></td><td>A website that finds other websites (Google)</td></tr>
+        <tr><td><strong>Download</strong></td><td>Bringing a file from the internet to your laptop</td></tr>
+        <tr><td><strong>Upload</strong></td><td>Sending a file from your laptop to the internet</td></tr>
+        <tr><td><strong>Wi-Fi</strong></td><td>Internet without wires, over radio signals</td></tr>
+        <tr><td><strong>Account / Login</strong></td><td>Your personal identity on a website — email + password</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Common Mistake — Downloading from wrong buttons</div>
+      <p>Many websites show big fake "DOWNLOAD" buttons that are actually advertisements. The real download link is usually smaller and matches the website's design. When in doubt, ask your instructor.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">14</span>
+    </div>
+  </div>
+
+  <!-- 8. SHORTCUTS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Chapter 8</span>
+    </div>
+
+    <span class="chapter-num">Chapter 8</span>
+    <h1>Keyboard Shortcuts Cheat Sheet</h1>
+    <p class="lead">Professionals use the keyboard, not just the mouse. Learn these 15 shortcuts and you will work twice as fast. Tear-out worthy — keep this page handy!</p>
+
+    <table>
+      <thead><tr><th>Shortcut</th><th>What it does</th><th>Where it works</th></tr></thead>
+      <tbody>
+        <tr><td><code>Ctrl + C</code></td><td>Copy</td><td>Everywhere</td></tr>
+        <tr><td><code>Ctrl + X</code></td><td>Cut (move)</td><td>Everywhere</td></tr>
+        <tr><td><code>Ctrl + V</code></td><td>Paste</td><td>Everywhere</td></tr>
+        <tr><td><code>Ctrl + Z</code></td><td>Undo the last action</td><td>Everywhere</td></tr>
+        <tr><td><code>Ctrl + A</code></td><td>Select everything</td><td>Everywhere</td></tr>
+        <tr><td><code>Ctrl + S</code></td><td>Save the file</td><td>Documents, editors</td></tr>
+        <tr><td><code>Ctrl + F</code></td><td>Find a word on the page</td><td>Browser, documents</td></tr>
+        <tr><td><code>F2</code></td><td>Rename selected file</td><td>File Explorer</td></tr>
+        <tr><td><code>Delete</code></td><td>Send to Recycle Bin</td><td>File Explorer</td></tr>
+        <tr><td><code>Windows + E</code></td><td>Open File Explorer</td><td>Anywhere</td></tr>
+        <tr><td><code>Windows + D</code></td><td>Show the Desktop</td><td>Anywhere</td></tr>
+        <tr><td><code>Alt + Tab</code></td><td>Switch between open apps</td><td>Anywhere</td></tr>
+        <tr><td><code>Ctrl + T</code></td><td>New tab</td><td>Browser</td></tr>
+        <tr><td><code>Ctrl + W</code></td><td>Close current tab</td><td>Browser</td></tr>
+        <tr><td><code>Ctrl + P</code></td><td>Print / Save as PDF</td><td>Browser, documents</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>Start with just four: <strong>Ctrl+C, Ctrl+V, Ctrl+Z, Alt+Tab</strong>. Use them every day for a week — your hands will remember them forever.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics</span>
+      <span class="pageno">15</span>
+    </div>
+  </div>
+
+  <!-- 9. PRACTICE & QUIZ -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 1 · <span>Computer Basics</span></span>
+      <span>Practice &amp; Quiz</span>
+    </div>
+
+    <span class="chapter-num">Practice</span>
+    <h1>Part 1 Practice Tasks</h1>
+    <p class="lead">Complete all five tasks. Tick each box when done. Ask for help if stuck — that's what class is for!</p>
+
+    <ul class="checklist">
+      <li>Turn on "File name extensions" in File Explorer</li>
+      <li>Create a folder called <code>Practice Folder</code> on the Desktop with <code>Notes.txt</code> inside</li>
+      <li>Copy any photo into the folder and rename it to <code>Image.jpg</code> using F2</li>
+      <li>Create a folder <code>My Work</code> inside Practice Folder and move Notes.txt into it</li>
+      <li>Delete a file, then restore it from the Recycle Bin</li>
+    </ul>
+
+    <div class="quiz">
+      <h4>✏️ Part 1 Quiz — 8 Questions</h4>
+      <ol>
+        <li>A folder is best compared to a…
+          <ul class="quiz-options"><li>(a) book &nbsp; (b) shelf &nbsp; (c) cook &nbsp; (d) plate</li></ul></li>
+        <li>Which part of <code>resume.pdf</code> is the extension?
+          <ul class="quiz-options"><li>(a) resume &nbsp; (b) .pdf &nbsp; (c) both &nbsp; (d) neither</li></ul></li>
+        <li>Which file type stores a photo?
+          <ul class="quiz-options"><li>(a) .txt &nbsp; (b) .jpg &nbsp; (c) .html &nbsp; (d) .zip</li></ul></li>
+        <li>Ctrl + Z does what?
+          <ul class="quiz-options"><li>(a) copy &nbsp; (b) paste &nbsp; (c) undo &nbsp; (d) delete forever</li></ul></li>
+        <li>A file in Google Drive is stored…
+          <ul class="quiz-options"><li>(a) locally &nbsp; (b) in the cloud &nbsp; (c) in the browser &nbsp; (d) in the Recycle Bin</li></ul></li>
+        <li>Chrome is a…
+          <ul class="quiz-options"><li>(a) file &nbsp; (b) folder &nbsp; (c) browser &nbsp; (d) cloud</li></ul></li>
+        <li>Which key renames a selected file?
+          <ul class="quiz-options"><li>(a) F1 &nbsp; (b) F2 &nbsp; (c) F5 &nbsp; (d) Delete</li></ul></li>
+        <li>Where do internet files land by default?
+          <ul class="quiz-options"><li>(a) Desktop &nbsp; (b) Documents &nbsp; (c) Downloads &nbsp; (d) Recycle Bin</li></ul></li>
+      </ol>
+      <p><em>Answers are at the back of Part 4.</em></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 1 · Computer Basics · End of Part 1</span>
+      <span class="pageno">16</span>
+    </div>
+  </div>
+
+</body>
+</html>

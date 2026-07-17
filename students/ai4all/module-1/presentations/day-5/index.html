@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 5 — Google Workspace Essentials | Bharat AI Academy</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #fff;
+      --surface-2: #eef2f7;
+      --text: #0b172a;
+      --muted: #526174;
+      --line: #dce3ec;
+      --blue: #4285f4;
+      --red: #ea4335;
+      --yellow: #fbbc04;
+      --green: #34a853;
+      --shadow: 0 18px 55px rgba(12, 27, 48, .11);
+      --radius: 22px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    }
+    html.dark {
+      --bg: #090d13;
+      --surface: #141a23;
+      --surface-2: #1b2330;
+      --text: #f5f7fa;
+      --muted: #a7b1c0;
+      --line: #2c3543;
+      --shadow: 0 18px 55px rgba(0, 0, 0, .36);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+    }
+    button { font: inherit; }
+    .deck { width: 100vw; height: 100vh; position: relative; }
+    .progress { position: fixed; inset: 0 0 auto; height: 4px; background: var(--line); z-index: 100; }
+    .progress-fill { width: 5%; height: 100%; background: linear-gradient(90deg, var(--blue), var(--green), var(--yellow), var(--red)); transition: width .35s ease; }
+    .topbar {
+      position: fixed; inset: 4px 0 auto; height: 64px; padding: 0 30px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); z-index: 90;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 245px; }
+    .brand svg { width: 168px; height: 40px; color: var(--text); }
+    .class-tag { padding-left: 11px; border-left: 1px solid var(--line); color: var(--muted); font-size: .78rem; line-height: 1.25; }
+    .meta { display: flex; gap: 16px; align-items: center; color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; }
+    .count { color: var(--text); font-weight: 700; min-width: 55px; }
+    .actions { display: flex; gap: 7px; min-width: 245px; justify-content: flex-end; }
+    .icon-btn {
+      width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 11px;
+      background: var(--surface); color: var(--text); cursor: pointer; font-weight: 700;
+      display: grid; place-items: center; transition: .18s ease;
+    }
+    .icon-btn:hover { transform: translateY(-1px); background: var(--surface-2); }
+    .icon-btn:disabled { opacity: .28; cursor: default; transform: none; }
+    .viewport { position: absolute; inset: 68px 0 42px; overflow: hidden; }
+    .slide {
+      position: absolute; inset: 0; padding: 44px 7vw;
+      display: grid; align-items: center; opacity: 0; visibility: hidden;
+      transform: translateY(18px) scale(.99); transition: opacity .38s ease, transform .38s ease, visibility .38s;
+      pointer-events: none;
+    }
+    .slide.active { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+    .slide::before {
+      content: "BHARAT AI ACADEMY"; position: absolute; top: 12px; left: 0; right: 0;
+      text-align: center; font-size: 9px; font-weight: 800; letter-spacing: .34em;
+      color: color-mix(in srgb, var(--muted) 33%, transparent);
+    }
+    .watermark {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-31deg);
+      white-space: nowrap; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 850; letter-spacing: .06em;
+      color: rgba(66, 133, 244, .045); pointer-events: none; user-select: none;
+    }
+    html.dark .watermark { color: rgba(255, 255, 255, .025); }
+    .inner { width: 100%; max-width: 1540px; max-height: 100%; margin: auto; position: relative; z-index: 1; }
+    .center { text-align: center; }
+    .kicker { color: var(--blue); font-weight: 800; letter-spacing: .13em; text-transform: uppercase; font-size: .85rem; margin: 0 0 15px; }
+    h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1.02; letter-spacing: -.045em; }
+    h1.medium { font-size: clamp(2.2rem, 4vw, 3.8rem); }
+    h2 { margin: 0 0 10px; font-size: clamp(1.15rem, 1.8vw, 1.65rem); letter-spacing: -.02em; }
+    h3 { margin: 0 0 7px; font-size: clamp(1rem, 1.4vw, 1.25rem); }
+    p { color: var(--muted); line-height: 1.52; }
+    .subtitle { max-width: 840px; margin: 18px auto 0; font-size: clamp(1.15rem, 2vw, 1.65rem); }
+    .google-word span:nth-child(1) { color: var(--blue); }
+    .google-word span:nth-child(2) { color: var(--red); }
+    .google-word span:nth-child(3) { color: var(--yellow); }
+    .google-word span:nth-child(4) { color: var(--blue); }
+    .google-word span:nth-child(5) { color: var(--green); }
+    .google-word span:nth-child(6) { color: var(--red); }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; }
+    .chip { border: 1px solid var(--line); background: var(--surface); border-radius: 100px; padding: 10px 15px; color: var(--muted); font-weight: 650; }
+    .grid { display: grid; gap: 16px; margin-top: 25px; }
+    .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px 22px; box-shadow: 0 5px 22px rgba(12, 27, 48, .04);
+    }
+    .card p { margin: 4px 0 0; font-size: clamp(.92rem, 1.15vw, 1.08rem); }
+    .app { display: flex; gap: 13px; align-items: flex-start; }
+    .app-icon {
+      flex: 0 0 45px; width: 45px; height: 45px; border-radius: 13px; display: grid; place-items: center;
+      color: white; font-size: 1.15rem; font-weight: 850; box-shadow: inset 0 0 0 1px rgba(255,255,255,.24);
+    }
+    .b { background: var(--blue); } .r { background: var(--red); } .y { background: #dca500; } .g { background: var(--green); }
+    .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 38px; align-items: center; }
+    .steps { margin: 25px 0 0; padding: 0; list-style: none; counter-reset: step; }
+    .steps li {
+      counter-increment: step; display: grid; grid-template-columns: 39px 1fr; gap: 13px; align-items: start;
+      border-bottom: 1px solid var(--line); padding: 10px 0; color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.12rem);
+    }
+    .steps li::before {
+      content: counter(step, decimal-leading-zero); width: 32px; height: 32px; border-radius: 9px;
+      display: grid; place-items: center; color: var(--blue); background: rgba(66,133,244,.1); font-size: .72rem; font-weight: 800;
+    }
+    .steps strong, .bullets strong { color: var(--text); }
+    .bullets { margin: 22px 0 0; padding: 0; list-style: none; }
+    .bullets li { position: relative; padding: 8px 0 8px 25px; color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.12rem); }
+    .bullets li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+    .formula {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px;
+    }
+    .formula code { display: block; background: var(--surface-2); border: 1px solid var(--line); border-radius: 13px; padding: 14px; color: var(--text); font-size: 1rem; }
+    .use-case {
+      margin-top: 20px; padding: 17px 20px; border-left: 4px solid var(--green); border-radius: 0 14px 14px 0;
+      background: color-mix(in srgb, var(--green) 8%, var(--surface)); color: var(--muted);
+    }
+    .use-case strong { color: var(--green); }
+    .workflow { display: flex; align-items: stretch; gap: 10px; margin-top: 28px; }
+    .workflow .node {
+      flex: 1; min-width: 0; padding: 17px 12px; border: 1px solid var(--line); border-radius: 16px;
+      background: var(--surface); text-align: center; font-weight: 750;
+    }
+    .workflow .arrow { align-self: center; color: var(--muted); font-size: 1.5rem; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: table; }
+    .table th, .table td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; color: var(--muted); vertical-align: top; }
+    .table th { color: var(--text); background: var(--surface-2); font-size: .9rem; }
+    .table tr:last-child td { border-bottom: 0; }
+    .callout {
+      margin-top: 25px; padding: 22px 25px; background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow); color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.5;
+    }
+    .callout strong { color: var(--text); }
+    .footer {
+      position: fixed; inset: auto 0 0; height: 42px; padding: 0 30px; display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--line); color: var(--muted); font-size: .74rem; background: color-mix(in srgb, var(--bg) 92%, transparent); z-index: 90;
+    }
+    .nav {
+      position: fixed; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%;
+      border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 90%, transparent); color: var(--text);
+      z-index: 95; cursor: pointer; font-size: 1.8rem; box-shadow: var(--shadow);
+    }
+    .nav.prev { left: 14px; } .nav.next { right: 14px; }
+    .nav:disabled { opacity: .22; cursor: default; }
+    .notes {
+      position: fixed; left: 0; right: 0; bottom: 42px; z-index: 110; padding: 18px 5vw;
+      background: var(--surface); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s ease;
+      box-shadow: 0 -15px 40px rgba(0,0,0,.15);
+    }
+    .notes.open { transform: translateY(0); }
+    .notes strong { display: block; margin-bottom: 5px; }
+    .notes p { margin: 0; }
+    @media (max-width: 900px) {
+      .meta, .class-tag { display: none; }
+      .brand, .actions { min-width: 0; }
+      .slide { padding: 35px 65px; overflow-y: auto; align-items: start; }
+      .inner { margin-top: 15px; }
+      .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
+      .split { grid-template-columns: 1fr; gap: 16px; }
+      .formula { grid-template-columns: 1fr 1fr; }
+      .workflow { flex-wrap: wrap; }
+      .workflow .node { flex-basis: 30%; }
+    }
+    @media print {
+      html, body { overflow: visible; background: white; }
+      .topbar, .footer, .nav, .notes, .progress { display: none !important; }
+      .viewport { position: static; }
+      .slide { position: relative; width: 100vw; height: 56.25vw; opacity: 1; visibility: visible; transform: none; page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="progress"><div class="progress-fill" id="progress"></div></div>
+    <header class="topbar">
+      <div class="brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" aria-label="Bharat AI Academy">
+          <rect width="40" height="40" y="4" rx="10" fill="#1D1D1F"/>
+          <text x="20" y="30" text-anchor="middle" fill="#F5F5F7" font-family="system-ui, sans-serif" font-size="14" font-weight="700">BA</text>
+          <text x="52" y="22" fill="currentColor" font-family="system-ui, sans-serif" font-size="15" font-weight="650">Bharat AI</text>
+          <text x="52" y="40" fill="#86868B" font-family="system-ui, sans-serif" font-size="11" font-weight="500">Academy</text>
+        </svg>
+        <div class="class-tag">Module 1<br>Class 5</div>
+      </div>
+      <div class="meta"><span id="section">Introduction</span><span class="count" id="count">1 / 20</span></div>
+      <div class="actions">
+        <button class="icon-btn" id="top-prev" title="Previous slide">‹</button>
+        <button class="icon-btn" id="top-next" title="Next slide">›</button>
+        <button class="icon-btn" id="theme" title="Dark/light mode (D)">◐</button>
+        <button class="icon-btn" id="notes-btn" title="Speaker notes (N)">N</button>
+        <button class="icon-btn" id="full" title="Fullscreen (F)">⛶</button>
+      </div>
+    </header>
+
+    <button class="nav prev" id="prev" aria-label="Previous slide">‹</button>
+    <button class="nav next" id="next" aria-label="Next slide">›</button>
+
+    <main class="viewport" id="viewport">
+      <!-- 1 -->
+      <section class="slide active" data-section="Introduction" data-notes="Welcome students. Ask how many Google apps they used today before class.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner center">
+          <p class="kicker">Module 1 · Class 5</p>
+          <h1><span class="google-word"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span> Workspace Essentials</h1>
+          <p class="subtitle">Gmail, Drive, Docs, Sheets, Calendar, Forms, Meet, YouTube—and how they work together.</p>
+          <div class="chips"><span class="chip">Learn</span><span class="chip">Organize</span><span class="chip">Collaborate</span><span class="chip">Create</span><span class="chip">Publish</span></div>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="slide" data-section="Introduction" data-notes="Set the goal: students should leave with an organized Google account and a working productivity system.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Today's learning journey</p>
+          <h1 class="medium">One Google account. A complete digital workspace.</h1>
+          <div class="grid g4">
+            <div class="card"><h3>1 · Communicate</h3><p>Gmail, Meet and Chat</p></div>
+            <div class="card"><h3>2 · Organize</h3><p>Drive, Calendar, Keep and Tasks</p></div>
+            <div class="card"><h3>3 · Create</h3><p>Docs, Sheets, Slides, Forms and Sites</p></div>
+            <div class="card"><h3>4 · Publish</h3><p>YouTube channel and professional content</p></div>
+          </div>
+          <div class="callout"><strong>Outcome:</strong> You will know which tool to use, how to share safely, and how to connect tools into one workflow.</div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="slide" data-section="Workspace Overview" data-notes="Explain that Workspace is a connected system, not a collection of unrelated apps.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">The ecosystem</p>
+          <h1 class="medium">What is Google Workspace?</h1>
+          <p class="subtitle" style="margin-left:0">A set of cloud tools connected through one Google account. Files save automatically and can be opened from any device.</p>
+          <div class="grid g4">
+            <div class="card app"><span class="app-icon r">M</span><div><h3>Gmail</h3><p>Email</p></div></div>
+            <div class="card app"><span class="app-icon g">D</span><div><h3>Drive</h3><p>Cloud storage</p></div></div>
+            <div class="card app"><span class="app-icon b">W</span><div><h3>Docs</h3><p>Documents</p></div></div>
+            <div class="card app"><span class="app-icon g">S</span><div><h3>Sheets</h3><p>Data</p></div></div>
+            <div class="card app"><span class="app-icon y">P</span><div><h3>Slides</h3><p>Presentations</p></div></div>
+            <div class="card app"><span class="app-icon b">C</span><div><h3>Calendar</h3><p>Time</p></div></div>
+            <div class="card app"><span class="app-icon r">Y</span><div><h3>YouTube</h3><p>Publishing</p></div></div>
+            <div class="card app"><span class="app-icon b">+</span><div><h3>More</h3><p>Forms, Meet, Keep, Tasks, Sites</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="slide" data-section="Account Setup" data-notes="Live demonstration: Google app launcher, profile switcher, and security page.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner split">
+          <div>
+            <p class="kicker">Foundation</p>
+            <h1 class="medium">Set up your Google account professionally</h1>
+            <p class="subtitle" style="margin-left:0">Your account name, security, and browser habits affect every Google tool.</p>
+          </div>
+          <div>
+            <ol class="steps">
+              <li><span><strong>Use a professional email:</strong> firstname.lastname@gmail.com</span></li>
+              <li><span><strong>Add recovery phone and email</strong> so you can recover the account.</span></li>
+              <li><span><strong>Turn on 2-Step Verification</strong> at myaccount.google.com/security.</span></li>
+              <li><span><strong>Use Chrome profiles</strong> to keep personal, study, and work accounts separate.</span></li>
+              <li><span><strong>Open the 9-dot launcher</strong> to access all Google apps.</span></li>
+            </ol>
+            <div class="use-case"><strong>Avoid:</strong> sharing passwords, using unclear email names, or staying signed in on public computers.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="slide" data-section="Gmail" data-notes="Explain To, CC and BCC with a simple class email example.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Gmail basics</p>
+          <h1 class="medium">Professional email—not just messaging</h1>
+          <div class="grid g3">
+            <div class="card"><h3>Compose correctly</h3><p><strong>To:</strong> main receiver<br><strong>CC:</strong> people who should know<br><strong>BCC:</strong> hidden recipient list</p></div>
+            <div class="card"><h3>Write clearly</h3><p>Useful subject → greeting → short purpose → action needed → professional closing.</p></div>
+            <div class="card"><h3>Manage inbox</h3><p>Star important mail, archive completed mail, use labels, filters and search.</p></div>
+          </div>
+          <table class="table">
+            <tr><th>Feature</th><th>Use case</th><th>Example</th></tr>
+            <tr><td>Schedule send</td><td>Send at the right professional time</td><td>Internship email at 9:00 AM</td></tr>
+            <tr><td>Undo send</td><td>Recover a message sent by mistake</td><td>Increase undo window in Settings</td></tr>
+            <tr><td>Confidential mode</td><td>Limit forwarding or set expiry</td><td>Sensitive document link</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="slide" data-section="Gmail" data-notes="Give students five minutes to create a label and draft the sample email.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner split">
+          <div>
+            <p class="kicker">Gmail practice</p>
+            <h1 class="medium">Inbox zero without deleting everything</h1>
+            <ul class="bullets">
+              <li><strong>Archive:</strong> remove from inbox but keep searchable.</li>
+              <li><strong>Label:</strong> categorize mail—Classes, Jobs, Projects.</li>
+              <li><strong>Filter:</strong> automatically label or archive matching mail.</li>
+              <li><strong>Search:</strong> <code>from:</code>, <code>has:attachment</code>, <code>after:</code>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>Mini activity: Send a professional email</h2>
+            <ol class="steps">
+              <li><span>Subject: <strong>Class 5 Assignment Submission – Your Name</strong></span></li>
+              <li><span>Write a greeting and one-sentence purpose.</span></li>
+              <li><span>Add a Drive link—not a huge attachment.</span></li>
+              <li><span>Request confirmation and add a closing.</span></li>
+              <li><span>Schedule it for a suitable time.</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="slide" data-section="Drive" data-notes="Explain My Drive, Shared with me, Recent, Starred and Trash.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Google Drive</p>
+          <h1 class="medium">Your cloud cupboard</h1>
+          <div class="grid g3">
+            <div class="card"><h3>Store</h3><p>Upload PDFs, images, videos, Office files and folders. Google files save automatically.</p></div>
+            <div class="card"><h3>Find</h3><p>Use search by file type, owner, date, words inside a document, or location.</p></div>
+            <div class="card"><h3>Access</h3><p>Open files on laptop or phone. Make selected files available offline when required.</p></div>
+          </div>
+          <div class="workflow">
+            <div class="node">My Drive</div><div class="arrow">→</div>
+            <div class="node">Module 1</div><div class="arrow">→</div>
+            <div class="node">Class 5</div><div class="arrow">→</div>
+            <div class="node">Docs · Sheets · Media</div>
+          </div>
+          <div class="use-case"><strong>Use case:</strong> Keep assignments, certificates, resumes and projects in organized folders accessible from anywhere.</div>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="slide" data-section="Drive" data-notes="Sharing permissions are critical. Demonstrate Viewer, Commenter, Editor and restricted links.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Drive sharing & organization</p>
+          <h1 class="medium">Share access—not passwords</h1>
+          <table class="table">
+            <tr><th>Permission</th><th>What they can do</th><th>Best use</th></tr>
+            <tr><td><strong>Viewer</strong></td><td>Read or download only</td><td>Final notes, portfolio, public guide</td></tr>
+            <tr><td><strong>Commenter</strong></td><td>Suggest feedback, cannot rewrite</td><td>Reviewing an assignment</td></tr>
+            <tr><td><strong>Editor</strong></td><td>Change, add and organize content</td><td>Trusted project teammates</td></tr>
+          </table>
+          <div class="grid g2">
+            <div class="card"><h3>Professional naming</h3><p><code>2026-07-17_Class5_GoogleWorkspace_YourName</code><br>Avoid: final-new-latest2-real-final.</p></div>
+            <div class="card"><h3>Safety rule</h3><p>Keep links <strong>Restricted</strong> unless people truly need access. Review editor access after a project ends.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="slide" data-section="Docs" data-notes="Show real-time collaboration and version history. Explain Suggesting mode.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner split">
+          <div>
+            <p class="kicker">Google Docs</p>
+            <h1 class="medium">Write, collaborate and publish</h1>
+            <p class="subtitle" style="margin-left:0">Use Docs for resumes, reports, meeting notes, proposals, assignments and SOPs.</p>
+            <div class="use-case"><strong>Best feature:</strong> Multiple people can edit the same file without sending different copies.</div>
+          </div>
+          <div>
+            <ul class="bullets">
+              <li><strong>Styles:</strong> Title, Heading 1 and Heading 2 create structure.</li>
+              <li><strong>Comments:</strong> tag a teammate with <code>+email</code> and assign an action.</li>
+              <li><strong>Suggesting mode:</strong> propose edits without replacing original text.</li>
+              <li><strong>Version history:</strong> see who changed what and restore older versions.</li>
+              <li><strong>Smart chips:</strong> insert people, dates, files and dropdowns.</li>
+              <li><strong>Download:</strong> export as PDF, DOCX or plain text.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section class="slide" data-section="Sheets" data-notes="Explain rows, columns, cells and ranges. Use a small expense or attendance sheet.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Google Sheets</p>
+          <h1 class="medium">Turn rows into decisions</h1>
+          <div class="grid g4">
+            <div class="card"><h3>Rows</h3><p>One record per row: one student, sale or expense.</p></div>
+            <div class="card"><h3>Columns</h3><p>One field per column: Name, Date, Amount.</p></div>
+            <div class="card"><h3>Cells</h3><p>A1 means column A, row 1. A1:C10 is a range.</p></div>
+            <div class="card"><h3>Data types</h3><p>Text, number, date, currency, percentage, checkbox.</p></div>
+          </div>
+          <ul class="bullets">
+            <li><strong>Sort</strong> changes order; <strong>Filter</strong> temporarily hides unmatched rows.</li>
+            <li>Freeze the header row so column names remain visible.</li>
+            <li>Use data validation for clean dropdown choices.</li>
+            <li>Use conditional formatting to highlight late, low or high values.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="slide" data-section="Sheets" data-notes="Type each formula live. Explain formulas always start with equals.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Sheets practice</p>
+          <h1 class="medium">Four formulas every beginner should know</h1>
+          <div class="formula">
+            <code>=SUM(D2:D20)<br><small>Total sales</small></code>
+            <code>=AVERAGE(D2:D20)<br><small>Average sale</small></code>
+            <code>=COUNTIF(C2:C20,"Paid")<br><small>Paid records</small></code>
+            <code>=IF(D2&gt;=500,"High","Normal")<br><small>Classify values</small></code>
+          </div>
+          <div class="grid g2">
+            <div class="card">
+              <h3>Mini project: Class tracker</h3>
+              <p>Columns: Student, Date, Attendance, Assignment Score, Status. Add dropdowns, average score and conditional formatting.</p>
+            </div>
+            <div class="card">
+              <h3>Charts</h3>
+              <p>Bar = compare categories. Line = trend over time. Pie = limited part-to-whole. Always add a clear title.</p>
+            </div>
+          </div>
+          <div class="use-case"><strong>AI use:</strong> Ask Gemini or ChatGPT to explain a formula, but verify the cell ranges before trusting it.</div>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section class="slide" data-section="Calendar" data-notes="Create one event live and add a Meet link and reminder.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner split">
+          <div>
+            <p class="kicker">Google Calendar</p>
+            <h1 class="medium">If it matters, schedule it</h1>
+            <p class="subtitle" style="margin-left:0">Calendar turns intentions into time blocks and reduces missed classes, meetings and deadlines.</p>
+          </div>
+          <div>
+            <ol class="steps">
+              <li><span>Create an <strong>event</strong> with clear title, date and time.</span></li>
+              <li><span>Add <strong>guests</strong>, location, notes and a Drive file.</span></li>
+              <li><span>Add a <strong>Google Meet</strong> link for online meetings.</span></li>
+              <li><span>Set <strong>notifications</strong>: one day before + 15 minutes before.</span></li>
+              <li><span>Use <strong>recurring events</strong> for weekly classes or habits.</span></li>
+              <li><span>Create separate calendars for Personal, Study and Work.</span></li>
+            </ol>
+            <div class="use-case"><strong>Use case:</strong> Schedule “LinkedIn post” after every class—repeat weekly.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section class="slide" data-section="Forms" data-notes="Explain that every Form response automatically becomes structured data in Sheets.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Google Forms</p>
+          <h1 class="medium">Collect information without copy-paste</h1>
+          <div class="grid g3">
+            <div class="card"><h3>Create questions</h3><p>Short answer, multiple choice, checkboxes, dropdown, scale, date and file upload.</p></div>
+            <div class="card"><h3>Control quality</h3><p>Required questions, response validation, sections and branching.</p></div>
+            <div class="card"><h3>Analyze</h3><p>See automatic charts or link responses to Google Sheets.</p></div>
+          </div>
+          <div class="workflow">
+            <div class="node">Form</div><div class="arrow">→</div>
+            <div class="node">Responses</div><div class="arrow">→</div>
+            <div class="node">Google Sheet</div><div class="arrow">→</div>
+            <div class="node">Chart / Decision</div>
+          </div>
+          <div class="use-case"><strong>Use cases:</strong> attendance, event registration, quiz, feedback, survey, internship application.</div>
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section class="slide" data-section="Meet & Chat" data-notes="Explain meeting etiquette: mute, headphones, professional display name, and screen sharing safety.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Google Meet & Chat</p>
+          <h1 class="medium">Communicate synchronously and asynchronously</h1>
+          <div class="grid g2">
+            <div class="card">
+              <h2>Google Meet · live communication</h2>
+              <ul class="bullets">
+                <li>Join through Calendar or Meet link.</li>
+                <li>Use captions, raise hand and chat.</li>
+                <li>Share one tab instead of your whole screen.</li>
+                <li>Mute when not speaking; use headphones.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>Google Chat · team communication</h2>
+              <ul class="bullets">
+                <li>Direct messages for quick questions.</li>
+                <li>Spaces for project teams.</li>
+                <li>Share Drive files with correct permissions.</li>
+                <li>Use threads to keep topics organized.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section class="slide" data-section="Productivity Tools" data-notes="These are small tools but very useful as a personal productivity system.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Small tools, big impact</p>
+          <h1 class="medium">Keep, Tasks and Contacts</h1>
+          <div class="grid g3">
+            <div class="card app"><span class="app-icon y">K</span><div><h3>Google Keep</h3><p>Quick notes, checklists, images, voice notes, labels and reminders. Capture ideas before they disappear.</p></div></div>
+            <div class="card app"><span class="app-icon b">T</span><div><h3>Google Tasks</h3><p>Action items with due dates and subtasks. Appears beside Gmail, Docs and Calendar.</p></div></div>
+            <div class="card app"><span class="app-icon b">C</span><div><h3>Google Contacts</h3><p>Store professional contacts with company, role, phone and notes. Create labels for groups.</p></div></div>
+          </div>
+          <div class="workflow">
+            <div class="node">Keep captures idea</div><div class="arrow">→</div>
+            <div class="node">Task defines action</div><div class="arrow">→</div>
+            <div class="node">Calendar reserves time</div><div class="arrow">→</div>
+            <div class="node">Gmail communicates</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 -->
+      <section class="slide" data-section="Create & Publish" data-notes="Briefly explain Slides and Sites. Connect Slides to classroom presentations and Sites to portfolios.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">More creation tools</p>
+          <h1 class="medium">Google Slides and Google Sites</h1>
+          <div class="grid g2">
+            <div class="card">
+              <h2>Google Slides</h2>
+              <p>Present ideas visually. Use themes, layouts, speaker notes, charts from Sheets and Presenter View.</p>
+              <ul class="bullets">
+                <li>One main idea per slide</li>
+                <li>Large text and visual hierarchy</li>
+                <li>Share for team editing</li>
+                <li>Publish or download as PPTX/PDF</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>Google Sites</h2>
+              <p>Create a simple website without coding. Embed Docs, Sheets, Forms, Slides, Maps and YouTube.</p>
+              <ul class="bullets">
+                <li>Student portfolio</li>
+                <li>Project documentation</li>
+                <li>Event or team website</li>
+                <li>Internal knowledge page</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17 -->
+      <section class="slide" data-section="YouTube" data-notes="Clarify that the channel belongs to the signed-in Google account. Discuss handle and branding.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner split">
+          <div>
+            <p class="kicker">YouTube channel setup</p>
+            <h1 class="medium">Create your public learning channel</h1>
+            <p class="subtitle" style="margin-left:0">A channel can become your video portfolio, teaching platform and professional identity.</p>
+          </div>
+          <div>
+            <ol class="steps">
+              <li><span>Sign in to YouTube with the correct Google account.</span></li>
+              <li><span>Profile picture → <strong>Create a channel</strong>.</span></li>
+              <li><span>Choose professional <strong>channel name and handle</strong>.</span></li>
+              <li><span>Add profile photo, banner and a clear description.</span></li>
+              <li><span>Open <strong>YouTube Studio</strong> to manage content and settings.</span></li>
+              <li><span>Verify the channel when YouTube requests it for more features.</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 -->
+      <section class="slide" data-section="YouTube" data-notes="Show Unlisted as safest way to submit practice videos without making them public.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">YouTube publishing</p>
+          <h1 class="medium">Upload professionally and read the results</h1>
+          <table class="table">
+            <tr><th>Step</th><th>What to do</th></tr>
+            <tr><td>Title</td><td>Clear promise + searchable words. Avoid fake clickbait.</td></tr>
+            <tr><td>Description</td><td>Summary, useful links, credits and relevant call to action.</td></tr>
+            <tr><td>Thumbnail</td><td>Simple visual, high contrast, 3–5 readable words.</td></tr>
+            <tr><td>Visibility</td><td><strong>Private:</strong> only you · <strong>Unlisted:</strong> anyone with link · <strong>Public:</strong> searchable</td></tr>
+            <tr><td>Playlists</td><td>Group videos into a learning series.</td></tr>
+            <tr><td>Analytics</td><td>Track views, watch time, audience retention and traffic sources.</td></tr>
+          </table>
+          <div class="use-case"><strong>Class use:</strong> Upload practice video as Unlisted → paste link in the assignment Form.</div>
+        </div>
+      </section>
+
+      <!-- 19 -->
+      <section class="slide" data-section="Connected Workflow" data-notes="This slide is the main lesson: tools become powerful when connected. Walk through the project flow.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">The real power</p>
+          <h1 class="medium">Google tools work better together</h1>
+          <div class="workflow">
+            <div class="node">Calendar<br><small>schedule class</small></div><div class="arrow">→</div>
+            <div class="node">Meet<br><small>teach online</small></div><div class="arrow">→</div>
+            <div class="node">Docs<br><small>shared notes</small></div><div class="arrow">→</div>
+            <div class="node">Forms<br><small>collect work</small></div><div class="arrow">→</div>
+            <div class="node">Sheets<br><small>track progress</small></div><div class="arrow">→</div>
+            <div class="node">Drive<br><small>store everything</small></div>
+          </div>
+          <div class="grid g3">
+            <div class="card"><h3>Student workflow</h3><p>Calendar deadline → Docs assignment → Drive submission → Gmail confirmation.</p></div>
+            <div class="card"><h3>Business workflow</h3><p>Forms lead → Sheets tracker → Calendar call → Meet demo → Gmail follow-up.</p></div>
+            <div class="card"><h3>Creator workflow</h3><p>Keep idea → Docs script → Drive assets → YouTube upload → Sheets analytics.</p></div>
+          </div>
+          <div class="callout"><strong>Rule:</strong> Do not use ten tools randomly. Build one repeatable workflow that solves a real problem.</div>
+        </div>
+      </section>
+
+      <!-- 20 -->
+      <section class="slide" data-section="Assignment" data-notes="Give students 25–30 minutes for the activity. Verify sharing permission before accepting links.">
+        <div class="watermark">Bharat AI Academy</div>
+        <div class="inner">
+          <p class="kicker">Today's practical + homework</p>
+          <h1 class="medium">Build your Google Workspace system</h1>
+          <div class="grid g2">
+            <div class="card">
+              <h2>Complete in class</h2>
+              <ol class="steps">
+                <li><span>Create Drive folder: <strong>AI Learning Journey</strong>.</span></li>
+                <li><span>Create subfolders: Notes, Assignments, Projects, Media.</span></li>
+                <li><span>Create one Doc: <strong>Class 5 Notes</strong>.</span></li>
+                <li><span>Create one Sheet: <strong>Learning Tracker</strong>.</span></li>
+                <li><span>Create a Calendar event for the next class.</span></li>
+              </ol>
+            </div>
+            <div class="card">
+              <h2>Complete before next class</h2>
+              <ol class="steps">
+                <li><span>Create or professionally update your YouTube channel.</span></li>
+                <li><span>Upload a 30–60 second learning video as <strong>Unlisted</strong>.</span></li>
+                <li><span>Create a Google Form with Name + YouTube link.</span></li>
+                <li><span>Share your Drive folder as <strong>Viewer</strong>.</span></li>
+                <li><span>Email the folder link professionally.</span></li>
+              </ol>
+            </div>
+          </div>
+          <div class="callout center"><strong>Today’s formula:</strong> One account → organized files → connected tools → professional output.</div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="notes" id="notes"><strong>Speaker Notes</strong><p id="notes-text"></p></aside>
+    <footer class="footer"><span>Class 5 · Google Workspace Essentials</span><span>© Bharat AI Academy · www.bharataiacademy.org</span><span>← → Navigate · F Fullscreen · D Theme · N Notes</span></footer>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+      const slides = [...document.querySelectorAll(".slide")];
+      const progress = document.getElementById("progress");
+      const count = document.getElementById("count");
+      const section = document.getElementById("section");
+      const notes = document.getElementById("notes");
+      const notesText = document.getElementById("notes-text");
+      const prevButtons = [document.getElementById("prev"), document.getElementById("top-prev")];
+      const nextButtons = [document.getElementById("next"), document.getElementById("top-next")];
+      let index = 0;
+      let touchX = 0;
+      let wheelLocked = false;
+
+      function render(nextIndex) {
+        if (nextIndex < 0 || nextIndex >= slides.length || nextIndex === index) return;
+        slides[index].classList.remove("active");
+        index = nextIndex;
+        slides[index].classList.add("active");
+        update();
+      }
+      function update() {
+        progress.style.width = ((index + 1) / slides.length * 100) + "%";
+        count.textContent = `${index + 1} / ${slides.length}`;
+        section.textContent = slides[index].dataset.section || "";
+        notesText.textContent = slides[index].dataset.notes || "No speaker notes.";
+        prevButtons.forEach(b => b.disabled = index === 0);
+        nextButtons.forEach(b => b.disabled = index === slides.length - 1);
+        try { history.replaceState(null, "", `#slide-${index + 1}`); } catch (_) {}
+      }
+      const next = () => render(index + 1);
+      const prev = () => render(index - 1);
+      prevButtons.forEach(b => b.addEventListener("click", prev));
+      nextButtons.forEach(b => b.addEventListener("click", next));
+      document.getElementById("theme").addEventListener("click", () => document.documentElement.classList.toggle("dark"));
+      document.getElementById("notes-btn").addEventListener("click", () => notes.classList.toggle("open"));
+      document.getElementById("full").addEventListener("click", () => {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      });
+      document.addEventListener("keydown", e => {
+        if (["ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); next(); }
+        if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); prev(); }
+        if (e.key === "Home") render(0);
+        if (e.key === "End") render(slides.length - 1);
+        if (e.key.toLowerCase() === "f") document.getElementById("full").click();
+        if (e.key.toLowerCase() === "d") document.getElementById("theme").click();
+        if (e.key.toLowerCase() === "n") document.getElementById("notes-btn").click();
+      });
+      document.getElementById("viewport").addEventListener("click", e => {
+        if (e.target.closest("button, a")) return;
+        const x = e.clientX / innerWidth;
+        if (x < .22) prev();
+        if (x > .78) next();
+      });
+      document.addEventListener("wheel", e => {
+        if (wheelLocked || Math.abs(e.deltaY) < 35) return;
+        wheelLocked = true;
+        e.deltaY > 0 ? next() : prev();
+        setTimeout(() => wheelLocked = false, 450);
+      }, { passive: true });
+      document.addEventListener("touchstart", e => touchX = e.touches[0].clientX, { passive: true });
+      document.addEventListener("touchend", e => {
+        const dx = touchX - e.changedTouches[0].clientX;
+        if (Math.abs(dx) > 50) dx > 0 ? next() : prev();
+      });
+      const match = location.hash.match(/slide-(\d+)/);
+      if (match) {
+        const start = Math.max(0, Math.min(slides.length - 1, Number(match[1]) - 1));
+        slides[0].classList.remove("active");
+        index = start;
+        slides[index].classList.add("active");
+      }
+      update();
+    })();
+  </script>
+</body>
+</html>

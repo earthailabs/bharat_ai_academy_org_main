@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1 Day 1 — Bharat AI Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../engine/css/design-system.css">
+  <link rel="stylesheet" href="../../engine/css/components.css">
+  <link rel="stylesheet" href="../../engine/css/layouts.css">
+  <style>
+    #loading {
+      position: fixed; inset: 0; display: flex; align-items: center;
+      justify-content: center; background: white; z-index: 999;
+      font-family: var(--font-family); color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">Loading presentation…</div>
+  <div id="app"></div>
+
+  <script src="../../engine/js/slide-renderer.js"></script>
+  <script src="../../engine/js/presentation-engine.js"></script>
+  <script src="slides.js"></script>
+  <script>
+    document.getElementById('loading').style.display = 'none';
+    new PresentationEngine(document.getElementById('app'), SLIDES_DATA);
+  </script>
+</body>
+</html>

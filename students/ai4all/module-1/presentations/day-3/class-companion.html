@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 3 Companion — Skills, Prompts & Teaching Guide | Bharat AI Academy</title>
+  <style>
+    @page { margin: 18mm 16mm; size: A4; }
+    :root {
+      --navy: #0A1628;
+      --blue: #0066FF;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --bg: #F8FAFC;
+      --orange: #FF6B35;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--navy);
+      line-height: 1.55;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 28px 80px;
+      font-size: 15px;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 8px; color: var(--navy); }
+    h2 {
+      font-size: 1.35rem; margin: 36px 0 12px; padding-bottom: 6px;
+      border-bottom: 2px solid var(--blue); color: var(--blue);
+      page-break-after: avoid;
+    }
+    h3 { font-size: 1.1rem; margin: 22px 0 8px; color: var(--navy); page-break-after: avoid; }
+    h4 { font-size: 1rem; margin: 16px 0 6px; }
+    p { margin: 0 0 10px; color: var(--muted); }
+    .meta {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px; margin: 16px 0 28px;
+    }
+    .meta strong { color: var(--navy); }
+    ul, ol { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+    li { margin-bottom: 4px; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 12px 0 18px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top;
+    }
+    th { background: #E8F1FF; color: var(--blue); }
+    code {
+      background: #E8F1FF; color: var(--blue);
+      padding: 1px 6px; border-radius: 4px; font-size: 0.9em;
+    }
+    pre {
+      background: #0A1628; color: #E2E8F0;
+      padding: 14px 16px; border-radius: 10px;
+      overflow-x: auto; font-size: 0.88rem; line-height: 1.5;
+      margin: 10px 0 16px; white-space: pre-wrap; word-break: break-word;
+      page-break-inside: avoid;
+    }
+    .skill-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; margin: 12px 0 18px;
+      background: #fff; page-break-inside: avoid;
+    }
+    .skill-card h3 {
+      margin: 0 0 4px; color: var(--blue); border: none; font-size: 1.05rem;
+    }
+    .skill-card .filename {
+      font-family: Consolas, monospace; font-size: 0.85rem;
+      color: var(--orange); margin-bottom: 8px;
+    }
+    .callout {
+      background: #FFF4EF; border-left: 4px solid var(--orange);
+      padding: 12px 14px; margin: 14px 0; border-radius: 0 8px 8px 0;
+    }
+    .callout.blue {
+      background: #E8F1FF; border-left-color: var(--blue);
+    }
+    .toc a { color: var(--blue); text-decoration: none; }
+    .toc li { margin-bottom: 6px; }
+    .print-tip {
+      background: var(--bg); border: 1px dashed var(--border);
+      padding: 12px; border-radius: 8px; margin-bottom: 24px; font-size: 0.9rem;
+    }
+    @media print {
+      body { padding: 0; font-size: 12.5px; }
+      .print-tip { display: none; }
+      a { color: inherit; text-decoration: none; }
+      h2 { margin-top: 24px; }
+      pre { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="print-tip">
+    <strong>To save as PDF:</strong> Open this file in Chrome → Press <kbd>Ctrl+P</kbd> (Windows) or <kbd>Cmd+P</kbd> (Mac) → Destination: <strong>Save as PDF</strong>.
+  </p>
+
+  <h1>Class 3 Companion Guide</h1>
+  <p style="font-size:1.15rem;color:#0A1628;font-weight:600;margin:0">Build Your AI Workspace</p>
+
+  <div class="meta">
+    <strong>Bharat AI Academy</strong> · Module 1 · Class 3 · Duration: 2 Hours<br>
+    Use this document during class for timings, demos, skill file contents, and student prompts.
+  </div>
+
+  <h2>Table of Contents</h2>
+  <ol class="toc">
+    <li><a href="#outcomes">Learning Outcomes</a></li>
+    <li><a href="#timing">Class Timing Guide</a></li>
+    <li><a href="#windows">Windows File Management Cheat Sheet</a></li>
+    <li><a href="#structure">AI Workspace Folder Structure</a></li>
+    <li><a href="#skills">All Skill Files (copy-paste ready)</a></li>
+    <li><a href="#rules">Rules Files</a></li>
+    <li><a href="#templates">Templates</a></li>
+    <li><a href="#prompts">Live Demo Prompts</a></li>
+    <li><a href="#exercises">Practical Exercises</a></li>
+    <li><a href="#homework">Homework / Assignment</a></li>
+    <li><a href="#teaching">Teaching Notes</a></li>
+    <li><a href="#course-skills">Skills Map for Full Course</a></li>
+  </ol>
+
+  <!-- ============================== -->
+  <h2 id="outcomes">1. Learning Outcomes</h2>
+  <p>By the end of class, every student should be able to:</p>
+  <ul>
+    <li>Explain what a <strong>file</strong> and a <strong>folder</strong> are</li>
+    <li>Recognize common file types (<code>.txt</code>, <code>.md</code>, <code>.html</code>, <code>.jpg</code>, etc.)</li>
+    <li>Tell the difference between <strong>Local</strong>, <strong>Cloud</strong>, and <strong>Browser</strong></li>
+    <li>Create, rename, copy, and move files on Windows</li>
+    <li>Open a <strong>folder</strong> (not a single file) in Cursor</li>
+    <li>Build a personal <strong>AI Workspace</strong> with Projects / Skills / Rules / Templates</li>
+    <li>Create reusable <strong>Skill</strong> files and use them to get better AI results</li>
+    <li>Understand: Skills = WHO · Rules = HOW · Project = WHAT</li>
+  </ul>
+
+  <div class="callout blue">
+    <strong>Core teaching message:</strong> A Skill is simply a text file containing instructions you can reuse again and again. Do <em>not</em> introduce advanced Cursor Skills features first — teach the idea, then the tool.
+  </div>
+
+  <!-- ============================== -->
+  <h2 id="timing">2. Class Timing Guide (2 Hours)</h2>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Part</th><th>What to cover</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0:00–0:05</td><td>Welcome</td><td>Goal: leave with your own AI Workspace</td></tr>
+      <tr><td>0:05–0:20</td><td>Part 1</td><td>What is a file? Cupboard analogy</td></tr>
+      <tr><td>0:20–0:40</td><td>Part 2</td><td>File types + create Practice Folder</td></tr>
+      <tr><td>0:40–0:50</td><td>Windows</td><td>File Explorer basics for beginners</td></tr>
+      <tr><td>0:50–1:05</td><td>Part 3</td><td>Local vs Cloud vs Browser</td></tr>
+      <tr><td>1:05–1:20</td><td>Part 4</td><td>Install Cursor · Open Folder</td></tr>
+      <tr><td>1:20–1:40</td><td>Part 5</td><td>Build AI Workspace structure</td></tr>
+      <tr><td>1:40–2:05*</td><td>Part 6–7</td><td>Skills + Rules + demos (*trim if needed)</td></tr>
+      <tr><td>Last 10 min</td><td>Close</td><td>Context exercise + homework + questions</td></tr>
+    </tbody>
+  </table>
+  <p>*If running over, shorten Rules demo and keep Teacher / Designer / Developer skills.</p>
+
+  <!-- ============================== -->
+  <h2 id="windows">3. Windows File Management Cheat Sheet</h2>
+  <table>
+    <thead><tr><th>Action</th><th>How</th></tr></thead>
+    <tbody>
+      <tr><td>Create folder</td><td>Right-click → New → Folder</td></tr>
+      <tr><td>Rename</td><td>Select → <code>F2</code></td></tr>
+      <tr><td>Copy</td><td><code>Ctrl + C</code></td></tr>
+      <tr><td>Paste</td><td><code>Ctrl + V</code></td></tr>
+      <tr><td>Cut / Move</td><td><code>Ctrl + X</code> then <code>Ctrl + V</code></td></tr>
+      <tr><td>Undo</td><td><code>Ctrl + Z</code></td></tr>
+      <tr><td>Delete</td><td><code>Delete</code></td></tr>
+      <tr><td>Search</td><td>Windows search bar (taskbar)</td></tr>
+      <tr><td>Show file extensions</td><td>File Explorer → View → File name extensions ✓</td></tr>
+    </tbody>
+  </table>
+  <h3>Desktop vs Downloads vs Documents</h3>
+  <ul>
+    <li><strong>Desktop</strong> — quick access; keep tidy</li>
+    <li><strong>Downloads</strong> — everything from internet; clean regularly</li>
+    <li><strong>Documents</strong> — best home for long-term <code>AI Workspace</code></li>
+  </ul>
+  <div class="callout">
+    <strong>Must do in class:</strong> Turn on “File name extensions” so students can see <code>.md</code>, <code>.jpg</code>, <code>.html</code>.
+  </div>
+
+  <!-- ============================== -->
+  <h2 id="structure">4. AI Workspace Folder Structure</h2>
+  <p>Create this under <strong>Documents</strong> (recommended):</p>
+<pre>AI Workspace
+│
+├── Projects
+│      ├── Personal Website
+│      ├── Resume
+│      └── AI Blog
+│
+├── Skills
+│      ├── Teacher.md
+│      ├── Website Developer.md
+│      ├── Graphic Designer.md
+│      ├── Video Creator.md
+│      ├── Resume Writer.md
+│      ├── Startup Advisor.md
+│      ├── Marketing Expert.md
+│      ├── Researcher.md
+│      ├── Data Analyst.md
+│      └── Career Mentor.md
+│
+├── Rules
+│      ├── General Rules.md
+│      ├── Website Rules.md
+│      ├── Writing Rules.md
+│      └── Design Rules.md
+│
+├── Templates
+│      ├── Blog.md
+│      ├── Landing Page.md
+│      ├── Instagram.md
+│      ├── LinkedIn.md
+│      ├── Resume.md
+│      └── Poster.md
+│
+├── Images
+├── Documents
+└── Downloads</pre>
+
+  <h3>Why each folder?</h3>
+  <table>
+    <thead><tr><th>Folder</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Projects</td><td>Things you build (website, resume, blog)</td></tr>
+      <tr><td>Skills</td><td>Reusable “who is the AI” instruction files</td></tr>
+      <tr><td>Rules</td><td>Always-on behavior (simple English, mobile-first…)</td></tr>
+      <tr><td>Templates</td><td>Ready formats for content you create often</td></tr>
+      <tr><td>Images</td><td>Photos, logos, generated designs</td></tr>
+      <tr><td>Documents</td><td>PDFs, notes, research</td></tr>
+      <tr><td>Downloads</td><td>Temporary imports inside the workspace</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Remember</h3>
+<pre>Skills   → WHO the AI is
+Rules    → HOW the AI should work
+Project  → WHAT the AI is building</pre>
+
+  <!-- ============================== -->
+  <h2 id="skills">5. All Skill Files (Copy-Paste Ready)</h2>
+  <p>Create each as a <code>.md</code> file inside <code>AI Workspace/Skills/</code>.</p>
+
+  <div class="skill-card">
+    <h3>Teacher</h3>
+    <div class="filename">Teacher.md</div>
+<pre>You are an experienced teacher.
+
+Explain everything simply.
+Always give examples.
+Never use difficult English.
+Explain step by step.
+If the topic is hard, use an everyday analogy from Indian life.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Teacher (Class 5 version) — for context demo</h3>
+    <div class="filename">Teacher-Class5.md</div>
+<pre>You are an experienced teacher explaining to a Class 5 student (age 10–11).
+
+Use very simple words.
+Use short sentences.
+Use fun examples from school, sports, or home.
+Never use technical jargon.
+Check understanding with one easy question at the end.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Graphic Designer</h3>
+    <div class="filename">Graphic Designer.md</div>
+<pre>You are a graphic designer.
+
+Create premium designs.
+Use modern style.
+Simple colors.
+Minimal design.
+Always explain the image prompt clearly so I can paste it into an image AI tool.
+Suggest dimensions (e.g. A4 poster, Instagram square).</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Website Developer</h3>
+    <div class="filename">Website Developer.md</div>
+<pre>You are a senior website developer.
+
+Always create responsive websites.
+Use HTML and CSS (and JS only when needed).
+Use clean, modern design.
+Comment your code.
+Always use mobile-first design.
+Prefer one clean HTML file with internal CSS unless I ask otherwise.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Resume Writer</h3>
+    <div class="filename">Resume Writer.md</div>
+<pre>You are a professional resume writer for Indian students and job seekers.
+
+Write clear, achievement-focused resumes.
+Use simple English.
+No fluff. No fake experience.
+Ask me for: name, education, skills, projects, and target role.
+Format for easy copying into Word or Google Docs.
+Keep length to 1 page when possible.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Career Mentor</h3>
+    <div class="filename">Career Mentor.md</div>
+<pre>You are a supportive career mentor for learners aged 15–35 in India.
+
+Give practical advice for studies, skills, and jobs.
+Be honest but encouraging.
+Always give next 3 action steps.
+Avoid scary job-loss narratives — focus on upskilling and opportunity.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Video Creator</h3>
+    <div class="filename">Video Creator.md</div>
+<pre>You are a short-form video creator (YouTube Shorts / Instagram Reels).
+
+Write scripts in simple spoken English (and Hindi mix if asked).
+Keep hooks in the first 3 seconds.
+Suggest on-screen text and shot ideas.
+Length: 30–60 seconds unless I ask otherwise.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Startup Advisor</h3>
+    <div class="filename">Startup Advisor.md</div>
+<pre>You are a practical startup advisor for Indian early-stage founders.
+
+Focus on customers, problem, and simple experiments — not jargon.
+Help with idea validation, pricing, and first customers.
+Keep advice realistic for low-budget startups.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Marketing Expert</h3>
+    <div class="filename">Marketing Expert.md</div>
+<pre>You are a digital marketing expert for small Indian businesses and creators.
+
+Create content ideas, captions, and simple campaign plans.
+Prefer free or low-cost channels first (WhatsApp, Instagram, LinkedIn).
+Always include a clear call to action.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Researcher</h3>
+    <div class="filename">Researcher.md</div>
+<pre>You are a careful research assistant.
+
+Summarize topics in simple English.
+Separate facts from opinions.
+List sources or say when something is uncertain.
+Give bullet points first, then a short paragraph.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Data Analyst</h3>
+    <div class="filename">Data Analyst.md</div>
+<pre>You are a data analyst who explains numbers simply.
+
+Help clean data, find patterns, and explain insights in plain language.
+When showing calculations, show steps.
+Suggest charts I can make in Excel or Google Sheets.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Interview Coach</h3>
+    <div class="filename">Interview Coach.md</div>
+<pre>You are an interview coach for freshers and career switchers in India.
+
+Ask one interview question at a time.
+Give feedback after my answer (clarity, confidence, examples).
+Teach STAR method with Indian workplace examples.</pre>
+  </div>
+
+  <!-- ============================== -->
+  <h2 id="rules">6. Rules Files</h2>
+
+  <div class="skill-card">
+    <h3>General Rules</h3>
+    <div class="filename">Rules/General Rules.md</div>
+<pre>Always reply in simple English.
+Never use difficult words.
+Always explain first.
+Then generate content or code.
+If I am confused, ask one clarifying question.
+Be encouraging and patient.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Website Rules</h3>
+    <div class="filename">Rules/Website Rules.md</div>
+<pre>Always make responsive websites.
+Always use mobile-first design.
+Prefer readable fonts and good contrast.
+Keep layouts clean — not crowded.
+Comment the HTML/CSS so a beginner can learn.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Writing Rules</h3>
+    <div class="filename">Rules/Writing Rules.md</div>
+<pre>Use short paragraphs.
+Prefer bullets when listing ideas.
+Avoid jargon.
+Write for Indian readers unless I specify otherwise.
+Keep titles clear and specific.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Design Rules</h3>
+    <div class="filename">Rules/Design Rules.md</div>
+<pre>Prefer minimal, modern layouts.
+Limit to 2–3 colors.
+Lots of whitespace.
+Avoid clutter and too many fonts.
+Always describe why the design choice works.</pre>
+  </div>
+
+  <!-- ============================== -->
+  <h2 id="templates">7. Quick Templates</h2>
+
+  <div class="skill-card">
+    <h3>Resume Template prompt</h3>
+    <div class="filename">Templates/Resume.md</div>
+<pre>Fill this resume for me.
+
+Name:
+City:
+Education:
+Skills:
+Projects:
+Target job:
+
+Output a clean 1-page resume in simple English.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Poster Template prompt</h3>
+    <div class="filename">Templates/Poster.md</div>
+<pre>Create a poster concept for:
+
+Event / product:
+Audience:
+Tone: (formal / fun / premium)
+Must include text:
+Size: A4 / Instagram
+
+Give: layout idea + exact image prompt + color palette.</pre>
+  </div>
+
+  <div class="skill-card">
+    <h3>Landing Page Template prompt</h3>
+    <div class="filename">Templates/Landing Page.md</div>
+<pre>Create a single-page HTML website for:
+
+Business / person:
+Goal of the page:
+Sections needed: Hero, About, Benefits, CTA
+Mobile-first, modern, clean.
+Include all CSS inside the HTML file.</pre>
+  </div>
+
+  <!-- ============================== -->
+  <h2 id="prompts">8. Live Demo Prompts (Use These in Class)</h2>
+
+  <h3>After creating Teacher.md</h3>
+<pre>What is Artificial Intelligence?
+Explain for a complete beginner.</pre>
+
+  <h3>After creating Graphic Designer.md</h3>
+<pre>Create a poster for Bharat AI Academy open day.
+Audience: students aged 15–25.
+Tone: exciting and premium.
+Give me the image prompt and suggested layout.</pre>
+
+  <h3>After creating Website Developer.md</h3>
+<pre>Create a simple personal portfolio website in one HTML file.
+Sections: Name, About, Skills, Projects, Contact.
+Mobile-first. Clean colors. Comment the code.</pre>
+
+  <h3>After adding Rules.md</h3>
+<pre>Build a small landing page for a local bakery in my city.
+Follow my Rules file for language and design.</pre>
+
+  <h3>Context exercise (Newton)</h3>
+<pre>Using Teacher.md:
+Explain Newton's Laws of Motion.
+
+Then switch to Teacher-Class5.md and ask again:
+Explain Newton's Laws of Motion.</pre>
+  <p>Ask students: “What changed?” → <strong>Audience / context</strong> changed the answer.</p>
+
+  <!-- ============================== -->
+  <h2 id="exercises">9. Practical Exercises (In Class)</h2>
+
+  <h3>Exercise A — Practice Folder</h3>
+  <p>On Desktop, create:</p>
+<pre>Practice Folder
+├── Image.jpg   (or any image renamed/copied)
+├── Resume.pdf  (or empty Notes file named Resume.txt if no PDF)
+├── Notes.txt
+└── Website.html</pre>
+  <p>Goal: students physically create files and see extensions.</p>
+
+  <h3>Exercise B — AI Workspace</h3>
+  <ol>
+    <li>Create <code>Documents/AI Workspace</code></li>
+    <li>Create subfolders: Projects, Skills, Rules, Templates, Images, Documents, Downloads</li>
+    <li>In Cursor: <strong>File → Open Folder → AI Workspace</strong></li>
+  </ol>
+
+  <h3>Exercise C — First 3 Skills</h3>
+  <ol>
+    <li>Create <code>Teacher.md</code>, <code>Graphic Designer.md</code>, <code>Website Developer.md</code></li>
+    <li>Paste skill content from this guide</li>
+    <li>Run one prompt per skill</li>
+  </ol>
+
+  <!-- ============================== -->
+  <h2 id="homework">10. Homework / Assignment</h2>
+  <p>Students complete at home before next class:</p>
+  <ol>
+    <li>Finish full <strong>AI Workspace</strong> folders</li>
+    <li>Create these Skills:
+      <ul>
+        <li>Teacher.md</li>
+        <li>Website Developer.md</li>
+        <li>Graphic Designer.md</li>
+        <li>Resume Writer.md</li>
+        <li>Career Mentor.md</li>
+      </ul>
+    </li>
+    <li>Using those Skills, produce:
+      <ul>
+        <li>One resume</li>
+        <li>One website (HTML)</li>
+        <li>One poster concept / image prompt</li>
+      </ul>
+    </li>
+    <li>Save outputs inside <code>Projects/</code> and <code>Images/</code></li>
+  </ol>
+
+  <!-- ============================== -->
+  <h2 id="teaching">11. Teaching Notes for Instructors</h2>
+  <ul>
+    <li>Start with phone photos question — makes “folders” feel familiar.</li>
+    <li>Keep file-types light: “this stores images / websites / instructions.”</li>
+    <li>Insist on <strong>Open Folder</strong> in Cursor — repeat it 3 times.</li>
+    <li>Define Skills as reusable text files first — avoid Cursor advanced Skills UI until students are comfortable.</li>
+    <li>Live type (or paste) skills on the big screen; students follow on laptops.</li>
+    <li>Celebrate the “wow” when Teacher vs Class-5 Teacher answers differ.</li>
+    <li>Walk the room during Practice Folder and Workspace creation — beginners get stuck on extensions and paths.</li>
+    <li>Common blockers: file extensions hidden, saving to Downloads by accident, opening a single .md instead of the folder.</li>
+  </ul>
+
+  <h3>Suggested discussion questions</h3>
+  <ul>
+    <li>If your phone photos are deleted from Google Photos but still on phone — Local or Cloud?</li>
+    <li>Why open a folder instead of one file?</li>
+    <li>What Skill will help you most this month?</li>
+  </ul>
+
+  <!-- ============================== -->
+  <h2 id="course-skills">12. Skills Map for the Full Course</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Skills to build over weeks</th></tr></thead>
+    <tbody>
+      <tr><td>Writing</td><td>Blog Writer · Resume Writer · Email Writer · Story Writer</td></tr>
+      <tr><td>Coding</td><td>Website Developer · App Developer · HTML Expert</td></tr>
+      <tr><td>Business</td><td>Startup Advisor · Business Analyst · Marketing Expert</td></tr>
+      <tr><td>Design</td><td>Graphic Designer · UI Designer · Logo Designer</td></tr>
+      <tr><td>Career</td><td>Interview Coach · Career Mentor · Teacher</td></tr>
+      <tr><td>Productivity</td><td>Research Assistant · Data Analyst · Meeting Assistant</td></tr>
+    </tbody>
+  </table>
+
+  <h2>File Types Quick Reference</h2>
+  <table>
+    <thead><tr><th>Ext</th><th>Meaning</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>.txt</td><td>Simple text</td><td>Notes</td></tr>
+      <tr><td>.md</td><td>Markdown / AI instructions</td><td>Skills</td></tr>
+      <tr><td>.pdf</td><td>Document</td><td>Resume</td></tr>
+      <tr><td>.jpg</td><td>Image</td><td>Photo</td></tr>
+      <tr><td>.png</td><td>Transparent image</td><td>Logo</td></tr>
+      <tr><td>.docx</td><td>Word</td><td>Letter</td></tr>
+      <tr><td>.xlsx</td><td>Excel</td><td>Marks</td></tr>
+      <tr><td>.pptx</td><td>Presentation</td><td>Slides</td></tr>
+      <tr><td>.html</td><td>Website</td><td>Portfolio</td></tr>
+      <tr><td>.css</td><td>Website design</td><td>Colors</td></tr>
+      <tr><td>.js</td><td>Website logic</td><td>Buttons</td></tr>
+      <tr><td>.json</td><td>Data / settings</td><td>AI config</td></tr>
+      <tr><td>.zip</td><td>Compressed folder</td><td>Share files</td></tr>
+    </tbody>
+  </table>
+
+  <hr style="margin:40px 0 16px;border:none;border-top:1px solid #E2E8F0">
+  <p style="text-align:center;font-size:0.85rem">© Bharat AI Academy · Class 3 Companion · Build Your AI Workspace</p>
+
+</body>
+</html>

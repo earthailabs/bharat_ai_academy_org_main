@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0066FF"/>
+  <text x="24" y="32" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">BA</text>
+  <text x="60" y="22" fill="#0A1628" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700">Bharat AI</text>
+  <text x="60" y="38" fill="#64748B" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500">Academy</text>
+</svg>

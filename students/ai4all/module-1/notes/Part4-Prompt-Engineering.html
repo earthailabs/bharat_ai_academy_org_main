@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 4 — Prompt Engineering | Module 1 Study Pack</title>
+  <link rel="stylesheet" href="studypack.css">
+</head>
+<body class="part-4">
+  <div class="print-bar no-print">
+    Part 4 — Prompt Engineering
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- PART OPENER -->
+  <div class="page cover">
+    <div class="watermark">Bharat AI Academy</div>
+    <span class="cover-badge">Module 1 · Part 4</span>
+    <h1>Prompt Engineering</h1>
+    <p class="cover-sub">Talk to AI Like a Pro</p>
+    <div class="cover-parts">
+      <ul class="toc-list">
+        <li><span class="sec">1. What is a Prompt? Why Do Good Prompts Matter?</span></li>
+        <li><span class="sec">2. The Prompt Formula — Role + Task + Context + Format</span></li>
+        <li><span class="sec">3. Three Levels of Prompting</span></li>
+        <li><span class="sec">4. Improving Prompts — The Art of Iteration</span></li>
+        <li><span class="sec">5. Common Prompting Mistakes</span></li>
+        <li><span class="sec">6. Your Prompt Library — 25 Ready-to-Use Prompts</span></li>
+        <li><span class="sec">7. Mini Project — Build Your Personal AI Assistant</span></li>
+        <li><span class="sec">8. Practice &amp; Quiz</span></li>
+        <li><span class="sec">9. Module Glossary + Quiz Answer Keys</span></li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span>© Bharat AI Academy</span>
+      <span class="pageno">37</span>
+    </div>
+  </div>
+
+  <!-- 1. WHAT IS A PROMPT -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 1</span>
+    </div>
+
+    <span class="chapter-num">Chapter 1</span>
+    <h1>What is a Prompt?</h1>
+    <p class="lead">Everything you've learned so far comes together here. The prompt is your steering wheel for AI.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Prompt</div>
+      <p>A <strong>prompt</strong> is the instruction you give to an AI. It can be one word or a full page. The quality of the AI's answer depends heavily on the quality of your prompt.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Prompt Engineering</div>
+      <p><strong>Prompt Engineering</strong> is the skill of writing clear, complete prompts that get exactly the answer you want. It is one of the most valuable AI skills — and it needs zero coding.</p>
+    </div>
+
+    <h2>Weak prompt vs strong prompt — see the difference</h2>
+    <div class="prompt-block"><span class="label">❌ Weak Prompt</span>write about exercise</div>
+    <p>The AI must guess everything: For whom? How long? What style? You'll get a generic essay.</p>
+
+    <div class="prompt-block"><span class="label">✅ Strong Prompt</span>You are a friendly fitness coach.
+Write a simple 7-day home exercise plan
+for a 19-year-old college student with no gym access.
+Only 20 minutes per day.
+Format: a table with Day, Exercise, and Time.</div>
+    <p>Same AI, completely different result — personal, useful, ready to follow.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Smart New Assistant</div>
+      <p>Imagine hiring a brilliant assistant on their first day. They are extremely capable but know <strong>nothing about you</strong>. Say "handle my work" and they'll be lost. Say "reply to this email politely, decline the meeting, suggest Friday instead" — perfection. <strong>AI is that assistant. Prompts are your instructions.</strong></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">38</span>
+    </div>
+  </div>
+
+  <!-- 2. THE FORMULA -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 2</span>
+    </div>
+
+    <span class="chapter-num">Chapter 2</span>
+    <h1>The Prompt Formula</h1>
+    <p class="lead">Memorise one formula and you can write a strong prompt for anything.</p>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This — THE Formula</div>
+      <p style="font-size:13pt"><strong>ROLE + TASK + CONTEXT + FORMAT</strong></p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-node"><strong>Role</strong><span>Who should AI be?</span></div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-node"><strong>Task</strong><span>What to do?</span></div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-node"><strong>Context</strong><span>Details about you</span></div>
+      <div class="flow-arrow">+</div>
+      <div class="flow-node"><strong>Format</strong><span>Shape of answer</span></div>
+    </div>
+
+    <h2>Each piece explained</h2>
+    <table>
+      <thead><tr><th>Piece</th><th>Question it answers</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Role</strong></td><td>Who should the AI pretend to be?</td><td>"You are an experienced career counsellor."</td></tr>
+        <tr><td><strong>Task</strong></td><td>What exactly do you want?</td><td>"Suggest 3 career paths."</td></tr>
+        <tr><td><strong>Context</strong></td><td>What should it know about you / the situation?</td><td>"I am 18, from Haryana, good at math, family budget is limited."</td></tr>
+        <tr><td><strong>Format</strong></td><td>How should the answer look?</td><td>"A table with career, first step, and monthly cost."</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The formula in action</h2>
+    <div class="prompt-block"><span class="label">Full Formula Prompt</span>You are an experienced career counsellor.        ← ROLE
+Suggest 3 career paths I can start this year.   ← TASK
+I am 18, from Haryana, good at math,
+just finished 12th, family budget is limited.   ← CONTEXT
+Answer as a table: Career | First Step | Cost.  ← FORMAT</div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Send the prompt above to ChatGPT — but replace the context with YOUR real details. Read the answer. Then remove the Role and Context lines and send just "suggest career paths". Compare the two answers. Feel the difference the formula makes!</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">39</span>
+    </div>
+  </div>
+
+  <!-- 3. THREE LEVELS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 3</span>
+    </div>
+
+    <span class="chapter-num">Chapter 3</span>
+    <h1>Three Levels of Prompting</h1>
+    <p class="lead">Grow from beginner to advanced with three levels. Each level adds one new trick.</p>
+
+    <h2>Level 1 — The Clear Ask (the formula)</h2>
+    <p>What you learned in Chapter 2: Role + Task + Context + Format. This alone puts you ahead of 90% of AI users.</p>
+
+    <h2>Level 2 — Show an Example</h2>
+    <p>Want the answer in a specific style? <strong>Show the AI an example</strong> of what you like. AI is excellent at copying patterns.</p>
+    <div class="prompt-block"><span class="label">Level 2 Prompt</span>Write 3 Instagram captions for a home bakery.
+
+Here is an example of the style I like:
+"Fresh out of the oven, straight into your heart 🍞✨"
+
+Match this style: short, warm, one emoji pair.</div>
+
+    <h2>Level 3 — Ask for Step-by-Step Thinking</h2>
+    <p>For difficult questions — math, decisions, planning — ask the AI to <strong>think step by step before answering</strong>. This dramatically improves accuracy.</p>
+    <div class="prompt-block"><span class="label">Level 3 Prompt</span>I can spend 3 hours daily studying and I have
+4 subjects with exams in 20 days.
+Think step by step, then create the best
+daily study timetable for me.</div>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Level 1: Ask clearly (formula) · Level 2: Show an example · Level 3: Ask for step-by-step thinking.</strong> Mix all three for your hardest tasks.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">40</span>
+    </div>
+  </div>
+
+  <!-- 4. ITERATION -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 4</span>
+    </div>
+
+    <span class="chapter-num">Chapter 4</span>
+    <h1>Improving Prompts — The Art of Iteration</h1>
+    <p class="lead">Nobody writes the perfect prompt on the first try — and nobody needs to. The secret of professionals is <strong>iteration</strong>: improving through follow-ups.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Iteration</div>
+      <p><strong>Iteration</strong> means improving something step by step through repeated attempts. With AI: get an answer → give feedback → get a better answer → repeat.</p>
+    </div>
+
+    <h2>The feedback moves — your follow-up toolkit</h2>
+    <table>
+      <thead><tr><th>If the answer is…</th><th>Say this</th></tr></thead>
+      <tbody>
+        <tr><td>Too long</td><td>"Make it half the length."</td></tr>
+        <tr><td>Too difficult</td><td>"Explain it like I'm 15, with an everyday example."</td></tr>
+        <tr><td>Too generic</td><td>"Make it specific to a college student in Haryana."</td></tr>
+        <tr><td>Wrong tone</td><td>"Make it more friendly / more formal."</td></tr>
+        <tr><td>Wrong shape</td><td>"Give it as a table / bullet points / numbered steps."</td></tr>
+        <tr><td>Almost right</td><td>"Keep points 1 and 3, replace point 2 with something about savings."</td></tr>
+        <tr><td>Not sure it's right</td><td>"What are the weaknesses of this answer? What did you assume?"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Tailor's Fitting</div>
+      <p>A tailor never stitches a perfect suit blindly. First fitting → "tighter here, longer there" → second fitting → perfect. Treat every AI answer as a first fitting. Your feedback is the measurement for the next one.</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now — The 3-Round Challenge</div>
+      <p>Ask AI: "Write a short message inviting my friend to study together." Then improve it in exactly 3 follow-ups: (1) make it funnier, (2) make it shorter, (3) add a specific time and place. Watch the message get better each round.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">41</span>
+    </div>
+  </div>
+
+  <!-- 5. MISTAKES -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 5</span>
+    </div>
+
+    <span class="chapter-num">Chapter 5</span>
+    <h1>Common Prompting Mistakes</h1>
+    <p class="lead">Avoid these five mistakes and you're instantly better than most AI users.</p>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Mistake 1 — The One-Word Prompt</div>
+      <p>"resume" ... "marketing" ... "essay". The AI must guess everything. <strong>Fix:</strong> use the formula — Role + Task + Context + Format.</p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Mistake 2 — No Context About You</div>
+      <p>Asking "suggest a business idea" without saying your budget, city, skills, or interests. <strong>Fix:</strong> two lines of context change everything.</p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Mistake 3 — Accepting the First Answer</div>
+      <p>The first answer is a first draft. <strong>Fix:</strong> always improve it with at least one follow-up (Chapter 4 toolkit).</p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Mistake 4 — Asking Two Things in One Breath</div>
+      <p>"Write my resume and also plan my diet and also explain AI" — messy answers. <strong>Fix:</strong> one task per message. New topic → new chat.</p>
+    </div>
+
+    <div class="box box-mistake">
+      <div class="box-title">⚠️ Mistake 5 — Blind Trust</div>
+      <p>Submitting AI facts without checking (remember hallucinations!). <strong>Fix:</strong> verify anything important — dates, numbers, names, medical or legal claims.</p>
+    </div>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Be specific · Give context · Iterate · One task at a time · Verify.</strong></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">42</span>
+    </div>
+  </div>
+
+  <!-- 6. PROMPT LIBRARY -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <span class="chapter-num">Chapter 6</span>
+    <h1>Your Prompt Library — Study &amp; Learning</h1>
+    <p class="lead">25 ready prompts across the next three pages. Copy them, fill in the [brackets], make them yours. Tick each one you try!</p>
+
+    <div class="prompt-block"><span class="label">1 · Understand Any Topic</span>You are a patient teacher. Explain [topic] in simple English
+to a student who just finished 12th. Use one everyday example.
+End with a 3-line summary.</div>
+
+    <div class="prompt-block"><span class="label">2 · Practice Questions</span>Create 10 practice questions on [topic], from easy to hard.
+Do not show answers yet. After I reply with my answers,
+check them and explain my mistakes.</div>
+
+    <div class="prompt-block"><span class="label">3 · Summarise Notes</span>Summarise these notes into 10 bullet points I can revise
+in 5 minutes before an exam: [paste your notes]</div>
+
+    <div class="prompt-block"><span class="label">4 · Study Timetable</span>You are a study planner. I have [number] days until my exam
+and can study [hours] hours daily. My subjects: [list].
+My weakest subject: [subject]. Think step by step and
+create a daily timetable as a table.</div>
+
+    <div class="prompt-block"><span class="label">5 · Memory Tricks</span>Give me easy memory tricks (mnemonics) to remember [list/formula].
+Use Hindi-English words that are easy for an Indian student.</div>
+
+    <div class="prompt-block"><span class="label">6 · Improve English</span>I will write sentences in English. Correct my mistakes,
+explain each correction in one line, and rate my sentence 1–10.
+My first sentence: [your sentence]</div>
+
+    <div class="prompt-block"><span class="label">7 · Explain My Mistake</span>I solved this problem and got the wrong answer.
+Find my mistake and explain it kindly, step by step:
+[paste your solution]</div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">43</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <h1>Prompt Library — Career &amp; Work</h1>
+
+    <div class="prompt-block"><span class="label">8 · Resume Builder</span>You are a professional resume writer. Create a 1-page resume.
+My details — Name: [—] · Education: [—] · Skills: [—] ·
+Projects: [—] · Target role: [—].
+Use strong action words. No fake experience.</div>
+
+    <div class="prompt-block"><span class="label">9 · Interview Practice</span>You are an interviewer for a [job role] position.
+Ask me one question at a time. After each answer,
+give feedback on clarity and confidence, then ask the next.</div>
+
+    <div class="prompt-block"><span class="label">10 · Professional Email</span>Write a polite professional email to [person] about [purpose].
+Keep it under 120 words. Tone: respectful but confident.</div>
+
+    <div class="prompt-block"><span class="label">11 · Career Explorer</span>You are a career counsellor. I am [age], interested in [interests],
+good at [strengths], budget is [low/medium/high].
+Suggest 5 realistic career paths with the first step for each.</div>
+
+    <div class="prompt-block"><span class="label">12 · LinkedIn Profile</span>Write a LinkedIn "About" section for me.
+I am a [describe yourself] learning AI skills.
+Make it genuine, warm, and professional. Under 100 words.</div>
+
+    <div class="prompt-block"><span class="label">13 · Skill Roadmap</span>Create a 30-day roadmap to learn [skill] from zero,
+30 minutes daily, using only free resources.
+Format: Week-by-week table with goals.</div>
+
+    <div class="prompt-block"><span class="label">14 · Explain a Document</span>I am pasting a [notice/form/agreement]. Explain in simple
+English what it says and what I must do: [paste text]</div>
+
+    <div class="prompt-block"><span class="label">15 · WhatsApp Business Message</span>Write a short WhatsApp message for my [type] business
+announcing [offer]. Friendly, clear, with one emoji
+and a call to action.</div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">44</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <h1>Prompt Library — Daily Life &amp; Creativity</h1>
+
+    <div class="prompt-block"><span class="label">16 · Meal Planner</span>You are a nutrition coach. Create a 7-day [vegetarian/any] meal
+plan for a student in India. Budget-friendly, local ingredients.
+Format: table with Day, Breakfast, Lunch, Dinner.</div>
+
+    <div class="prompt-block"><span class="label">17 · Fitness Coach</span>Create a 20-minute daily home workout for a beginner.
+No equipment. Include warm-up and cool-down.
+Make week 2 slightly harder than week 1.</div>
+
+    <div class="prompt-block"><span class="label">18 · Morning Routine</span>Design a realistic morning routine for me. I wake at [time],
+leave home at [time], and want time for [goals].
+Keep it simple enough to actually follow.</div>
+
+    <div class="prompt-block"><span class="label">19 · Money Basics</span>You are a friendly financial teacher. Explain how a student
+can manage ₹[amount] monthly pocket money — saving,
+spending, and one good habit. Simple English.</div>
+
+    <div class="prompt-block"><span class="label">20 · Trip Planner</span>Plan a 2-day budget trip from [city] to [destination]
+for [number] friends, total budget ₹[amount] per person.
+Include travel, food, and 5 must-see places.</div>
+
+    <div class="prompt-block"><span class="label">21 · Story Writer</span>Write a 200-word story about [idea]. Set it in an Indian
+town. Make the ending surprising.</div>
+
+    <div class="prompt-block"><span class="label">22 · Poster Idea</span>You are a graphic designer. I need a poster for [event].
+Describe the layout, colors, and main text. Then write
+an image-generation prompt I can use in an AI image tool.</div>
+
+    <div class="prompt-block"><span class="label">23 · Gift Ideas</span>Suggest 5 thoughtful gift ideas under ₹[amount] for my
+[relation] who loves [interests]. One line on why each fits.</div>
+
+    <div class="prompt-block"><span class="label">24 · Debate Both Sides</span>Show me both sides of the debate: "[statement]".
+5 strong points for, 5 against, then your balanced summary.</div>
+
+    <div class="prompt-block"><span class="label">25 · Daily Motivation</span>I'm feeling lazy about [task]. Give me a short, powerful
+motivation message — and then break my task into
+3 tiny steps I can start in the next 5 minutes.</div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">45</span>
+    </div>
+  </div>
+
+  <!-- 7. MINI PROJECT -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Chapter 7</span>
+    </div>
+
+    <span class="chapter-num">Chapter 7 · Mini Project</span>
+    <h1>Build Your Personal AI Assistant</h1>
+    <p class="lead">Time to combine everything: the formula, context, iteration — into one project you'll keep using after class.</p>
+
+    <h2>Step 1 — Write your assistant prompt</h2>
+    <ul class="steps">
+      <li>Open ChatGPT or Gemini and start a <strong>new chat</strong>. Name it "My AI Assistant".</li>
+      <li>Copy the template below and fill in your details.</li>
+      <li>Send it. Your assistant is born!</li>
+    </ul>
+
+    <div class="prompt-block"><span class="label">Your Assistant Template</span>You are my personal assistant and coach.          ← ROLE
+
+Help me with studies, health, and daily planning. ← TASK
+
+About me: I am [age] years old, living in [city].
+I am currently [studying/working on ...].
+My main goal this month is [goal].
+My daily schedule: [brief schedule].              ← CONTEXT
+
+Always reply in simple English, keep answers
+short, and end with one clear next step.          ← FORMAT</div>
+
+    <h2>Step 2 — Test it with real questions</h2>
+    <ul class="checklist">
+      <li>"Plan my study schedule for tomorrow."</li>
+      <li>"Suggest a healthy breakfast I can make in 10 minutes."</li>
+      <li>"I'm feeling unmotivated — help me start."</li>
+      <li>"What should I focus on this week for my goal?"</li>
+    </ul>
+
+    <h2>Step 3 — Improve it (iteration!)</h2>
+    <p>Answers too long? Too generic? Use your Chapter 4 feedback moves. Add more context. Adjust the personality. After 3–4 rounds of improvement, your assistant will feel truly yours.</p>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>Keep your assistant in <strong>one chat</strong> and return to it daily (the One-Chat Rule). In the next module, you'll turn this prompt into a reusable <strong>Skill file</strong> in your AI Workspace!</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">46</span>
+    </div>
+  </div>
+
+  <!-- 8. QUIZ -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 4 · <span>Prompt Engineering</span></span>
+      <span>Practice &amp; Quiz</span>
+    </div>
+
+    <span class="chapter-num">Practice</span>
+    <h1>Part 4 Practice Tasks</h1>
+
+    <ul class="checklist">
+      <li>Rewrite the weak prompt "write about exercise" using the full formula</li>
+      <li>Try 5 prompts from the Prompt Library with your own details</li>
+      <li>Complete the 3-Round Challenge (Chapter 4)</li>
+      <li>Build and improve your Personal AI Assistant (Chapter 7)</li>
+      <li>Teach the formula (Role + Task + Context + Format) to one friend or family member</li>
+    </ul>
+
+    <div class="quiz">
+      <h4>✏️ Part 4 Quiz — 8 Questions</h4>
+      <ol>
+        <li>The prompt formula is…
+          <ul class="quiz-options"><li>(a) Ask + Wait + Hope &nbsp; (b) Role + Task + Context + Format &nbsp; (c) Copy + Paste &nbsp; (d) Question + Answer</li></ul></li>
+        <li>"You are an experienced teacher" is the ______ part of a prompt.
+          <ul class="quiz-options"><li>(a) Task &nbsp; (b) Context &nbsp; (c) Role &nbsp; (d) Format</li></ul></li>
+        <li>"I am 18 and from Haryana with a low budget" is the ______.
+          <ul class="quiz-options"><li>(a) Role &nbsp; (b) Context &nbsp; (c) Format &nbsp; (d) Task</li></ul></li>
+        <li>Level 2 prompting means…
+          <ul class="quiz-options"><li>(a) typing louder &nbsp; (b) showing the AI an example of the style you want &nbsp; (c) using two chats &nbsp; (d) paying for AI</li></ul></li>
+        <li>For hard problems, you should ask AI to…
+          <ul class="quiz-options"><li>(a) answer in one word &nbsp; (b) think step by step first &nbsp; (c) guess quickly &nbsp; (d) skip the question</li></ul></li>
+        <li>Iteration means…
+          <ul class="quiz-options"><li>(a) accepting the first answer &nbsp; (b) improving through follow-up feedback &nbsp; (c) deleting the chat &nbsp; (d) asking twice at once</li></ul></li>
+        <li>If an AI answer is too difficult, the best follow-up is…
+          <ul class="quiz-options"><li>(a) "wrong!" &nbsp; (b) "Explain it like I'm 15, with an example" &nbsp; (c) start a new chat &nbsp; (d) give up</li></ul></li>
+        <li>Before submitting AI facts anywhere important, you should…
+          <ul class="quiz-options"><li>(a) trust them fully &nbsp; (b) verify them &nbsp; (c) delete them &nbsp; (d) shorten them</li></ul></li>
+      </ol>
+      <p><em>Answers on the last page.</em></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 4 · Prompt Engineering</span>
+      <span class="pageno">47</span>
+    </div>
+  </div>
+
+  <!-- 9. GLOSSARY -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Module 1 · <span>Back Matter</span></span>
+      <span>Glossary</span>
+    </div>
+
+    <span class="chapter-num">Module Glossary</span>
+    <h1>All Terms A–Z</h1>
+    <p class="lead">Every highlighted term from Parts 1–4 in one place. Perfect for revision.</p>
+
+    <table>
+      <thead><tr><th>Term</th><th>Meaning</th><th>Part</th></tr></thead>
+      <tbody>
+        <tr><td><strong>AI</strong></td><td>Human-made software that can learn and solve problems</td><td>2</td></tr>
+        <tr><td><strong>AI Agent</strong></td><td>AI that can do multi-step tasks by itself</td><td>2</td></tr>
+        <tr><td><strong>API</strong></td><td>The doorway through which apps talk to AI services</td><td>2</td></tr>
+        <tr><td><strong>Cloud</strong></td><td>Someone else's powerful computers, reached via internet</td><td>1</td></tr>
+        <tr><td><strong>Context</strong></td><td>Everything the AI can currently see in a chat</td><td>2, 3</td></tr>
+        <tr><td><strong>Extension</strong></td><td>File name ending (.pdf, .jpg) that shows the type</td><td>1</td></tr>
+        <tr><td><strong>File</strong></td><td>One single item saved on a computer</td><td>1</td></tr>
+        <tr><td><strong>Folder</strong></td><td>A container for files and other folders</td><td>1</td></tr>
+        <tr><td><strong>Generative AI</strong></td><td>AI that creates new content — text, images, video, code</td><td>2</td></tr>
+        <tr><td><strong>Hallucination</strong></td><td>A confident but wrong AI answer</td><td>2</td></tr>
+        <tr><td><strong>Hardware / Software</strong></td><td>Parts you can touch / programs that run on them</td><td>1</td></tr>
+        <tr><td><strong>Iteration</strong></td><td>Improving step by step through feedback</td><td>4</td></tr>
+        <tr><td><strong>LLM</strong></td><td>Large Language Model — predicts the next token</td><td>2</td></tr>
+        <tr><td><strong>Machine Learning</strong></td><td>Teaching computers with examples, not rules</td><td>2</td></tr>
+        <tr><td><strong>Markdown</strong></td><td>Simple text formatting AI loves (.md files)</td><td>3</td></tr>
+        <tr><td><strong>Model</strong></td><td>A trained AI program</td><td>2</td></tr>
+        <tr><td><strong>Operating System</strong></td><td>The manager software of a computer (Windows)</td><td>1</td></tr>
+        <tr><td><strong>Path</strong></td><td>The address of a file through its folders</td><td>1</td></tr>
+        <tr><td><strong>Prompt</strong></td><td>The instruction you give to an AI</td><td>4</td></tr>
+        <tr><td><strong>Prompt Engineering</strong></td><td>The skill of writing clear, complete prompts</td><td>4</td></tr>
+        <tr><td><strong>Token</strong></td><td>A small piece of text — AI's unit of reading</td><td>2</td></tr>
+        <tr><td><strong>Training</strong></td><td>The phase when AI learns from millions of examples</td><td>2</td></tr>
+      </tbody>
+    </table>
+
+    <div class="page-foot">
+      <span>Module 1 · Glossary</span>
+      <span class="pageno">48</span>
+    </div>
+  </div>
+
+  <!-- ANSWERS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Module 1 · <span>Back Matter</span></span>
+      <span>Answer Keys</span>
+    </div>
+
+    <span class="chapter-num">Answer Keys</span>
+    <h1>Quiz Answers — All Parts</h1>
+
+    <div class="cards">
+      <div class="mini-card">
+        <h4>Part 1 — Computer Basics</h4>
+        <p>1 (b) shelf · 2 (b) .pdf · 3 (b) .jpg · 4 (c) undo · 5 (b) cloud · 6 (c) browser · 7 (b) F2 · 8 (c) Downloads</p>
+      </div>
+      <div class="mini-card">
+        <h4>Part 2 — AI Foundations</h4>
+        <p>1 (b) examples and data · 2 (c) traditional software · 3 (b) Large Language Model · 4 (c) predict the next token · 5 (b) confidently wrong info · 6 (c) text, images, video, code · 7 (b) everything AI can see in chat · 8 (c) use boldly, verify facts</p>
+      </div>
+      <div class="mini-card">
+        <h4>Part 3 — Working with AI Tools</h4>
+        <p>1 (c) Cursor · 2 (a) Perplexity · 3 (b) forgets previous chat · 4 (b) # · 5 (b) bold · 6 (c) OTP or bank PIN · 7 (b) one topic, one chat · 8 (b) enough for this course</p>
+      </div>
+      <div class="mini-card">
+        <h4>Part 4 — Prompt Engineering</h4>
+        <p>1 (b) Role + Task + Context + Format · 2 (c) Role · 3 (b) Context · 4 (b) showing an example · 5 (b) think step by step · 6 (b) improving through feedback · 7 (b) "Explain like I'm 15" · 8 (b) verify them</p>
+      </div>
+    </div>
+
+    <h2>You completed Module 1! 🎉</h2>
+    <p>You can now use a computer confidently, explain how AI works, operate five AI tools, and write professional prompts. In <strong>Module 2</strong>, you will build your complete AI Workspace with Cursor — Skills, Rules, Projects — and create your first website with AI.</p>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Your Module 1 Superpowers</div>
+      <p>Files &amp; folders · Local vs Cloud · How LLMs think · The One-Chat Rule · Markdown · Role + Task + Context + Format · Iteration · Verify everything important.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>© Bharat AI Academy · Model Town, Rohtak · www.bharataiacademy.org</span>
+      <span class="pageno">49</span>
+    </div>
+  </div>
+
+</body>
+</html>

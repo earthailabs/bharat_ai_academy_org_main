@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your AI Workspace — Bharat AI Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="deck">
+    <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+
+    <header class="chrome">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Bharat AI Academy" width="160" height="40">
+        <div class="brand-name">Bharat AI Academy<span>AI For Everyone</span></div>
+      </div>
+      <div class="chrome-meta">
+        <span class="section-label" id="section-label">Introduction</span>
+        <span class="slide-count" id="slide-count">1 / 60</span>
+      </div>
+      <div class="chrome-actions">
+        <button class="btn-icon" id="btn-theme" title="Dark / Light (D)">◐</button>
+        <button class="btn-icon" id="btn-notes" title="Speaker Notes (N)">☰</button>
+        <button class="btn-icon" id="btn-timer" title="Timer (T)">⏱</button>
+        <button class="btn-icon" id="btn-fullscreen" title="Fullscreen (F)">⛶</button>
+        <button class="btn-icon" id="btn-help" title="Help (?)">?</button>
+      </div>
+    </header>
+
+    <main class="slides-viewport" id="slides">
+
+      <!-- ========== SECTION 1: INTRODUCTION ========== -->
+      <!-- Speaker notes also in data-notes for toggle panel -->
+
+      <section class="slide active" data-section="Introduction" data-notes="Welcome students warmly. Set the tone: this is the most practical class of the course — they leave with a real workspace on their laptop, not just theory.">
+        <div class="slide-inner center">
+          <p class="kicker">Module 1 · Class 3</p>
+          <h1 class="slide-title wide">Build Your AI Workspace</h1>
+          <p class="slide-subtitle wide">Not ChatGPT alone. A complete professional workspace on your laptop.</p>
+        </div>
+      </section>
+      <!-- Notes: Welcome. Emphasize daily-use skill. -->
+
+      <section class="slide" data-section="Introduction" data-notes="Contrast most AI courses vs this class. Ask for a raise of hands: who only uses ChatGPT in the browser today?">
+        <div class="slide-inner center">
+          <p class="kicker">The difference</p>
+          <p class="quote">Most courses teach <em>write a prompt</em>.<br><br>We teach <em>build your workspace</em>.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Introduction" data-notes="Read goals aloud. Connect to careers — workspace = permanent advantage.">
+        <div class="slide-inner">
+          <p class="kicker">Today’s Goal</p>
+          <h1 class="slide-title wide">Every student leaves with an AI Workspace</h1>
+          <ul class="list">
+            <li><span class="num">01</span> Understand files, folders &amp; projects</li>
+            <li><span class="num">02</span> Install and use Cursor</li>
+            <li><span class="num">03</span> Create Skills, Rules &amp; Projects</li>
+            <li><span class="num">04</span> Build with AI — website, poster, blog</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Introduction" data-notes="Quick scan of learning outcomes. Do not linger — students want hands-on.">
+        <div class="slide-inner">
+          <p class="kicker">What you will learn</p>
+          <h1 class="slide-title">Outcomes</h1>
+          <div class="grid grid-3 mt">
+            <div class="card"><div class="ico">📁</div><h3>Computer Basics</h3><p>Files, folders, extensions, local vs cloud</p></div>
+            <div class="card"><div class="ico">🧠</div><h3>AI Skills</h3><p>Reusable instructions that define who AI is</p></div>
+            <div class="card"><div class="ico">⚙️</div><h3>Cursor + Models</h3><p>Workspace tool, APIs, open &amp; closed AI</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Introduction" data-notes="Why it matters: professionals don’t rewrite the same prompt every day. They organize.">
+        <div class="slide-inner center">
+          <p class="kicker">Why this class matters</p>
+          <p class="quote">A skill you will use <em>every single day</em>.</p>
+          <p class="slide-subtitle wide mt-sm">Organized AI work beats clever one-off prompts.</p>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 2: AI WORKSPACE ========== -->
+
+      <section class="slide" data-section="AI Workspace" data-notes="Use the comparison carefully. ChatGPT is great — workspace is next level.">
+        <div class="slide-inner">
+          <p class="kicker">Section 2</p>
+          <h1 class="slide-title wide">ChatGPT vs AI Workspace</h1>
+          <div class="compare">
+            <div class="compare-side">
+              <h3>ChatGPT</h3>
+              <ul>
+                <li>Single chat window</li>
+                <li>No project folders</li>
+                <li>Hard to reuse instructions</li>
+                <li>Files stay elsewhere</li>
+                <li>Great for quick answers</li>
+              </ul>
+            </div>
+            <div class="compare-mid">VS</div>
+            <div class="compare-side hl">
+              <h3>AI Workspace</h3>
+              <ul>
+                <li>Full project folders</li>
+                <li>Skills you reuse forever</li>
+                <li>Rules for every reply</li>
+                <li>Files AI can read &amp; edit</li>
+                <li>Built for real work</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="AI Workspace" data-notes="Analogy: ChatGPT is a smart friend. Workspace is an office with desks, drawers, templates.">
+        <div class="slide-inner center">
+          <p class="kicker">Simple idea</p>
+          <div class="flow">
+            <div class="flow-node"><strong>Chat</strong><span>Conversation</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Workspace</strong><span>Your AI office</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Projects</strong><span>Real deliverables</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 3: COMPUTER BASICS ========== -->
+
+      <section class="slide" data-section="Computer Basics" data-notes="Start from zero. Phone photos question if needed.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 3</p>
+          <h1 class="slide-title wide">Computer Basics</h1>
+          <p class="slide-subtitle">Very simple. Very important.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Computer Basics" data-notes="Cupboard analogy — draw on board if helpful.">
+        <div class="slide-inner center">
+          <p class="kicker">Analogy</p>
+          <h1 class="slide-title wide">Computer is a cupboard</h1>
+          <div class="flow">
+            <div class="flow-node"><strong>Cupboard</strong><span>Computer</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Shelf</strong><span>Folder</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Book</strong><span>File</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Computer Basics" data-notes="Emphasize: folders hold things; files are the things.">
+        <div class="slide-inner">
+          <p class="kicker">Core words</p>
+          <h1 class="slide-title">Five ideas</h1>
+          <div class="grid grid-3 mt">
+            <div class="card"><div class="ico">💻</div><h3>Computer</h3><p>Where your work lives</p></div>
+            <div class="card"><div class="ico">📁</div><h3>Folder</h3><p>A container for files</p></div>
+            <div class="card"><div class="ico">📄</div><h3>File</h3><p>One document, image, or page</p></div>
+            <div class="card"><div class="ico">.md</div><h3>Extension</h3><p>The ending that tells type</p></div>
+            <div class="card"><div class="ico">📦</div><h3>Project</h3><p>A folder of related files</p></div>
+            <div class="card"><div class="ico">🗂️</div><h3>Workspace</h3><p>Many projects + skills</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Computer Basics" data-notes="Show File Explorer and turn on 'File name extensions'.">
+        <div class="slide-inner">
+          <p class="kicker">Extensions</p>
+          <h1 class="slide-title wide">The name after the dot</h1>
+          <p class="slide-subtitle wide">resume.pdf · photo.jpg · site.html · Teacher.md</p>
+          <div class="activity">
+            <div class="label">Windows tip</div>
+            <p>Turn on View → File name extensions so you can always see the type.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 4: FILE TYPES ========== -->
+
+      <section class="slide" data-section="File Types" data-notes="Do not lecture every row. Teach category meaning: text, image, office, web, data.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 4</p>
+          <h1 class="slide-title wide">File Types</h1>
+          <p class="slide-subtitle">Purpose · Can AI read? · Can AI edit?</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="File Types" data-notes="Text & docs first. .md is critical for Skills.">
+        <div class="slide-inner">
+          <p class="kicker">Text &amp; documents</p>
+          <div class="grid grid-4 mt-sm">
+            <div class="card"><div class="ext">.txt</div><h3>Simple text</h3><p>Notes. AI read ✓ · edit ✓</p></div>
+            <div class="card"><div class="ext">.md</div><h3>Markdown</h3><p>AI skills &amp; notes. Read ✓ · edit ✓</p></div>
+            <div class="card"><div class="ext">.pdf</div><h3>Document</h3><p>Resume, reports. Read ✓ · edit limited</p></div>
+            <div class="card"><div class="ext">.docx</div><h3>Word</h3><p>Letters. Read ✓ · edit via tools</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="File Types" data-notes="Images & office.">
+        <div class="slide-inner">
+          <p class="kicker">Images &amp; Office</p>
+          <div class="grid grid-4 mt-sm">
+            <div class="card"><div class="ext">.jpg</div><h3>Photo</h3><p>Images. AI read ✓ · edit tools</p></div>
+            <div class="card"><div class="ext">.png</div><h3>Logo</h3><p>Transparent image. Read ✓</p></div>
+            <div class="card"><div class="ext">.xlsx</div><h3>Excel</h3><p>Marks, data. Read ✓</p></div>
+            <div class="card"><div class="ext">.pptx</div><h3>Slides</h3><p>Presentations. Read ✓</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="File Types" data-notes="Web & data — students will build websites today.">
+        <div class="slide-inner">
+          <p class="kicker">Web &amp; data</p>
+          <div class="grid grid-4 mt-sm">
+            <div class="card"><div class="ext">.html</div><h3>Website</h3><p>Structure. AI read ✓ · edit ✓</p></div>
+            <div class="card"><div class="ext">.css</div><h3>Design</h3><p>Colors &amp; layout. Read ✓ · edit ✓</p></div>
+            <div class="card"><div class="ext">.js</div><h3>Logic</h3><p>Buttons &amp; actions. Read ✓ · edit ✓</p></div>
+            <div class="card"><div class="ext">.json / .zip</div><h3>Data · Pack</h3><p>Settings / share folders</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="File Types" data-notes="Students create Practice Folder on Desktop NOW. Walk the room.">
+        <div class="slide-inner">
+          <p class="kicker">Practical</p>
+          <h1 class="slide-title">Create Practice Folder</h1>
+          <div class="tree"><span class="root">Practice Folder</span>
+├── Image.jpg
+├── Resume.pdf
+├── Notes.txt
+└── Website.html</div>
+          <div class="activity">
+            <div class="label">Activity</div>
+            <p>Create this folder on your Desktop. Right-click → New → Folder.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 5: LOCAL / BROWSER / CLOUD ========== -->
+
+      <section class="slide" data-section="Local · Cloud · Browser" data-notes="Biggest confusion for beginners. Spend time here.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 5</p>
+          <h1 class="slide-title wide">Local · Browser · Cloud</h1>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Local · Cloud · Browser" data-notes="Local = laptop only. Cloud = Google/Microsoft computers. Browser = window to the internet.">
+        <div class="slide-inner">
+          <div class="grid grid-3">
+            <div class="card"><div class="ico">💻</div><h3>Local</h3><p>Files on <strong>your</strong> laptop. Desktop, Documents, Downloads.</p></div>
+            <div class="card"><div class="ico">☁️</div><h3>Cloud</h3><p>Files on Google Drive / OneDrive. Accessible anywhere.</p></div>
+            <div class="card"><div class="ico">🌐</div><h3>Browser</h3><p>Chrome / Edge open websites. Not a storage place.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Local · Cloud · Browser" data-notes="Windows folders: Desktop (quick), Downloads (messy), Documents (best for AI Workspace).">
+        <div class="slide-inner">
+          <p class="kicker">On your laptop</p>
+          <h1 class="slide-title">Three Windows folders</h1>
+          <div class="grid grid-3 mt">
+            <div class="card"><h3>Desktop</h3><p>Fast access. Keep tidy.</p></div>
+            <div class="card"><h3>Downloads</h3><p>Internet files land here. Clean often.</p></div>
+            <div class="card"><h3>Documents</h3><p>Best home for AI Workspace.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Local · Cloud · Browser" data-notes="Quick check answers: Photos app = Local, Google Photos = Cloud, Chrome = Browser.">
+        <div class="slide-inner center">
+          <p class="kicker">Quick check</p>
+          <div class="grid grid-3 mt">
+            <div class="card"><h3>Photos app</h3><p style="font-size:1.4rem;margin-top:12px;font-weight:600;color:var(--text)">Local</p></div>
+            <div class="card"><h3>Google Drive</h3><p style="font-size:1.4rem;margin-top:12px;font-weight:600;color:var(--text)">Cloud</p></div>
+            <div class="card"><h3>Chrome / Edge</h3><p style="font-size:1.4rem;margin-top:12px;font-weight:600;color:var(--text)">Browser</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 6: AI WORKSPACE TREE ========== -->
+
+      <section class="slide" data-section="AI Workspace" data-notes="Create structure live on screen. Students follow in Documents.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 6</p>
+          <h1 class="slide-title wide">Your AI Workspace</h1>
+          <p class="slide-subtitle">One home for all AI work.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="AI Workspace" data-notes="Explain each folder in one sentence. Knowledge = PDFs/notes AI can use as context.">
+        <div class="slide-inner">
+          <div class="tree"><span class="root">AI Workspace</span>
+├── <span class="dir">Projects</span>
+├── <span class="dir">Skills</span>
+├── <span class="dir">Rules</span>
+├── <span class="dir">Templates</span>
+├── <span class="dir">Knowledge</span>
+├── <span class="dir">Images</span>
+├── <span class="dir">Videos</span>
+├── <span class="dir">Documents</span>
+└── <span class="dir">Downloads</span></div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="AI Workspace" data-notes="Why structure matters: AI + humans find things faster.">
+        <div class="slide-inner">
+          <p class="kicker">Why each folder</p>
+          <div class="grid grid-3 mt-sm">
+            <div class="card"><h3>Projects</h3><p>Websites, resumes, apps you build</p></div>
+            <div class="card"><h3>Skills</h3><p>Reusable “who AI is” files</p></div>
+            <div class="card"><h3>Rules</h3><p>How AI should always behave</p></div>
+            <div class="card"><h3>Templates</h3><p>Ready formats for blog, poster…</p></div>
+            <div class="card"><h3>Knowledge</h3><p>Notes &amp; PDFs for context</p></div>
+            <div class="card"><h3>Media</h3><p>Images, videos, documents</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 7: CURSOR ========== -->
+
+      <section class="slide" data-section="Cursor" data-notes="Cursor = AI-first code editor that understands folders.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 7</p>
+          <h1 class="slide-title wide">What is Cursor?</h1>
+          <p class="slide-subtitle wide">An AI editor that reads your project — not just one chat.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Cursor" data-notes="Why not only ChatGPT: files, folders, edit, agent.">
+        <div class="slide-inner">
+          <p class="kicker">Why Cursor</p>
+          <h1 class="slide-title wide">Beyond ChatGPT alone</h1>
+          <div class="grid grid-3 mt">
+            <div class="card"><div class="ico">📂</div><h3>Reads folders</h3><p>Sees the whole project</p></div>
+            <div class="card"><div class="ico">🖼️</div><h3>Reads images</h3><p>Understands visual context</p></div>
+            <div class="card"><div class="ico">📑</div><h3>Reads PDFs</h3><p>Uses documents as input</p></div>
+            <div class="card"><div class="ico">✏️</div><h3>Edits files</h3><p>Changes code on disk</p></div>
+            <div class="card"><div class="ico">💬</div><h3>AI Chat</h3><p>Ask in context</p></div>
+            <div class="card"><div class="ico">🤖</div><h3>Agent</h3><p>Multi-step building</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Cursor" data-notes="REPEAT: Open Folder, never just Open File.">
+        <div class="slide-inner">
+          <p class="kicker">Critical rule</p>
+          <h1 class="slide-title wide">Open Folder — not Open File</h1>
+          <div class="compare">
+            <div class="compare-side">
+              <h3>Open File</h3>
+              <ul>
+                <li>AI sees one file</li>
+                <li>No project context</li>
+                <li>Weak for building</li>
+              </ul>
+            </div>
+            <div class="compare-mid">VS</div>
+            <div class="compare-side hl">
+              <h3>Open Folder</h3>
+              <ul>
+                <li>AI sees everything</li>
+                <li>Understands structure</li>
+                <li>Builds like a pro</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 8: INSTALL ========== -->
+
+      <section class="slide" data-section="Install Cursor" data-notes="Walk through slowly. Assist stuck students.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 8</p>
+          <h1 class="slide-title wide">Install Cursor</h1>
+          <p class="slide-subtitle">Windows · Step by step</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Install Cursor" data-notes="cursor.com → Download → Run installer → Login → Open Folder → Create Workspace.">
+        <div class="slide-inner">
+          <div class="steps">
+            <div class="step"><div class="n">1</div><h4>Download</h4><p>cursor.com</p></div>
+            <div class="step"><div class="n">2</div><h4>Install</h4><p>Run the installer</p></div>
+            <div class="step"><div class="n">3</div><h4>Login</h4><p>Google / email</p></div>
+            <div class="step"><div class="n">4</div><h4>Open Folder</h4><p>AI Workspace</p></div>
+            <div class="step"><div class="n">5</div><h4>Create</h4><p>Skills &amp; folders</p></div>
+          </div>
+          <div class="shot mt-sm">
+            <strong>Screenshot placeholder</strong>
+            <span>assets/images/cursor-install.png</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 9: MARKDOWN ========== -->
+
+      <section class="slide" data-section="Markdown" data-notes="Markdown = simple text with light formatting. AI loves it.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 9</p>
+          <h1 class="slide-title">Markdown</h1>
+          <p class="slide-subtitle">.md — the language of AI instructions</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Markdown" data-notes="Show side by side: typed markdown vs rendered idea. Keep examples tiny.">
+        <div class="slide-inner">
+          <p class="kicker">Why AI likes Markdown</p>
+          <div class="grid grid-2 mt-sm">
+            <div class="card"><h3>Simple</h3><p>Plain text. Opens anywhere.</p></div>
+            <div class="card"><h3>Structured</h3><p>Headings, lists, code blocks</p></div>
+            <div class="card"><h3>Reusable</h3><p>Perfect for Skills &amp; Rules</p></div>
+            <div class="card"><h3>Portable</h3><p>Works with every AI tool</p></div>
+          </div>
+          <div class="code"># Title
+## Subtitle
+- Point one
+- Point two
+
+**Bold** and *italic*</div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 10: SKILLS ========== -->
+
+      <section class="slide" data-section="Skills" data-notes="Define Skills simply — reusable text files. NOT advanced Cursor feature first.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 10</p>
+          <h1 class="slide-title wide">AI Skills</h1>
+          <p class="quote mt">A Skill is a <em>text file</em><br>you reuse again and again.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Skills" data-notes="Skills = WHO. Live-create Teacher.md">
+        <div class="slide-inner">
+          <p class="kicker">WHO the AI is</p>
+          <h1 class="slide-title">Teacher.md</h1>
+          <div class="code">You are an experienced teacher.
+
+Explain everything simply.
+Always give examples.
+Never use difficult English.
+Explain step by step.</div>
+          <div class="activity">
+            <div class="label">Ask</div>
+            <p>What is Artificial Intelligence?</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Skills" data-notes="Quick introductions — one line purpose each.">
+        <div class="slide-inner">
+          <p class="kicker">Skill library</p>
+          <div class="grid grid-3 mt-sm">
+            <div class="card"><h3>Graphic Designer</h3><p>Posters, premium visual prompts</p></div>
+            <div class="card"><h3>Website Developer</h3><p>Responsive HTML &amp; CSS</p></div>
+            <div class="card"><h3>Researcher</h3><p>Summaries &amp; clear sources</p></div>
+            <div class="card"><h3>Resume Writer</h3><p>1-page achievement resumes</p></div>
+            <div class="card"><h3>Marketing Expert</h3><p>Captions &amp; campaigns</p></div>
+            <div class="card"><h3>Career Mentor</h3><p>Next action steps</p></div>
+            <div class="card"><h3>Startup Advisor</h3><p>Validate ideas cheaply</p></div>
+            <div class="card"><h3>Video Creator</h3><p>Short-form scripts</p></div>
+            <div class="card"><h3>Teacher</h3><p>Simple step-by-step teaching</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Skills" data-notes="Show Designer + Website prompts.">
+        <div class="slide-inner">
+          <div class="grid grid-2">
+            <div>
+              <h1 class="slide-title" style="font-size:2.2rem">Designer.md</h1>
+              <div class="code">You are a graphic designer.
+Create premium designs.
+Modern. Minimal.
+Always explain the image prompt.</div>
+            </div>
+            <div>
+              <h1 class="slide-title" style="font-size:2.2rem">Website Dev.md</h1>
+              <div class="code">You are a senior website developer.
+Responsive. HTML + CSS.
+Clean design. Comment code.
+Mobile-first.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 11: RULES ========== -->
+
+      <section class="slide" data-section="Rules" data-notes="Rules = HOW. Contrast with Skills.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 11</p>
+          <h1 class="slide-title">Rules</h1>
+          <p class="slide-subtitle">How AI should work — every time.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Rules" data-notes="Paste Rules.md. Demo website WITH rules.">
+        <div class="slide-inner">
+          <h1 class="slide-title">Rules.md</h1>
+          <div class="code">Always reply in simple English.
+Never use difficult words.
+Always explain first.
+Then generate code.
+Always make responsive websites.
+Always use mobile-first design.</div>
+          <div class="flow mt-sm">
+            <div class="flow-node"><strong>Skills</strong><span>WHO</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Rules</strong><span>HOW</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Project</strong><span>WHAT</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 12: PROJECTS ========== -->
+
+      <section class="slide" data-section="Projects" data-notes="Show AI can read README + Requirements + Assets together.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 12</p>
+          <h1 class="slide-title">Projects</h1>
+          <p class="slide-subtitle">How AI reads everything together</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Projects" data-notes="Create one sample project folder live.">
+        <div class="slide-inner">
+          <div class="tree"><span class="root">Projects / Personal Website</span>
+├── <span class="file">README.md</span>
+├── <span class="file">Requirements.md</span>
+├── <span class="file">Notes.md</span>
+├── <span class="dir">Assets / Images</span>
+├── <span class="dir">Source</span>
+└── <span class="dir">Output</span></div>
+          <p class="slide-subtitle wide mt-sm">Open the project folder in Cursor — AI sees the full picture.</p>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 13: OPEN VS CLOSED ========== -->
+
+      <section class="slide" data-section="Open · Closed Source" data-notes="Keep neutral. Closed = company hosted. Open = downloadable/weights available.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 13</p>
+          <h1 class="slide-title wide">Open Source vs Closed Source</h1>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Open · Closed Source" data-notes="Students will use both. Closed often polished; open often free/customizable.">
+        <div class="slide-inner">
+          <div class="compare">
+            <div class="compare-side">
+              <h3>Closed</h3>
+              <ul>
+                <li>ChatGPT</li>
+                <li>Claude</li>
+                <li>Gemini</li>
+                <li>Grok</li>
+              </ul>
+            </div>
+            <div class="compare-mid">VS</div>
+            <div class="compare-side hl">
+              <h3>Open Source</h3>
+              <ul>
+                <li>DeepSeek</li>
+                <li>Qwen</li>
+                <li>Llama</li>
+                <li>Gemma</li>
+                <li>Mistral</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 14: BEST MODELS ========== -->
+
+      <section class="slide" data-section="Best AI Models" data-notes="Table is a map, not a ranking war. Point students to free tiers &amp; Cursor Agent.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 14</p>
+          <h1 class="slide-title wide">Best AI Models</h1>
+          <p class="slide-subtitle">Pick the right tool for the job</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Best AI Models" data-notes="Scroll table if needed. ✓ = strong fit. Free column: Free tier / open weights — approximate for teaching.">
+        <div class="slide-inner">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Model</th><th>Best for</th><th>Free</th><th>Code</th><th>Write</th><th>Research</th><th>Reason</th><th>Web</th><th>Image</th><th>Student</th><th>Biz</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>ChatGPT</td><td>General</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Claude</td><td>Writing · Code</td><td>~</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+                <tr><td>Gemini</td><td>Multimodal</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>DeepSeek</td><td>Code · Reason</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+                <tr><td>Qwen</td><td>Multilingual</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Grok</td><td>Realtime</td><td>~</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Llama</td><td>Open models</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+                <tr><td>Gemma</td><td>Lightweight</td><td>✓</td><td>~</td><td>✓</td><td>~</td><td>~</td><td>~</td><td></td><td>✓</td><td>~</td></tr>
+                <tr><td>Perplexity</td><td>Research</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td></tr>
+                <tr><td>Cursor Agent</td><td>Building</td><td>~</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>~</td><td>✓</td><td>✓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="slide-subtitle" style="font-size:0.95rem;margin-top:12px">✓ strong · ~ partial / free tier · empty = not focus. Check current pricing — models change.</p>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 15: API ========== -->
+
+      <section class="slide" data-section="API" data-notes="Restaurant analogy: Customer=You, Waiter=API, Kitchen=AI model, Food=Response.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 15</p>
+          <h1 class="slide-title">What is an API?</h1>
+          <p class="slide-subtitle">A waiter between you and the kitchen</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="API" data-notes="Walk the flow slowly with gestures.">
+        <div class="slide-inner center">
+          <div class="flow">
+            <div class="flow-node"><strong>You</strong><span>Customer</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>API</strong><span>Waiter</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>AI Model</strong><span>Kitchen</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Answer</strong><span>Food</span></div>
+          </div>
+          <p class="slide-subtitle wide mt">API = how apps talk to AI services.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="API" data-notes="NEVER share API keys in chat, GitHub, screenshots, WhatsApp.">
+        <div class="slide-inner center">
+          <p class="kicker">Security</p>
+          <h1 class="slide-title wide">API Key</h1>
+          <p class="quote mt">Your private password<br>to the AI kitchen.</p>
+          <div class="activity mt">
+            <div class="label">Rule</div>
+            <p>Never share API keys. Never commit them to public folders.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 16: GOOGLE AI STUDIO ========== -->
+
+      <section class="slide" data-section="Google AI Studio" data-notes="Live demo if internet available. Otherwise show placeholders and assign for home.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 16</p>
+          <h1 class="slide-title wide">Google AI Studio</h1>
+          <p class="slide-subtitle">Create a free API key for Gemini</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Google AI Studio" data-notes="aistudio.google.com → Login → Get API key → Copy → Paste in Cursor settings.">
+        <div class="slide-inner">
+          <div class="steps">
+            <div class="step"><div class="n">1</div><h4>Visit</h4><p>AI Studio</p></div>
+            <div class="step"><div class="n">2</div><h4>Login</h4><p>Google account</p></div>
+            <div class="step"><div class="n">3</div><h4>Create Key</h4><p>API key</p></div>
+            <div class="step"><div class="n">4</div><h4>Copy</h4><p>Keep secret</p></div>
+            <div class="step"><div class="n">5</div><h4>Paste</h4><p>Into Cursor</p></div>
+          </div>
+          <div class="shot">
+            <strong>Screenshot placeholders</strong>
+            <span>assets/images/ai-studio-1.png · ai-studio-2.png</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 17: PRACTICAL ========== -->
+
+      <section class="slide" data-section="Practical" data-notes="Hands-on block. Checklist on board. Celebrate first HTML file opened in browser.">
+        <div class="slide-inner center">
+          <p class="kicker">Section 17</p>
+          <h1 class="slide-title">Practical</h1>
+          <p class="slide-subtitle">Do this now — on your laptop</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Practical" data-notes="Walk room. Common stuck points: extensions hidden, wrong folder opened.">
+        <div class="slide-inner">
+          <ul class="list">
+            <li><span class="num">1</span> Install Cursor</li>
+            <li><span class="num">2</span> Create AI Workspace folders</li>
+            <li><span class="num">3</span> Create Skills + Rules (.md)</li>
+            <li><span class="num">4</span> Generate a website</li>
+            <li><span class="num">5</span> Generate a poster concept</li>
+            <li><span class="num">6</span> Generate a blog draft</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 18: HOMEWORK ========== -->
+
+      <section class="slide" data-section="Homework" data-notes="Assign clearly. Due next class. Bring laptop with workspace organized.">
+        <div class="slide-inner">
+          <p class="kicker">Section 18</p>
+          <h1 class="slide-title">Homework</h1>
+          <ul class="list">
+            <li><span class="num">10</span> Skills</li>
+            <li><span class="num">05</span> Templates</li>
+            <li><span class="num">03</span> Rules</li>
+            <li><span class="num">01</span> Website · Resume · Blog</li>
+            <li><span class="num">✓</span> Organize full AI Workspace</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Close" data-notes="Recap formula. Q&A. Applause.">
+        <div class="slide-inner center">
+          <p class="kicker">Remember</p>
+          <div class="flow">
+            <div class="flow-node"><strong>Skills</strong><span>WHO</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Rules</strong><span>HOW</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node"><strong>Project</strong><span>WHAT</span></div>
+          </div>
+          <p class="quote mt">You now have a home<br>for your AI work.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-section="Close" data-notes="Thank students. Point to companion materials if any. See you next class.">
+        <div class="slide-inner center">
+          <p class="kicker">Bharat AI Academy</p>
+          <h1 class="slide-title wide">Thank you</h1>
+          <p class="slide-subtitle">Learn · Organize · Build · Repeat</p>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="notes-panel" id="notes-panel">
+      <h4>Speaker Notes</h4>
+      <p id="notes-text"></p>
+    </aside>
+
+    <footer class="footer-bar">
+      <span>© Bharat AI Academy</span>
+      <span id="timer" style="opacity:0.5" title="T start/stop · Shift+T reset">00:00</span>
+      <span>← → Space · F Fullscreen · N Notes · D Theme · ? Help</span>
+    </footer>
+
+    <div class="overlay" id="help-overlay">
+      <div class="overlay-card">
+        <h3>Keyboard Shortcuts</h3>
+        <p><span>Next</span><span><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd></span></p>
+        <p><span>Previous</span><span><kbd>←</kbd> <kbd>PgUp</kbd></span></p>
+        <p><span>Fullscreen</span><span><kbd>F</kbd></span></p>
+        <p><span>Speaker notes</span><span><kbd>N</kbd></span></p>
+        <p><span>Dark / Light</span><span><kbd>D</kbd></span></p>
+        <p><span>Timer</span><span><kbd>T</kbd> / <kbd>Shift+T</kbd></span></p>
+        <p><span>Help</span><span><kbd>?</kbd></span></p>
+        <p><span>First / Last</span><span><kbd>Home</kbd> <kbd>End</kbd></span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

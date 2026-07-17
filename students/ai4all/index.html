@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b2545" />
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="AI For Everyone — student study materials: module-wise presentations and notes from Bharat AI Academy." />
+  <title>AI For Everyone — Student Materials | Bharat AI Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0b2545;
+      --navy-2: #13315c;
+      --blue: #1d4ed8;
+      --blue-soft: #eef4ff;
+      --blue-line: #d6e4ff;
+      --orange: #ea580c;
+      --orange-soft: #fff4ec;
+      --green: #15803d;
+      --green-soft: #ecfdf3;
+      --ink: #1f2937;
+      --muted: #5b6b7f;
+      --line: #e6ebf2;
+      --bg: #f6f8fb;
+      --white: #ffffff;
+      --r: 16px;
+      --r-sm: 12px;
+      --shadow: 0 1px 2px rgba(11,37,69,0.05), 0 10px 30px rgba(11,37,69,0.07);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-in {
+      max-width: 1080px; margin: 0 auto; padding: 0 20px;
+      height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .nav-in .logo img { height: 44px; width: auto; }
+    .nav-in a.back {
+      font-size: 0.875rem; font-weight: 600; color: var(--muted);
+      text-decoration: none; padding: 8px 13px; border-radius: 8px;
+    }
+    .nav-in a.back:hover { color: var(--navy); background: var(--bg); }
+
+    .hero {
+      background:
+        radial-gradient(900px 420px at 85% -10%, rgba(29,78,216,0.08), transparent 60%),
+        radial-gradient(700px 380px at -10% 30%, rgba(234,88,12,0.06), transparent 55%),
+        var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 44px 0 48px;
+      text-align: center;
+    }
+    .hero .badge {
+      display: inline-block; background: var(--blue-soft); color: var(--blue);
+      border: 1px solid var(--blue-line); font-size: 0.78rem; font-weight: 700;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 16px;
+      letter-spacing: 0.02em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); font-weight: 800; color: var(--navy); line-height: 1.2; letter-spacing: -0.02em; }
+    .hero p { color: var(--muted); max-width: 620px; margin: 12px auto 0; font-size: 1rem; }
+
+    .modules { padding: 40px 0 64px; display: grid; gap: 26px; }
+    .module {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden;
+    }
+    .module-head {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      padding: 20px 24px; border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fbfcfe, var(--white));
+    }
+    .module-num {
+      width: 46px; height: 46px; flex-shrink: 0; border-radius: 12px;
+      display: grid; place-items: center;
+      font-weight: 800; font-size: 1.05rem; color: #fff; background: var(--navy);
+    }
+    .module.m2 .module-num { background: var(--blue); }
+    .module.m3 .module-num, .module.m4 .module-num { background: #94a3b8; }
+    .module-head h2 { font-size: 1.15rem; font-weight: 800; color: var(--navy); line-height: 1.3; }
+    .module-head .sub { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+    .tag {
+      margin-left: auto; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 5px 12px; border-radius: 100px; text-transform: uppercase; white-space: nowrap;
+    }
+    .tag.live { background: var(--green-soft); color: var(--green); }
+    .tag.soon { background: var(--orange-soft); color: var(--orange); }
+
+    .module-body { padding: 20px 24px 24px; display: grid; gap: 22px; }
+    @media (min-width: 760px) { .module-body.two { grid-template-columns: 1fr 1fr; } }
+    .group h3 {
+      font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .group h3 svg { width: 15px; height: 15px; fill: var(--blue); flex-shrink: 0; }
+    .links { list-style: none; display: grid; gap: 8px; }
+    .links a {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm);
+      padding: 12px 15px; text-decoration: none; color: var(--navy);
+      font-weight: 600; font-size: 0.9rem; line-height: 1.4;
+      transition: border-color .15s, background .15s, transform .12s;
+    }
+    .links a:hover { border-color: var(--blue); background: var(--blue-soft); transform: translateX(2px); }
+    .links a .arrow { margin-left: auto; color: var(--blue); font-weight: 800; }
+    .links a small { display: block; font-weight: 500; color: var(--muted); font-size: 0.78rem; }
+    .soon-box {
+      background: var(--bg); border: 1.5px dashed var(--line); border-radius: var(--r-sm);
+      padding: 22px; text-align: center; color: var(--muted); font-size: 0.9rem; font-weight: 500;
+    }
+
+    .tip {
+      background: var(--blue-soft); border: 1px solid var(--blue-line); border-radius: var(--r);
+      padding: 16px 20px; font-size: 0.88rem; color: var(--navy);
+    }
+    .tip b { color: var(--blue); }
+
+    footer {
+      border-top: 1px solid var(--line); background: var(--white);
+      padding: 22px 20px; text-align: center; font-size: 0.8rem; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Bharat AI Academy" /></a>
+      <a class="back" href="/">← Back to Home</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">Student Materials</span>
+      <h1>AI For Everyone — Study Materials</h1>
+      <p>Module-wise presentations and study notes. Open any material directly in your browser — works on laptop and phone.</p>
+    </div>
+  </header>
+
+  <main class="wrap modules">
+
+    <!-- MODULE 1 -->
+    <section class="module m1">
+      <div class="module-head">
+        <div class="module-num">M1</div>
+        <div>
+          <h2>Module 1 — Computer Basics, AI Foundations &amp; Prompt Engineering</h2>
+          <span class="sub">Start here · Zero computer knowledge needed</span>
+        </div>
+        <span class="tag live">Available</span>
+      </div>
+      <div class="module-body two">
+        <div class="group">
+          <h3><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.17L4 17.17V4m0-2c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H4z"/></svg>Class Presentations</h3>
+          <ul class="links">
+            <li><a href="module-1/presentations/day-1/index.html">Day 1 — Introduction to AI &amp; The Future of AI<span class="arrow">→</span></a></li>
+            <li><a href="module-1/presentations/day-3/index.html">Day 3 — Build Your AI Workspace<span class="arrow">→</span></a></li>
+            <li><a href="module-1/presentations/day-3/class-companion.html">Day 3 — Class Companion (skills, prompts &amp; exercises)<span class="arrow">→</span></a></li>
+            <li><a href="module-1/presentations/day-4/index.html">Day 4 — Organization Structure &amp; Professional Setup<span class="arrow">→</span></a></li>
+            <li><a href="module-1/presentations/day-5/index.html">Day 5 — Google Workspace Essentials<span class="arrow">→</span></a></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>Study Notes (Study Pack)</h3>
+          <ul class="links">
+            <li><a href="module-1/notes/Cover.html">Cover, How to Use &amp; Contents<span class="arrow">→</span></a></li>
+            <li><a href="module-1/notes/Part1-Computer-Basics.html">Part 1 — Computer Basics<span class="arrow">→</span></a></li>
+            <li><a href="module-1/notes/Part2-AI-Foundations.html">Part 2 — AI Foundations<span class="arrow">→</span></a></li>
+            <li><a href="module-1/notes/Part3-Working-With-AI-Tools.html">Part 3 — Working with AI Tools<span class="arrow">→</span></a></li>
+            <li><a href="module-1/notes/Part4-Prompt-Engineering.html">Part 4 — Prompt Engineering<span class="arrow">→</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 2 -->
+    <section class="module m2">
+      <div class="module-head">
+        <div class="module-num">M2</div>
+        <div>
+          <h2>Module 2 — Create Content with AI</h2>
+          <span class="sub">Social Media · Writing · Graphics · Video</span>
+        </div>
+        <span class="tag live">Available</span>
+      </div>
+      <div class="module-body two">
+        <div class="group">
+          <h3><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>Study Notes (Study Pack)</h3>
+          <ul class="links">
+            <li><a href="module-2/notes/Cover.html">Cover, How to Use &amp; Contents<span class="arrow">→</span></a></li>
+            <li><a href="module-2/notes/Part1-Social-Media.html">Part 1 — Social Media: Platforms &amp; Algorithms<span class="arrow">→</span></a></li>
+            <li><a href="module-2/notes/Part2-Writing-With-AI.html">Part 2 — Writing with AI<span class="arrow">→</span></a></li>
+            <li><a href="module-2/notes/Part3-Graphics-With-AI.html">Part 3 — Graphics with AI<span class="arrow">→</span></a></li>
+            <li><a href="module-2/notes/Part4-Video-Audio-With-AI.html">Part 4 — Video &amp; Audio with AI<span class="arrow">→</span></a></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.17L4 17.17V4m0-2c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H4z"/></svg>Class Presentations</h3>
+          <div class="soon-box">Presentations for Module 2 will be added here after each class.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 3 -->
+    <section class="module m3">
+      <div class="module-head">
+        <div class="module-num">M3</div>
+        <div>
+          <h2>Module 3</h2>
+          <span class="sub">Details will be announced in class</span>
+        </div>
+        <span class="tag soon">Coming Soon</span>
+      </div>
+      <div class="module-body">
+        <div class="soon-box">Materials for Module 3 will appear here once the module begins.</div>
+      </div>
+    </section>
+
+    <!-- MODULE 4 -->
+    <section class="module m4">
+      <div class="module-head">
+        <div class="module-num">M4</div>
+        <div>
+          <h2>Module 4</h2>
+          <span class="sub">Details will be announced in class</span>
+        </div>
+        <span class="tag soon">Coming Soon</span>
+      </div>
+      <div class="module-body">
+        <div class="soon-box">Materials for Module 4 will appear here once the module begins.</div>
+      </div>
+    </section>
+
+    <div class="tip">
+      <b>Tip:</b> Presentations open like slides — use the <b>← →</b> arrow keys (or the on-screen arrows) to navigate, and press <b>F</b> for fullscreen. Notes can be printed or saved as PDF using the Print button on each page.
+    </div>
+
+  </main>
+
+  <footer>
+    © Bharat AI Academy · Model Town, Rohtak · www.bharataiacademy.org
+  </footer>
+
+</body>
+</html>

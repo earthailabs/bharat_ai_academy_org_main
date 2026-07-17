@@ -1,0 +1,308 @@
+/* Bharat AI Academy — Slide Layouts & Chrome */
+
+/* Presentation shell */
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--progress-height);
+  background: var(--color-border);
+  z-index: 100;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-electric), var(--color-orange));
+  transition: width var(--transition);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Section indicator */
+.section-indicator {
+  position: fixed;
+  top: var(--progress-height);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 6px 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 99;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-dot {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  background: transparent;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.section-dot.active {
+  background: var(--color-electric-light);
+  color: var(--color-electric);
+  font-weight: 600;
+}
+
+.section-dot.completed {
+  color: var(--color-electric);
+}
+
+/* Header */
+.slide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+  height: var(--header-height);
+  flex-shrink: 0;
+  margin-top: calc(var(--progress-height) + 32px);
+}
+
+.slide-header .logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.slide-header .header-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.slide-header .header-meta .slide-counter {
+  color: var(--color-navy);
+  font-weight: 600;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Footer */
+.slide-footer {
+  padding: var(--space-xs) var(--space-lg);
+  height: var(--footer-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  flex-shrink: 0;
+}
+
+/* Slide container */
+.slides-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slide.prev {
+  transform: translateX(-40px);
+}
+
+.slide-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md) var(--space-2xl);
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Layout-specific */
+.layout-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  height: 100%;
+}
+
+.layout-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.layout-hero .hero-badges {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.layout-hero .hero-image {
+  height: 100%;
+  min-height: 400px;
+}
+
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.layout-title-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.layout-title-center .title-icon {
+  font-size: 4rem;
+}
+
+/* Speaker notes panel */
+.speaker-notes-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 30vh;
+  background: var(--color-navy);
+  color: #E2E8F0;
+  padding: var(--space-md) var(--space-lg);
+  transform: translateY(100%);
+  transition: transform var(--transition);
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.speaker-notes-panel.visible {
+  transform: translateY(0);
+}
+
+.speaker-notes-panel h4 {
+  color: var(--color-orange);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.speaker-notes-panel p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+.animate-slide-left { animation: slideLeft 0.5s ease forwards; }
+
+.slide.active .stagger > * {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.slide.active .stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.slide.active .stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.slide.active .stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.slide.active .stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.slide.active .stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Fullscreen */
+.presentation:fullscreen .section-indicator {
+  display: none;
+}
+
+.presentation:fullscreen .slide-header {
+  margin-top: var(--progress-height);
+}
+
+/* Help overlay */
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+}
+
+.help-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.help-content {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 500px;
+  text-align: center;
+}
+
+.help-content h3 { margin-bottom: var(--space-md); }
+.help-content kbd {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.help-content p { margin: var(--space-xs) 0; color: var(--color-muted); font-size: 0.9rem; }

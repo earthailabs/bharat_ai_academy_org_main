@@ -1,0 +1,447 @@
+/* Bharat AI Academy — Module 1 Study Pack
+   A4 print-ready study notes · Color print · Simple, student-friendly design */
+
+:root {
+  --navy: #0A1628;
+  --blue: #0066FF;
+  --blue-light: #E8F1FF;
+  --blue-pale: #F4F8FF;
+  --orange: #FF6B35;
+  --orange-light: #FFF4EF;
+  --yellow: #B45309;
+  --yellow-light: #FEF9E7;
+  --yellow-border: #F5C518;
+  --green: #15803D;
+  --green-light: #EAF7EF;
+  --red: #B91C1C;
+  --red-light: #FDEDED;
+  --muted: #475569;
+  --border: #DCE3EC;
+  --card: #F8FAFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 18mm 14mm;
+}
+
+body {
+  font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--navy);
+  line-height: 1.6;
+  font-size: 11.5pt;
+  background: #EEF2F7;
+}
+
+/* Screen preview: pages appear as A4 sheets */
+.page {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 24px auto;
+  padding: 16mm 15mm 20mm;
+  box-shadow: 0 4px 24px rgba(10, 22, 40, 0.12);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  body { background: white; }
+  .page {
+    width: auto;
+    min-height: 297mm;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ===== Bharat AI Academy ownership marks ===== */
+/* Small brand text at the very top and bottom edge of every page */
+.page::before,
+.page::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(10, 22, 40, 0.18);
+  pointer-events: none;
+  z-index: 2;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page::before {
+  content: "BHARAT AI ACADEMY";
+  top: 4mm;
+}
+.page::after {
+  content: "BHARAT AI ACADEMY · WWW.BHARATAIACADEMY.ORG";
+  bottom: 4mm;
+}
+
+/* Diagonal watermark across the centre of every page */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-32deg);
+  font-size: 42pt;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: rgba(0, 102, 255, 0.055);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Keep all real content above the watermark */
+.page > *:not(.watermark) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Page header & footer ===== */
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--part-color, var(--blue));
+  margin-bottom: 20px;
+  font-size: 9pt;
+  color: var(--muted);
+}
+.page-head .brand { font-weight: 700; color: var(--navy); }
+.page-head .brand span { color: var(--part-color, var(--blue)); }
+
+.page-foot {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+.page-foot .pageno { font-weight: 700; color: var(--navy); }
+
+/* ===== Typography ===== */
+h1 {
+  font-size: 24pt;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 16pt;
+  font-weight: 750;
+  color: var(--part-color, var(--blue));
+  margin: 18px 0 10px;
+  page-break-after: avoid;
+}
+h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 14px 0 8px;
+  page-break-after: avoid;
+}
+h4 { font-size: 11.5pt; font-weight: 700; margin: 10px 0 6px; }
+p { margin-bottom: 9px; color: #23324a; }
+ul, ol { margin: 0 0 10px 22px; color: #23324a; }
+li { margin-bottom: 5px; }
+strong { color: var(--navy); }
+
+.lead {
+  font-size: 12.5pt;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Chapter opener */
+.chapter-num {
+  display: inline-block;
+  background: var(--part-color, var(--blue));
+  color: white;
+  font-weight: 800;
+  font-size: 10pt;
+  border-radius: 100px;
+  padding: 4px 16px;
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===== Special boxes ===== */
+.box {
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  page-break-inside: avoid;
+  border: 1.5px solid;
+}
+.box .box-title {
+  font-weight: 800;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+
+.box-term { background: var(--blue-light); border-color: var(--blue); }
+.box-term .box-title { color: var(--blue); }
+
+.box-analogy { background: var(--yellow-light); border-color: var(--yellow-border); }
+.box-analogy .box-title { color: var(--yellow); }
+
+.box-remember { background: var(--green-light); border-color: var(--green); }
+.box-remember .box-title { color: var(--green); }
+
+.box-try { background: var(--orange-light); border-color: var(--orange); border-style: dashed; }
+.box-try .box-title { color: var(--orange); }
+
+.box-mistake { background: var(--red-light); border-color: var(--red); }
+.box-mistake .box-title { color: var(--red); }
+
+.box-note { background: var(--card); border-color: var(--border); }
+.box-note .box-title { color: var(--muted); }
+
+/* ===== Steps ===== */
+.steps { list-style: none; margin: 12px 0; counter-reset: step; }
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 9px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 7px;
+  page-break-inside: avoid;
+}
+.steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--part-color, var(--blue));
+  color: white;
+  font-weight: 800;
+  font-size: 10pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 10pt;
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--part-color, var(--blue));
+  color: white;
+  font-weight: 700;
+  font-size: 9.5pt;
+}
+tr:nth-child(even) td { background: var(--blue-pale); }
+td code, p code, li code {
+  background: var(--blue-light);
+  color: var(--blue);
+  font-family: Consolas, 'SF Mono', monospace;
+  font-size: 0.92em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* ===== Prompt blocks ===== */
+.prompt-block {
+  background: var(--navy);
+  color: #E9EEF6;
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-family: Consolas, 'SF Mono', monospace;
+  font-size: 9.5pt;
+  line-height: 1.6;
+  margin: 10px 0 14px;
+  white-space: pre-wrap;
+  page-break-inside: avoid;
+}
+.prompt-block .label {
+  display: block;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 8pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+/* ===== Diagrams (CSS flow) ===== */
+.flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+  page-break-inside: avoid;
+}
+.flow-node {
+  background: var(--blue-pale);
+  border: 2px solid var(--part-color, var(--blue));
+  border-radius: 10px;
+  padding: 10px 18px;
+  text-align: center;
+  min-width: 90px;
+}
+.flow-node strong { display: block; font-size: 11pt; }
+.flow-node span { font-size: 8.5pt; color: var(--muted); }
+.flow-arrow { font-size: 14pt; color: var(--muted); font-weight: 700; }
+
+/* ===== File tree ===== */
+.tree {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-family: Consolas, monospace;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin: 10px 0;
+  white-space: pre;
+  page-break-inside: avoid;
+  color: #23324a;
+}
+
+/* ===== Quiz ===== */
+.quiz {
+  border: 2px solid var(--part-color, var(--blue));
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 14px 0;
+  page-break-inside: avoid;
+}
+.quiz h4 { color: var(--part-color, var(--blue)); margin-top: 0; }
+.quiz ol { margin-left: 20px; }
+.quiz-options { list-style: none; margin: 4px 0 8px 4px; }
+.quiz-options li { margin-bottom: 3px; color: var(--muted); }
+
+/* ===== Cards grid ===== */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+.mini-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 13px;
+  page-break-inside: avoid;
+}
+.mini-card h4 { margin: 0 0 4px; font-size: 10.5pt; }
+.mini-card p { font-size: 9.5pt; color: var(--muted); margin: 0; }
+.mini-card .emoji { font-size: 16pt; display: block; margin-bottom: 5px; }
+
+/* ===== Checklist ===== */
+.checklist { list-style: none; margin: 10px 0; }
+.checklist li {
+  padding: 7px 10px 7px 34px;
+  position: relative;
+  border-bottom: 1px dashed var(--border);
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 6px; top: 9px;
+  width: 15px; height: 15px;
+  border: 2px solid var(--part-color, var(--blue));
+  border-radius: 4px;
+}
+
+/* Cover page */
+.cover { justify-content: center; text-align: center; }
+.cover .cover-badge {
+  display: inline-block;
+  background: var(--blue-light);
+  color: var(--blue);
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 7px 22px;
+  margin: 0 auto 18px;
+  font-size: 11pt;
+}
+.cover h1 { font-size: 34pt; }
+.cover .cover-sub { font-size: 14pt; color: var(--muted); margin-top: 10px; }
+.cover .cover-parts { margin: 30px auto 0; max-width: 130mm; text-align: left; }
+
+/* Table of contents */
+.toc-list { list-style: none; margin: 14px 0; }
+.toc-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 4px;
+  border-bottom: 1px dotted var(--border);
+  font-size: 11pt;
+}
+.toc-list .sec { font-weight: 600; }
+.toc-list .sub { padding-left: 24px; font-size: 10pt; color: var(--muted); }
+
+/* Part color themes: set on <body> */
+body.part-1 { --part-color: #0066FF; }
+body.part-2 { --part-color: #7C3AED; }
+body.part-3 { --part-color: #0D9488; }
+body.part-4 { --part-color: #EA580C; }
+
+/* Print helper bar (screen only) */
+.print-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 10.5pt;
+}
+.print-bar button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-weight: 700;
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 10.5pt;
+}

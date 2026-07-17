@@ -1,0 +1,104 @@
+/* Bharat AI Academy — Design System */
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-navy: #0A1628;
+  --color-electric: #0066FF;
+  --color-electric-light: #E8F1FF;
+  --color-orange: #FF6B35;
+  --color-orange-light: #FFF4EF;
+  --color-muted: #64748B;
+  --color-card-bg: #F8FAFC;
+  --color-border: #E2E8F0;
+  --shadow-soft: 0 4px 24px rgba(10, 22, 40, 0.08);
+  --shadow-card: 0 8px 32px rgba(10, 22, 40, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --header-height: 72px;
+  --footer-height: 40px;
+  --progress-height: 4px;
+  --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+.slide-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+}
+
+.slide-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin-top: var(--space-sm);
+}
+
+.text-electric { color: var(--color-electric); }
+.text-orange { color: var(--color-orange); }
+.text-muted { color: var(--color-muted); }
+.text-small { font-size: 0.85rem; }
+.text-source { font-size: 0.75rem; color: var(--color-muted); font-style: italic; }
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--color-electric-light);
+  color: var(--color-electric);
+}
+
+.badge-orange {
+  background: var(--color-orange-light);
+  color: var(--color-orange);
+}
+
+/* Icon */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-electric-light);
+  color: var(--color-electric);
+  font-size: 1.5rem;
+}
+
+.icon-sm {
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+}

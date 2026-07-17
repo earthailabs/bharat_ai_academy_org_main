@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 2 — AI Foundations | Module 1 Study Pack</title>
+  <link rel="stylesheet" href="studypack.css">
+</head>
+<body class="part-2">
+  <div class="print-bar no-print">
+    Part 2 — AI Foundations: What is AI &amp; How It Works
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- PART OPENER -->
+  <div class="page cover">
+    <div class="watermark">Bharat AI Academy</div>
+    <span class="cover-badge">Module 1 · Part 2</span>
+    <h1>AI Foundations</h1>
+    <p class="cover-sub">What is AI &amp; How It Works</p>
+    <div class="cover-parts">
+      <ul class="toc-list">
+        <li><span class="sec">1. What is Intelligence? What is AI?</span></li>
+        <li><span class="sec">2. Traditional Software vs AI</span></li>
+        <li><span class="sec">3. Machine Learning — Without Any Math</span></li>
+        <li><span class="sec">4. How ChatGPT Works — Inside an LLM</span></li>
+        <li><span class="sec">5. Generative AI — AI That Creates</span></li>
+        <li><span class="sec">6. AI is Already All Around You</span></li>
+        <li><span class="sec">7. AI Myths vs Reality</span></li>
+        <li><span class="sec">8. The AI Dictionary</span></li>
+        <li><span class="sec">9. Practice &amp; Quiz</span></li>
+      </ul>
+    </div>
+    <div class="page-foot">
+      <span>© Bharat AI Academy</span>
+      <span class="pageno">17</span>
+    </div>
+  </div>
+
+  <!-- 1. WHAT IS AI -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 1</span>
+    </div>
+
+    <span class="chapter-num">Chapter 1</span>
+    <h1>What is Intelligence? What is AI?</h1>
+    <p class="lead">Before "Artificial Intelligence", let's understand plain intelligence.</p>
+
+    <h2>What makes something intelligent?</h2>
+    <p>Think about what YOU can do: recognise your friend's face in a crowd, understand a joke, learn cycling by practising, answer a question you've never heard before. All of this is <strong>intelligence</strong> — the ability to learn, understand, and solve new problems.</p>
+
+    <h2>So what is Artificial Intelligence?</h2>
+    <p><strong>Artificial Intelligence (AI)</strong> means making computers do things that normally need human intelligence — understanding language, recognising images, answering questions, making decisions.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Artificial Intelligence (AI)</div>
+      <p><strong>Artificial</strong> = made by humans, not natural.<br>
+      <strong>Intelligence</strong> = the ability to learn and solve problems.<br>
+      <strong>AI = human-made software that can learn and solve problems.</strong></p>
+    </div>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — AI is Like Electricity</div>
+      <p>150 years ago, electricity changed everything — homes, factories, hospitals. Nobody today asks "should I learn to use electricity?" — everyone just uses it. AI is the new electricity. It will be inside every job and every tool. You don't need to build power stations — you need to know how to use the switch. This course teaches you the switches.</p>
+    </div>
+
+    <h2>What AI is NOT</h2>
+    <ul>
+      <li>AI is <strong>not a robot</strong>. Robots are machines with bodies; AI is software (a robot may <em>use</em> AI, like a body uses a brain).</li>
+      <li>AI is <strong>not magic</strong>. It follows patterns learned from data.</li>
+      <li>AI is <strong>not alive</strong> and has no feelings — even when it chats politely!</li>
+    </ul>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">18</span>
+    </div>
+  </div>
+
+  <!-- 2. TRADITIONAL VS AI -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 2</span>
+    </div>
+
+    <span class="chapter-num">Chapter 2</span>
+    <h1>Traditional Software vs AI</h1>
+    <p class="lead">Your calculator and ChatGPT are both software. So what's the difference? Everything.</p>
+
+    <h2>Traditional software follows fixed rules</h2>
+    <p>A calculator was <strong>programmed</strong> with exact rules: "when the user presses 2 + 2, show 4." It can never do anything its programmers didn't write. Same input, same output, every single time. It never improves and never surprises you.</p>
+
+    <h2>AI learns patterns from examples</h2>
+    <p>AI is different. Nobody wrote a rule for every possible question you could ask ChatGPT — that would be impossible. Instead, AI <strong>learned patterns</strong> from millions of examples, and now it can handle questions it has never seen before.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — Recipe Book vs Experienced Cook</div>
+      <p><strong>Traditional software</strong> = a recipe book. It can only make dishes that are written in it. Ask for anything else and it fails.<br>
+      <strong>AI</strong> = an experienced cook who has tasted thousands of dishes. Give them ingredients they've never combined before, and they can still create something good — because they understand the <em>patterns</em> of cooking.</p>
+    </div>
+
+    <table>
+      <thead><tr><th></th><th>Traditional Software</th><th>AI</th></tr></thead>
+      <tbody>
+        <tr><td><strong>How it's built</strong></td><td>Programmers write exact rules</td><td>Learns patterns from data</td></tr>
+        <tr><td><strong>Same question twice</strong></td><td>Exactly the same answer</td><td>May answer differently</td></tr>
+        <tr><td><strong>New situations</strong></td><td>Fails or shows error</td><td>Usually handles them</td></tr>
+        <tr><td><strong>Improves over time?</strong></td><td>Only if reprogrammed</td><td>Yes, with more data/training</td></tr>
+        <tr><td><strong>Examples</strong></td><td>Calculator, alarm clock, MS Paint</td><td>ChatGPT, Google Maps traffic, face unlock</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>Traditional software = written rules. AI = learned patterns.</strong></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">19</span>
+    </div>
+  </div>
+
+  <!-- 3. MACHINE LEARNING -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 3</span>
+    </div>
+
+    <span class="chapter-num">Chapter 3</span>
+    <h1>Machine Learning — Without Any Math</h1>
+    <p class="lead">"Machine Learning" sounds scary. It isn't. You already know how it works — because it's how YOU learned as a child.</p>
+
+    <h2>How does a child learn what a cat is?</h2>
+    <p>Nobody gives a child a rulebook: "a cat has 4 legs, whiskers, pointed ears…". Instead, the child <strong>sees many cats</strong>. Mum points and says "cat". After seeing 50 cats, the child recognises a brand-new cat instantly — even one they've never seen, in a colour they've never seen.</p>
+
+    <p><strong>Machine Learning works exactly the same way:</strong></p>
+
+    <div class="flow">
+      <div class="flow-node"><strong>Show examples</strong><span>1,000s of cat photos</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><strong>Find patterns</strong><span>whiskers, ears, shape</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><strong>Predict</strong><span>"this new photo = cat!"</span></div>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Machine Learning (ML)</div>
+      <p>Teaching computers by showing them <strong>examples</strong> instead of writing rules. The machine finds the patterns by itself. ML is the engine inside almost all modern AI.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Training</div>
+      <p><strong>Training</strong> is the learning phase — when the AI studies millions of examples and adjusts itself to get better. Training ChatGPT took months and thousands of powerful computers. When you use AI, training is already finished.</p>
+    </div>
+
+    <h2>You've already seen ML in action</h2>
+    <ul>
+      <li><strong>Gmail spam filter</strong> — learned from millions of emails people marked as spam.</li>
+      <li><strong>YouTube recommendations</strong> — learned what people like you watch next.</li>
+      <li><strong>UPI fraud detection</strong> — learned patterns of fraudulent payments and blocks them in milliseconds.</li>
+      <li><strong>Face unlock</strong> — learned the pattern of your face from a few scans.</li>
+    </ul>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">20</span>
+    </div>
+  </div>
+
+  <!-- 4. HOW LLMS WORK -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 4</span>
+    </div>
+
+    <span class="chapter-num">Chapter 4</span>
+    <h1>How ChatGPT Works — Inside an LLM</h1>
+    <p class="lead">ChatGPT, Gemini, and Claude are all "LLMs". Let's open the bonnet and see the engine — no math, only ideas.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — LLM (Large Language Model)</div>
+      <p><strong>Large</strong> = trained on enormous amounts of text (a big part of the internet, millions of books).<br>
+      <strong>Language</strong> = it works with words and sentences.<br>
+      <strong>Model</strong> = a computer program that has learned patterns.<br>
+      An LLM is a giant pattern-machine for language.</p>
+    </div>
+
+    <h2>The core secret: predicting the next word</h2>
+    <p>Here's the surprising truth — an LLM does ONE simple thing, extremely well: <strong>it predicts the next word.</strong></p>
+    <p>Complete this sentence: <em>"The sky is ___."</em> You said "blue" — because you have heard that pattern thousands of times. An LLM does the same, but it has "read" more text than any human could in a thousand lifetimes. So it can continue not just sentences, but essays, poems, emails, and code.</p>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — Super Autocomplete</div>
+      <p>Your phone keyboard suggests the next word when you type — that's baby-level prediction. ChatGPT is that same idea grown into a giant: instead of predicting one lazy word, it predicts word after word after word, so well that whole intelligent-sounding answers appear. <strong>ChatGPT = autocomplete with a PhD.</strong></p>
+    </div>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Librarian Who Read Everything</div>
+      <p>Imagine a librarian who has read every book in the world's biggest library. Ask anything, and they answer instantly from memory of all those books. But note: they <strong>recall patterns</strong>, they don't check facts live — and sometimes they misremember confidently. That's an LLM.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">21</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 4</span>
+    </div>
+
+    <h2>Step by step: what happens when you ask ChatGPT a question</h2>
+    <ul class="steps">
+      <li><strong>You type your question</strong> — "Suggest a healthy breakfast."</li>
+      <li><strong>Your text is broken into tokens</strong> — small pieces of words the AI understands.</li>
+      <li><strong>The question travels to the cloud</strong> — to powerful servers where the LLM lives.</li>
+      <li><strong>The model predicts the best next token, again and again</strong> — building the answer piece by piece, using patterns from its training.</li>
+      <li><strong>The answer streams back to your screen</strong> — that's why you see it appear word by word!</li>
+    </ul>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Token</div>
+      <p>A <strong>token</strong> is a small piece of text — roughly ¾ of a word. "Namaste India" ≈ 4 tokens. AI reads and writes in tokens, not full words. Free AI plans often limit how many tokens you can use.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Context</div>
+      <p>The <strong>context</strong> is everything the AI can currently "see" — your question, the chat so far, and any files you shared. AI only knows what is in its context. This is why staying in one chat gives smarter answers: the AI remembers the earlier messages of THAT chat.</p>
+    </div>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Hallucination</div>
+      <p>Sometimes AI produces an answer that <strong>sounds confident but is wrong</strong> — a made-up fact, a fake book name. This is called a hallucination. It happens because the AI predicts what <em>sounds</em> right, not what <em>is</em> right. <strong>Rule: always verify important facts.</strong></p>
+    </div>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p><strong>LLM = a next-word prediction machine trained on massive text.</strong><br>
+      It is brilliant with language and patterns — but it can be confidently wrong. Trust, but verify.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">22</span>
+    </div>
+  </div>
+
+  <!-- 5. GENERATIVE AI -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 5</span>
+    </div>
+
+    <span class="chapter-num">Chapter 5</span>
+    <h1>Generative AI — AI That Creates</h1>
+    <p class="lead">Old AI could only <em>recognise</em> things (is this spam? is this a cat?). New AI can <em>create</em> things. That's the revolution you're living in.</p>
+
+    <div class="box box-term">
+      <div class="box-title">🔑 AI Term — Generative AI</div>
+      <p>AI that <strong>generates (creates) new content</strong> — text, images, video, music, code — from your instructions. "Generative" comes from "generate" = to create.</p>
+    </div>
+
+    <h2>What Generative AI can create today</h2>
+    <div class="cards">
+      <div class="mini-card"><span class="emoji">✍️</span><h4>Text</h4><p>Essays, emails, resumes, stories, summaries — ChatGPT, Gemini, Claude</p></div>
+      <div class="mini-card"><span class="emoji">🖼️</span><h4>Images</h4><p>Posters, logos, art from a text description — DALL·E, Midjourney</p></div>
+      <div class="mini-card"><span class="emoji">🎬</span><h4>Video</h4><p>Short clips from text or images — Sora, Kling, Veo</p></div>
+      <div class="mini-card"><span class="emoji">🎵</span><h4>Music &amp; Voice</h4><p>Songs and realistic voices — Suno, ElevenLabs</p></div>
+      <div class="mini-card"><span class="emoji">💻</span><h4>Code &amp; Websites</h4><p>Working websites and apps — Cursor, GitHub Copilot</p></div>
+      <div class="mini-card"><span class="emoji">📊</span><h4>Presentations</h4><p>Slides from a topic — Gamma, Tome</p></div>
+    </div>
+
+    <div class="box box-analogy">
+      <div class="box-title">💡 Analogy — The Tailor</div>
+      <p>Old AI was like a shop assistant who could only <em>identify</em> clothes: "this is a kurta, this is a shirt." Generative AI is a <strong>tailor</strong> — describe what you want ("blue kurta, silver buttons, wedding style") and it <em>stitches a brand-new one</em> for you. The better your description, the better the fit — which is why Part 4 teaches prompting!</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Open ChatGPT or Gemini on your phone and type: <em>"Write a 4-line poem about Rohtak in simple English."</em> Congratulations — you just used Generative AI to create something that never existed before.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">23</span>
+    </div>
+  </div>
+
+  <!-- 6. AI AROUND YOU -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 6</span>
+    </div>
+
+    <span class="chapter-num">Chapter 6</span>
+    <h1>AI is Already All Around You</h1>
+    <p class="lead">You have been using AI for years without knowing it. Count how many of these you used this week:</p>
+
+    <table>
+      <thead><tr><th>Where</th><th>What AI does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Google Maps</strong></td><td>Predicts traffic and finds the fastest route by learning from millions of phones on the road</td></tr>
+        <tr><td><strong>YouTube / Instagram</strong></td><td>Learns your taste and fills your feed with videos you're likely to watch</td></tr>
+        <tr><td><strong>UPI apps (PhonePe, GPay)</strong></td><td>Checks every payment in milliseconds for fraud patterns</td></tr>
+        <tr><td><strong>Gmail</strong></td><td>Moves spam out of your inbox automatically; suggests replies</td></tr>
+        <tr><td><strong>Phone camera</strong></td><td>Improves photos, recognises faces, blurs backgrounds</td></tr>
+        <tr><td><strong>Netflix / Hotstar</strong></td><td>Recommends shows based on your watching pattern</td></tr>
+        <tr><td><strong>Amazon / Flipkart</strong></td><td>"Customers also bought…" — pattern learning from crores of orders</td></tr>
+        <tr><td><strong>Voice assistants</strong></td><td>Alexa and Google Assistant understand your spoken words</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>AI is not coming in the future. <strong>AI is already here</strong> — quietly working inside apps you use daily. What's new is that now YOU can use it directly to create and build.</p>
+    </div>
+
+    <div class="box box-try">
+      <div class="box-title">🎯 Try It Now</div>
+      <p>Make a list: open your phone and find 5 apps that use AI. For each one, write one line about what the AI does. Bring your list to the next class.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">24</span>
+    </div>
+  </div>
+
+  <!-- 7. MYTHS -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 7</span>
+    </div>
+
+    <span class="chapter-num">Chapter 7</span>
+    <h1>AI Myths vs Reality</h1>
+    <p class="lead">Movies and WhatsApp forwards have created many wrong ideas about AI. Let's clear them.</p>
+
+    <table>
+      <thead><tr><th>❌ Myth</th><th>✅ Reality</th></tr></thead>
+      <tbody>
+        <tr><td>"AI is a robot that will take over the world"</td><td>AI is software — a very advanced pattern machine. It has no wishes, plans, or feelings.</td></tr>
+        <tr><td>"AI knows everything"</td><td>AI knows patterns from its training data. It can be outdated or simply wrong (hallucination).</td></tr>
+        <tr><td>"AI will take all jobs"</td><td>AI changes jobs. Repetitive tasks get automated; new roles appear. People who USE AI will replace people who don't.</td></tr>
+        <tr><td>"You need coding and math to use AI"</td><td>You need clear thinking and good instructions. This course requires zero coding.</td></tr>
+        <tr><td>"AI understands like a human"</td><td>AI predicts likely words. It often <em>seems</em> to understand — but it has no real-world experience.</td></tr>
+        <tr><td>"Whatever AI says must be true"</td><td>AI sounds confident even when wrong. Verify important facts, always.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-remember">
+      <div class="box-title">📝 Remember This</div>
+      <p>The smartest attitude towards AI: <strong>a powerful assistant, not a perfect oracle.</strong> Use it boldly, check it wisely.</p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">25</span>
+    </div>
+  </div>
+
+  <!-- 8. DICTIONARY -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Chapter 8</span>
+    </div>
+
+    <span class="chapter-num">Chapter 8</span>
+    <h1>The AI Dictionary</h1>
+    <p class="lead">Every field has its own language. Here are the 14 AI words you'll hear again and again. Revise this page often!</p>
+
+    <table>
+      <thead><tr><th>Term</th><th>Simple meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>AI</strong></td><td>Human-made software that can learn and solve problems</td></tr>
+        <tr><td><strong>Machine Learning</strong></td><td>Teaching computers with examples instead of rules</td></tr>
+        <tr><td><strong>Model</strong></td><td>A trained AI program (ChatGPT, Gemini are models)</td></tr>
+        <tr><td><strong>LLM</strong></td><td>Large Language Model — AI trained on massive text; predicts the next word</td></tr>
+        <tr><td><strong>Training</strong></td><td>The learning phase, when AI studies millions of examples</td></tr>
+        <tr><td><strong>Prompt</strong></td><td>The instruction you give to AI (Part 4 is all about this!)</td></tr>
+        <tr><td><strong>Token</strong></td><td>A small piece of text (~¾ of a word) — AI's unit of reading</td></tr>
+        <tr><td><strong>Context</strong></td><td>Everything the AI can currently see — your chat, your files</td></tr>
+        <tr><td><strong>Hallucination</strong></td><td>When AI confidently gives a wrong or made-up answer</td></tr>
+        <tr><td><strong>Generative AI</strong></td><td>AI that creates new content — text, images, video, code</td></tr>
+        <tr><td><strong>Chatbot</strong></td><td>An AI you talk to in a chat window</td></tr>
+        <tr><td><strong>AI Agent</strong></td><td>AI that can do multi-step tasks by itself, not just answer</td></tr>
+        <tr><td><strong>Open Source</strong></td><td>AI models whose insides are shared publicly (Llama, DeepSeek)</td></tr>
+        <tr><td><strong>API</strong></td><td>The doorway through which apps talk to AI services (Module 2!)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations</span>
+      <span class="pageno">26</span>
+    </div>
+  </div>
+
+  <!-- 9. QUIZ -->
+  <div class="page">
+    <div class="watermark">Bharat AI Academy</div>
+    <div class="page-head">
+      <span class="brand">Part 2 · <span>AI Foundations</span></span>
+      <span>Practice &amp; Quiz</span>
+    </div>
+
+    <span class="chapter-num">Practice</span>
+    <h1>Part 2 Practice Tasks</h1>
+
+    <ul class="checklist">
+      <li>Explain to a family member what AI is, using the electricity analogy</li>
+      <li>Find 5 apps on your phone that use AI and write what each one does</li>
+      <li>Ask ChatGPT/Gemini the same question twice — notice the answers differ slightly (why?)</li>
+      <li>Ask AI about a very recent event — see how it responds when it may not know</li>
+      <li>Revise the AI Dictionary page — cover the meanings and test yourself</li>
+    </ul>
+
+    <div class="quiz">
+      <h4>✏️ Part 2 Quiz — 8 Questions</h4>
+      <ol>
+        <li>AI learns from…
+          <ul class="quiz-options"><li>(a) written rules &nbsp; (b) examples and data &nbsp; (c) magic &nbsp; (d) the internet live</li></ul></li>
+        <li>A calculator is…
+          <ul class="quiz-options"><li>(a) AI &nbsp; (b) an LLM &nbsp; (c) traditional software &nbsp; (d) a robot</li></ul></li>
+        <li>LLM stands for…
+          <ul class="quiz-options"><li>(a) Long Language Machine &nbsp; (b) Large Language Model &nbsp; (c) Live Learning Model &nbsp; (d) Large Logic Machine</li></ul></li>
+        <li>The core thing an LLM does is…
+          <ul class="quiz-options"><li>(a) search the web &nbsp; (b) store your files &nbsp; (c) predict the next token &nbsp; (d) translate only</li></ul></li>
+        <li>A "hallucination" is when AI…
+          <ul class="quiz-options"><li>(a) refuses to answer &nbsp; (b) confidently gives wrong information &nbsp; (c) crashes &nbsp; (d) dreams</li></ul></li>
+        <li>Generative AI can create…
+          <ul class="quiz-options"><li>(a) only text &nbsp; (b) only images &nbsp; (c) text, images, video, code and more &nbsp; (d) nothing new</li></ul></li>
+        <li>"Context" means…
+          <ul class="quiz-options"><li>(a) the AI's mood &nbsp; (b) everything the AI can currently see in the chat &nbsp; (c) the internet &nbsp; (d) your laptop storage</li></ul></li>
+        <li>The smartest attitude to AI answers is…
+          <ul class="quiz-options"><li>(a) trust everything &nbsp; (b) trust nothing &nbsp; (c) use boldly, verify important facts &nbsp; (d) never use AI</li></ul></li>
+      </ol>
+      <p><em>Answers are at the back of Part 4.</em></p>
+    </div>
+
+    <div class="page-foot">
+      <span>Part 2 · AI Foundations · End of Part 2</span>
+      <span class="pageno">27</span>
+    </div>
+  </div>
+
+</body>
+</html>
