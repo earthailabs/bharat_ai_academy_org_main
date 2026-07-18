@@ -2,7 +2,7 @@
   "use strict";
 
   var AUTH_KEY = "bai-ai4all-access";
-  var PASSWORD_HASH = "90a5fa455cad9aee6840f6e87234e5c7bce647decae108ab0d91e9a3ad19234a";
+  var PASSWORD_HASH = "ea72790ad5f2c1433957d4fb9a97c605dec5d7a4c65704c99da53f228c8dc97e";
 
   function toHex(buffer) {
     return Array.from(new Uint8Array(buffer))
